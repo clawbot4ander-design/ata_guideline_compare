@@ -1,686 +1,732 @@
-# Evidence Framework and Methodology Appraisal: ATA 2015 vs 2025
+# Evidence Framework and Methodology Appraisal（證據架構與方法學評析）：ATA 2015 vs 2025
 
 **Deliverable:** 04 of 07
-**Project:** ATA 2015 vs 2025 DTC Guideline Comparison (v1.1)
+**Project:** ATA 2015 vs 2025 DTC Guideline Comparison (v1.3)
 **Generated:** 2026-03-10
-**Source Agent:** methods-evidence-appraiser v1.1 ("WHY engine")
-**Status:** Final -- cross-validated
+**Source Agent:** methods-evidence-appraiser v1.3 ("WHY engine")
+**Status:** Complete -- v1.3 with integrated reference analysis
 
 ---
 
-## About This Document
+## 關於本文件
 
-This document analyzes the evidence frameworks, grading methodologies, and rationale structures underlying the 2015 and 2025 ATA DTC guidelines. It addresses Layer 2 ("WHY it changed") of the v1.1 three-layer analysis for every major recommendation shift, mapping each change to its evidence drivers, confidence level, and residual uncertainty. It should be read in conjunction with `03_comparison_matrix.md` (Layer 1 and 3 details) and the scope crosswalk (`outputs/scope_crosswalk.md`).
+本文件是 ATA 2015 vs 2025 DTC guideline 比較計畫的核心「WHY engine」輸出。目的不在於列舉研究，而在於解釋 **recommendation 為什麼改變** -- 區分哪些是證據驅動、哪些是哲學驅動、哪些是方法學變更的產物。本文件對應 v1.1 三層分析中的 Layer 2（Rationale），每一項重大變動均以 Rationale Deep Dive 模板呈現，並依 v1.3 要求將關鍵文獻分析直接整合於主文中。
 
----
-
-# ATA 2015 vs 2025 Guideline: Evidence, Methodology, and Rationale Analysis
-
-**Generated:** 2026-03-10
-**Agent:** methods-evidence-appraiser v1.1 ("WHY engine")
-**Status:** Complete
+建議搭配 `03_comparison_matrix.md`（Layer 1 & 3）及 `outputs/recommendation_diff.md` 一同閱讀。
 
 ---
 
-## 1. Methodology Comparison
+# 第一部分：Evidence Framework Evolution（證據架構演進）
 
-### 1.1 Grading Systems
+## 1.1 分級系統比較
 
-| Feature | 2015 Guideline | 2025 Guideline | Impact on Comparability |
-|---------|---------------|---------------|------------------------|
-| **Primary system** | American College of Physicians (ACP) Guideline Grading System | Modified GRADE (Grading of Recommendations Assessment, Development and Evaluation) | Different terminology and thresholds make direct strength comparison imperfect |
-| **Recommendation strength** | Strong / Weak / No recommendation | Strong / Conditional / No recommendation; plus Good Practice Statement (GPS) | "Weak" (2015) approximately = "Conditional" (2025), but GPS is a new category with no 2015 equivalent |
-| **Evidence quality** | High / Moderate / Low / Insufficient | High / Moderate / Low / Very Low / Insufficient | 2025 adds "Very Low" tier, allowing finer discrimination |
-| **Therapeutic evidence** | RCT without limitations = High; RCT with limitations = Moderate; Observational = Low | Adapted from GRADE: considers risk of bias, consistency, directness, precision, reporting bias | 2025 methodology is more structured and explicit about quality determinants |
-| **Diagnostic evidence** | Custom ATA system developed for these guidelines (Tables 3-4) | Methods adapted from GRADE and ACP; commissioned systematic reviews from Pacific Northwest Evidence-based Practice Center | 2025 has dedicated external methodologist and commissioned systematic reviews |
-| **GPS (new in 2025)** | Not available | Not GRADE-d; functions like a strong recommendation; requires unanimous consensus; used when direct evidence is lacking but benefits are obvious via indirect evidence chain | GPS captures practices too obvious for formal grading (e.g., visual identification of RLN, low-iodine diet) |
+| 特徵 | 2015 Guideline | 2025 Guideline | 對可比性的影響 |
+|------|---------------|---------------|-------------|
+| **分級系統** | American College of Physicians (ACP) Grading System | Modified GRADE (Grading of Recommendations Assessment, Development and Evaluation) | 術語不同但概念可對應；需謹慎比較 |
+| **推薦強度** | Strong / Weak / No recommendation | Strong / Conditional / No recommendation + Good Practice Statement (GPS) | 2015 "Weak" 近似 2025 "Conditional"；GPS 為新增類別 |
+| **證據品質** | High / Moderate / Low / Insufficient | High / Moderate / Low / Very low / Insufficient | 2025 新增 "Very low" 等級；對低品質證據區分更細 |
+| **診斷檢查分級** | 自行開發的 diagnostic test appraisal system（Tables 3-4） | 統一使用 modified GRADE | 2015 有獨立的 diagnostic test grading，2025 統一化 |
+| **Strong + Low 組合** | 允許（Strong/Low-quality evidence） | 僅在有限情況下允許（需特殊理由：低成本、高可行性、高公平性等） | 2025 對此組合設有更嚴格的門檻 |
+| **GPS 機制** | 無 | Good Practice Statement -- 非 GRADE-d 但等同 strong；需全體一致同意 | 全新類別，用於證據低或不足但 benefit 明顯的情境 |
 
-**Key Methodological Difference:** The 2025 guideline's adoption of modified GRADE introduces a more transparent framework for linking evidence certainty to recommendation strength. In GRADE, a "Strong" recommendation with "Low" certainty requires explicit justification, which the 2025 guideline provides (Table 1, p. 847: "Strong recommendations are only indicated when certainty is low or very low in limited circumstances"). This contrasts with the 2015 system where Strong/Low combinations were used more liberally.
+### 分級系統變更的臨床意義
 
-**Implication for Comparisons:** When a 2015 "Strong recommendation, Low-quality evidence" becomes a 2025 "Conditional recommendation, Low certainty evidence," this may reflect a methodology change (GRADE's stricter pairing requirements) rather than a substantive weakening of the recommendation. Conversely, some 2015 "Weak" recommendations becoming 2025 "Strong" recommendations may reflect genuine evidence accumulation rather than methodology inflation.
+ACP 系統與 modified GRADE 之間的核心差異在於：
 
-### 1.2 Panel Composition and Process
+1. **ACP 將 benefit-harm balance 與 evidence quality 分開評估**：一個 recommendation 可以是 Strong/Low（即：益處明顯但證據品質差）。2025 GRADE 框架保留了這種可能性，但設立了更高的門檻 -- Strong/Low 或 Strong/Very low 的組合需要「a strong rationale for benefit despite uncertainty in the evidence and strong supporting considerations」（2025 guideline, p.846）。
 
-| Feature | 2015 | 2025 | Significance |
-|---------|------|------|-------------|
-| **Panel size** | 16 members | 21 members (including co-chairs) | Larger, more diverse panel |
-| **Co-chairs** | 1 chair (B.R. Haugen) | 2 co-chairs (M.D. Ringel, J.A. Sosa) | Shared leadership model |
-| **Specialties** | Endocrinology, Surgery, Nuclear Medicine, Radiology, Pathology, Oncology, Molecular Diagnostics, Epidemiology | Endocrinology, Surgery (endocrine + otolaryngology-HNS), Nuclear Medicine, Pathology, Medical Oncology, Cancer Genetics, Medical Informatics/Clinical Epidemiology | Broader representation; Cancer Genetics is new |
-| **Patient advocate** | None on panel (thyroid cancer survivor group input sought via email) | Full panel member (Gary Bloom, ThyCa) | First-time inclusion of patient representative as voting member |
-| **Methodology consultant** | Panel member with epidemiology/SR expertise provided training | Dedicated methodology consultant (Roger Chou, OHSU) -- compensated by ATA; commissioned external systematic reviews | Substantially more rigorous methodology infrastructure |
-| **COI management** | Reviewed at inception, yearly, and upon completion | Pre-vetted before invitation, annually updated, managed by ATA GSC and BOD; conflicted members excluded from specific recommendation votes | More structured and proactive COI management |
-| **Systematic reviews** | Individual panel members searched and appraised literature | Panel members conducted searches + two commissioned systematic reviews from Pacific Northwest Evidence-based Practice Center (OHSU) | External commissioned reviews represent a significant methodological upgrade |
-| **Consensus process** | Draft reviewed until no further revisions requested; general consensus | Formal voting; majority approval from all nonconflicted task force members; unanimous consensus required for all GPS | More formal and documented consensus process |
-| **Stakeholder input** | Online survey (Oct 2011), thyroid cancer survivor group emails, satellite symposium, ATA membership review | Larger stakeholder complement, patient advocate on panel, ATA membership review (Fall 2024) | More integrated stakeholder engagement |
-| **Literature search cutoff** | Approximately 2014 (exact date not specified) | July 1, 2024 (explicit), with one exception for WHO 2025 classification | 2025 captures approximately 10 additional years of literature |
+2. **Good Practice Statement (GPS) 的引入**：GPS 是 2025 guideline 最重要的方法學創新之一。GPS 適用於直接證據缺乏但 inferred benefit 明確的情境（如：「active surveillance 監測時不常規檢測 Tg」）。GPS 不賦予 GRADE 等級，但臨床效力等同於 Strong recommendation，且需要 **unanimous consensus**。在 2015 年，這些建議會被歸類為 Strong/Low 或 Weak/Low，造成臨床不確定性。GPS 的引入實際上消除了一類「明知應該做但證據不足以評級」的尷尬處境。
 
-**Significance of Process Changes:** The inclusion of a patient advocate as a voting panel member, combined with a dedicated methodology consultant and commissioned external systematic reviews, represents a fundamental shift in guideline development rigor. These process changes likely contributed to the stronger emphasis on patient-centered outcomes (QoL, morbidity avoidance) and to the more careful grading of evidence seen in the 2025 guideline.
+3. **"Conditional" vs "Weak" 的語義差異**：雖然兩者概念近似，但 "Conditional" 的語義更中性 -- 暗示「在特定條件下適用」而非「推薦力度弱」。這一術語變更可能影響臨床醫師對 recommendation 的感知和遵從度。
 
-### 1.3 Systematic Review Process
+### 方法學比較的結論
 
-| Aspect | 2015 | 2025 |
-|--------|------|------|
-| **Search databases** | Electronic databases (not further specified) | Ovid MEDLINE, Embase, Cochrane Central; supplemented by reference list review |
-| **Search design** | Primary reviewer searched, secondary reviewer checked | Information specialist-assisted searches using PICO framework; two investigators independently screened |
-| **Inclusion criteria** | Published English-language articles on adults | Published English-language articles; studies published only as conference abstracts excluded |
-| **Quality assessment** | Varied by reviewer using ACP framework | Study-design-specific criteria adapted from USPSTF Procedure Manual |
-| **Outcome prioritization** | Not explicitly hierarchical | Explicitly prioritized: survival/mortality > oncologic outcomes > QoL/function > intermediate outcomes |
-| **Commissioned reviews** | None | Two external systematic reviews: (1) Active surveillance vs immediate surgery; (2) Diagnostic accuracy of serum Tg after partial/total thyroidectomy without RAI |
+2015 到 2025 的分級系統變更**不應被誤解為 recommendation 強度的實質變化**。例如，2015 年的 "Weak recommendation" 與 2025 年的 "Conditional recommendation" 在概念上等價。然而，2025 年 GRADE 框架的引入確實影響了某些 recommendation 的表述方式：部分 2015 年的 "Strong/Low" 建議在 2025 年被重新歸類為 "Conditional/Low" 或 GPS，這反映的是方法學嚴謹性的提升而非臨床立場的改變。
 
-**How This Affects Comparability:** The 2025 guideline's explicit outcome prioritization hierarchy -- survival > recurrence > QoL > intermediate -- helps explain why some 2015 recommendations that were driven by recurrence reduction appear "weaker" in 2025. When a committee formally decides that disease-specific survival matters more than recurrence, and then observes that many treatments reduce recurrence without improving survival, de-escalation follows naturally.
+## 1.2 Panel 組成與流程比較
 
----
+| 面向 | 2015 | 2025 |
+|------|------|------|
+| **成員數** | 16 位 | 21 位（含 patient advocate） |
+| **專科代表** | Endocrinology, Surgery, Nuclear medicine, Radiology, Pathology, Oncology, Molecular diagnostics, Epidemiology | Endocrinology, Surgery (endocrine + otolaryngology-head and neck), Nuclear medicine, Pathology, Medical oncology, Cancer genetics, Medical informatics/Clinical epidemiology, **Patient advocacy** |
+| **Patient advocate** | 無正式成員；透過外部 stakeholder input | **正式委員會成員**，參與所有 consensus 討論和投票 |
+| **方法學專家** | Panel 成員中具流行病學和 systematic review 專長者提供內部培訓 | 專任 methodology consultant（Roger Chou, OHSU），受 ATA 付費，負責教育和支援 task force members |
+| **Systematic review** | 由 panel 成員各自進行 literature search 和 critical appraisal | Panel 成員進行搜尋 + **委託 2 項外部 systematic reviews**（Pacific Northwest Evidence-based Practice Center, OHSU）-- active surveillance vs surgery, Tg diagnostic accuracy post-lobectomy |
+| **COI 管理** | 於成立時、年度和完成時審查 | 由 ATA GSC 和 BOD 預審；年度更新；有 conflict 的成員不參與相關 recommendation 的最終批准 |
+| **Consensus 機制** | 透過 email、teleconference、面對面會議修訂至無進一步建議 | 正式的 group discussion + informal consensus process；**所有 recommendation 需獲 majority approval from all nonconflicted members** |
+| **外部審查** | ATA membership review（2014 年秋季）；33 位成員反饋 | ATA membership review（2024 年秋季）+ ATA GSC + BOD 審查 |
+| **文獻截止日** | 未明確標示 | **2024 年 7 月 1 日**，僅 WHO 2025 分類除外 |
 
-## 2. Rationale Deep Dives: Major Recommendation Changes
+### Panel 組成變更的意義
 
-### 2.1 Lobectomy Threshold Expansion (<=2 cm)
+2025 年 panel 的兩項關鍵變化反映了 guideline 發展的結構性演進：
 
-**The Change:** Lobectomy is now the default for all tumors <=2 cm (cT1N0M0), up from <1 cm in 2015.
+1. **Patient advocate 的納入**是 2025 年 guideline 最重要的 process-level 變更之一。Patient advocate（ThyCa: Thyroid Cancer Survivors' Association 代表 Gary Bloom）作為正式 panel 成員參與所有 recommendation 的討論和投票。這一變更直接影響了多項 patient-centered recommendation 的形成，包括 shared decision-making 的形式化（R11, R15B, R45）、survivorship 關切（R82-84）、以及 "complete remission" 概念的引入（R48）。
 
-**What the Guideline Says About Why:**
-The 2025 guideline states (p. 862, discussion following R15): "Since publication of the 2015 guidelines suggesting that thyroid lobectomy/hemi-thyroidectomy may be sufficient for low risk (cT1-2N0M0) DTC, numerous studies have been published evaluating this recommendation. Several systematic reviews and meta-analyses have been performed, with approximately half showing no difference in recurrence or survival but with higher complication rates for total thyroidectomy." The guideline also notes that "only one meta-analysis found improved overall survival with total thyroidectomy over lobectomy, but the benefit was confined to T2 primary tumors" and that this result was heavily influenced by an NCDB study that "seemed to be driven by tumors >2 cm" after subset analysis.
-
-**Evidence Analysis:**
-- Key post-2015 evidence cited: Multiple systematic reviews and meta-analyses (refs 335-340); updated NCDB analyses; Adam et al. updated analysis (61,775 patients)
-- Evidence type: Systematic reviews of retrospective database studies; no RCTs
-- Evidence quality: Moderate (large datasets but inherently observational; confounding by indication remains a concern)
-- Was there a pivotal study? No single pivotal study; rather cumulative evidence from multiple large database analyses all pointing in the same direction
-
-**Driving Force Classification:**
-- [x] **Primary: Accumulated lower-quality evidence** -- Multiple large database analyses consistently showing no survival difference
-- Secondary: Outcome re-weighting (survival equivalence now valued over potential recurrence reduction); de-escalation/overtreatment concern (lobectomy has half the complication rate)
-
-**What's Still Missing:**
-- No RCT comparing lobectomy vs total thyroidectomy for 1-2 cm DTC exists
-- Long-term (>15 year) recurrence data for lobectomy patients with 1-2 cm tumors are sparse
-- Impact of lobectomy on ability to use Tg for surveillance remains incompletely characterized
-- The committee acknowledges that some meta-analyses do show lower recurrence with total thyroidectomy; they chose to weight survival equivalence over recurrence difference
-
-**Confidence in Rationale:** High -- the guideline explicitly states the evidence base and reasoning
+2. **專任 methodology consultant 的角色**標誌著從「panel 成員兼任方法學指導」到「專業方法學家提供系統性支持」的轉變。Roger Chou（OHSU）在 systematic review、GRADE 應用、和 evidence synthesis 方面的專業支持，確保了 2025 guideline 的方法學嚴謹性顯著高於 2015 年。特別是兩項委託外部 systematic review（active surveillance vs surgery、lobectomy 後 Tg 診斷價值）的做法，是 ATA guideline 歷史上首次。
 
 ---
 
-### 2.2 Lobectomy Preference for 2-4 cm (cT2)
+# 第二部分：Rationale Deep Dive -- 八大重要變更
 
-**The Change:** Lobectomy moved from equipoise ("either lobectomy or total thyroidectomy") to preferred for low-risk cT2N0M0.
+## 2.1 Lobectomy 適用範圍擴大（<=2 cm 為 strong default）
 
-**What the Guideline Says About Why:**
-The 2025 guideline (p. 862, R15B) states lobectomy is preferred "due to significantly lower risk and side effects." The discussion cites the same population-level data showing no survival difference and emphasizes that "complication rates of 7.6% for lobectomy vs 14.5% for total thyroidectomy even in high-volume surgeons" favor lobectomy.
+### The Change
+2015 年將 lobectomy 默認範圍限於 <1 cm intrathyroidal cN0 PTC（R35C, Strong/Moderate）；1-4 cm 為 lobectomy 或 total thyroidectomy 均可（R35B, Strong/Moderate）。2025 年將 lobectomy 默認適用上限擴大至 <=2 cm cT1N0M0（R15A, Strong/Moderate certainty），並將 2-4 cm 的 preference 方向從 "equipoise" 轉向 "lobectomy preferred"（R15B, Conditional/Low-moderate）。
 
-**Evidence Analysis:**
-- Key evidence: Same database analyses as for 2.1 above; plus the one meta-analysis showing possible OS benefit for TT in T2 tumors driven by confounded NCDB analysis
-- Evidence type: Retrospective database studies, systematic reviews
-- Evidence quality: Low-moderate (the guideline itself rates this as "Low-moderate certainty evidence")
-- Notably: The evidence quality is lower here than for T1 tumors, reflecting genuine uncertainty about the 2-4 cm range
+### What the Guideline Says About Why
+2025 guideline 在 R15 的 rationale 段落中明確解釋了變更原因（p.862-863）：
 
-**Driving Force Classification:**
-- [x] **Primary: Reinterpretation of existing data + de-escalation philosophy** -- The same data that 2015 interpreted as allowing "either" is now interpreted as favoring lobectomy because of the morbidity differential
-- Secondary: Patient-centered values (new emphasis on shared decision-making and informed consent about conversion)
+> "Earlier ATA guidelines endorsed total thyroidectomy as the primary initial surgical treatment option for nearly all DTCs >1 cm... However, the 2015 ATA guidelines suggested lobectomy as an alternative to total thyroidectomy for cT1b-T2N0M0, low risk, unilateral PTCs... Since publication of the 2015 guidelines suggesting that thyroid lobectomy/hemi-thyroidectomy may be sufficient for low risk (cT1-2N0M0) DTC, numerous studies have been published evaluating this recommendation."
 
-**What's Still Missing:**
-- The one meta-analysis showing OS benefit for TT in T2 tumors has not been refuted -- only reinterpreted as confounded
-- No prospective data supporting lobectomy preference for cT2 tumors
-- The committee added cautionary language about possible need for completion thyroidectomy, implicitly acknowledging uncertainty
+Guideline 進一步指出關於 meta-analyses 的證據分析（p.862）：「approximately half showing no difference in recurrence or survival but with higher complication rates for total thyroidectomy. The other approximate half demonstrate statistically significant, lower recurrence rates with total thyroidectomy compared with lobectomy alone.」然而，關於 survival：「only one meta-analysis found improved overall survival with total thyroidectomy over lobectomy, but the benefit was confined to T2 primary tumors.」
 
-**Confidence in Rationale:** High -- guideline explicitly acknowledges the evidence base and its limitations
+Guideline 同時強調了併發症數據（p.856）：在 HCUP-NIS 資料中，即使高手術量外科醫師（>99 cases/year），total thyroidectomy 的併發症率（14.5%）仍然接近 lobectomy（7.6%）的兩倍。
 
----
+### Evidence Analysis
 
-### 2.3 Active Surveillance for T1a PTC
+#### 支持 lobectomy 擴大的累積 registry 證據
 
-**The Change:** AS formally recognized as an appropriate management option for cT1aN0M0 PTC (not addressed in 2015).
+自 2014 年以來，至少 5 項大型 NCDB/SEER registry 分析和 3 項 meta-analyses 一致顯示 lobectomy 在 1-2 cm tumors 中的 oncologic equivalence。這些研究的累積樣本量超過 300,000 名患者。
 
-**What the Guideline Says About Why:**
-The 2025 guideline states (p. 859, R11 discussion): "A systematic review published by a subgroup of this guidelines task force reviewed the published literature regarding active surveillance versus immediate resection and found low-certainty evidence that in adults with small, low-risk DTC, active surveillance and immediate resection are associated with similar, low risk of all-cause or cancer-specific mortality, distant metastasis, and recurrence after thyroidectomy." The guideline explicitly cites Japanese and Korean AS program data, noting that "in patients managed with active surveillance, rates of tumor growth were low."
+■ 關鍵文獻：Adam et al. 2014 NCDB Analysis
+- **Citation**: Adam MA et al., Ann Surg, 2014 (PMID: 25203876)
+- **研究設計**: Retrospective registry analysis (NCDB), N=61,775
+- **PICO**: P=PTC patients 1998-2006; I=total thyroidectomy; C=lobectomy; O=overall survival
+- **主要發現**: After multivariable adjustment, OS was similar for TT vs LT for 1.0-4.0 cm (HR=0.96; 95% CI 0.84-1.09; P=0.54). Stratified: 1.0-2.0 cm (HR=1.05; P=0.61) and 2.1-4.0 cm (HR=0.89; P=0.21).
+- **次要發現**: 即使在 multifocal tumors 亞群中，差異也未達統計顯著性。
+- **為什麼支持此 recommendation 變更**: 這是最早也是規模最大的單一 registry 分析直接挑戰 Bilimoria 2007 的 TT survival advantage 報告，證明該優勢在控制更多混雜因素後消失。
+- **主要限制**: Retrospective; unable to control for completeness of resection; selection bias; limited follow-up.
+- **Data source**: Full text (PMC4532384)
 
-**Evidence Analysis:**
-- Key post-2015 evidence cited: Commissioned systematic review (ref 15, published by task force subgroup); Japanese cohort data (Kuma Hospital, N=1235, 75-month follow-up; refs 202, 272-290); Korean AS programs
-- Evidence type: Prospective cohort studies (Japanese/Korean programs); systematic review of predominantly observational studies
-- Evidence quality: Low (no RCTs; most data from specialized centers in Japan/Korea with different population demographics)
-- There was a specific body of evidence: The Japanese active surveillance programs (Ito et al., Sugitani et al.) represent the largest cumulative experience, but generalizability to Western populations is uncertain
+■ 關鍵文獻：Bojoga et al. 2020 Low-Risk DTC Meta-Analysis
+- **Citation**: Bojoga A et al., J Clin Med, 2020 (PMID: 32708218)
+- **研究設計**: Systematic meta-analysis, 16 studies, N=175,430
+- **PICO**: P=low-risk DTC; I=total thyroidectomy; C=lobectomy; O=recurrence, OS, DFS, DSS
+- **主要發現**: No significant differences for: recurrence (7% vs 7%; RR 1.10), OS (94.1% vs 94.4%; RR 0.99), DFS (87% vs 91%; RR 0.96), DSS (97.2% vs 95.4%; RR 1.01).
+- **為什麼支持此 recommendation 變更**: 迄今最大規模 meta-analysis，綜合 175,430 名低風險 DTC 的數據確認四項 outcome 指標均無統計學差異。
+- **主要限制**: All included studies retrospective; heterogeneity in "low risk" definitions; PTC-dominated.
+- **Data source**: Full text (PMC7408649)
 
-**Driving Force Classification:**
-- [x] **Primary: New evidence** -- The Japanese/Korean AS data accumulated since 2015 provided the evidentiary foundation
-- Secondary: Patient-centered values (shared decision-making explicitly required); de-escalation philosophy (avoiding surgery for indolent microcarcinomas)
+■ 關鍵文獻：Hauch et al. 2014 Complication Rates
+- **Citation**: Hauch A et al., Ann Surg Oncol, 2014 (PMID: 24943236)
+- **研究設計**: Retrospective registry analysis (NIS), N=62,722
+- **主要發現**: 即使 high-volume surgeons (>99/yr) complication rate: TT 14.5% vs LT 7.6%. Low-volume: TT 24.1% vs LT 11.8%.
+- **為什麼支持此 recommendation 變更**: 量化了 TT 的 morbidity cost -- 即使在最有經驗的外科醫師手中，TT 併發症率仍接近 LT 的兩倍。
+- **Data source**: Abstract only
 
-**What's Still Missing:**
-- No RCTs comparing AS vs surgery for T1a PTC
-- Limited data on QoL outcomes during AS (patient anxiety, psychological burden)
-- No clear evidence on optimal duration of AS before recommending intervention
-- Western population data remain sparse
-- The 2025 guideline explicitly notes the limited evidence on harms and QoL
+#### 反面證據：T2 tumors 可能例外
 
-**Confidence in Rationale:** High -- guideline commissioned its own systematic review and cites it extensively
+■ 關鍵文獻：Rajjoub et al. 2018 (Counterpoint)
+- **Citation**: Rajjoub SR et al., Surgery, 2018 (PMID: 29426618)
+- **研究設計**: Retrospective NCDB analysis, N=33,816
+- **主要發現**: TT associated with improved survival for 2.0-3.9 cm CONVENTIONAL PTC (P=0.03) but NOT for FVPTC.
+- **為什麼重要**: 這是 2025 guideline 將 T2 建議降為 Conditional/Low-moderate 的關鍵原因 -- 證據矛盾。
+- **Data source**: Abstract only
 
----
+### Driving Force Classification
 
-### 2.4 Prophylactic CND: From "Appropriate to Omit" to "Should Not Be Performed"
+**Primary driver: Accumulated lower-quality evidence (cumulative registry data)**
 
-**The Change:** For T1-T2 cN0 PTC, prophylactic CND went from "thyroidectomy without pCND is appropriate" (weak/low, 2015) to "should not be performed" (strong/moderate, 2025).
+多項大型 registry 分析一致顯示 1-2 cm PTC lobectomy 後 survival 與 TT 相當，但所有研究均為 retrospective。沒有 RCT 數據。然而，這些 registry 資料的一致性和累積樣本量（>300,000 patients）賦予了「量的優勢」。2025 guideline 對此的處理方式是：對 <=2 cm 維持 Strong/Moderate（因為證據方向一致），但對 2-4 cm 降為 Conditional/Low-moderate（因為證據方向矛盾）。
 
-**What the Guideline Says About Why:**
-The 2025 guideline states (p. 867, R19 discussion): Chen and co-workers performed a meta-analysis including "23 retrospective and prospective cohort studies with a total of 18,376 patients" finding that pCLND had "a significantly lower locoregional recurrence rate (OR 0.65 [CI 0.48-0.88]) but significantly higher rates of transient recurrent laryngeal nerve injury (OR 2.03 [CI 1.32-3.13]), transient (OR 2.23 [CI 1.84-2.70]), and permanent hypocalcemia (OR 2.22 [CI 1.58-3.13])." The guideline also cites Lee et al. who "saw no association between occult lymph node metastasis and regional recurrence" and calculated "an NNT of 31 prophylactic CLND procedures to prevent 1 locoregional recurrence."
+**Secondary drivers:**
+- Outcome re-weighting：併發症風險從「可接受的代價」重新定位為「需要積極避免的 harm」
+- De-escalation philosophy：與整體 overtreatment reduction 趨勢一致
+- RAI 角色的削弱：ESTIMABL2/IoN RCT 證明低風險 DTC 可省略 RAI，使得「需要 TT 以便後續 RAI」的論點不再成立
 
-**Evidence Analysis:**
-- Key post-2015 evidence: Chen et al. meta-analysis (23 studies, 18,376 patients); Lee et al. NNT analysis; Conzo et al.; additional systematic reviews
-- Evidence type: Meta-analysis of retrospective/prospective cohort studies
-- Evidence quality: Moderate (large pooled sample; consistent findings across studies; no RCTs)
-- This is one of the strongest evidence-driven changes in the guideline
+### What's Still Missing
+- **No RCT comparing lobectomy vs total thyroidectomy**: 所有證據均為 retrospective registry data，存在固有的 selection bias
+- **Long-term recurrence data limited**: 大多數 registry 研究隨訪 <10 年
+- **Molecular-guided surgical selection**: BRAF V600E + TERT promoter 共突變患者是否仍應接受 TT 尚無前瞻性數據
+- **Lobectomy 後 Tg 監測策略**尚未標準化
 
-**Driving Force Classification:**
-- [x] **Primary: New high-quality evidence (meta-analyses)** -- The Chen meta-analysis quantified both the modest benefit and significant harms, enabling a formal benefit-harm analysis
-- Secondary: Outcome re-weighting (the NNT of 31 with doubled complication rates shifted the balance decisively against pCND)
-
-**What's Still Missing:**
-- No RCT of pCND vs no pCND
-- Whether pCND information would change RAI decision-making (and whether that matters given changes in RAI indications)
-- Long-term (>10 year) recurrence data comparing pCND vs no pCND strategies
-
-**Confidence in Rationale:** High -- the guideline provides specific odds ratios, NNT, and explicit benefit-harm analysis
-
----
-
-### 2.5 Risk Stratification: 3-Tier to 4-Tier System
-
-**The Change:** ATA risk stratification expanded from 3 tiers (low, intermediate, high) to 4 tiers (low, low-intermediate, intermediate-high, high).
-
-**What the Guideline Says About Why:**
-The 2025 guideline states (p. 876): "The 2015 ATA Risk of Recurrence stratification system has been reported to be a better predictor of structural persistence/recurrence than AJCC/UICC TNM staging." However, the guideline extensively documents heterogeneity within the 2015 intermediate-risk category, noting that "Multivariable analysis of the 2015 ATA Risk of Recurrence categories in patients with PTC showed 1.5% recurrence in low-risk, 5.4% in intermediate-risk, and 25% in high-risk patients" (ref 600). The guideline then details how specific features within the old "intermediate" category have very different recurrence risks: microscopic N1a (4-8%) vs macroscopic N1a (>20%); minor ETE alone (3-9%) vs aggressive histology with ETE (>20%).
-
-The rationale paragraphs extensively discuss how new data on vascular invasion, extranodal extension, lymph node ratio, and histologic subtype allowed more precise risk discrimination. The guideline cites multiple retrospective multivariable analyses (refs 424, 425, 456, 460, 600-634) demonstrating that the 2015 intermediate category contained patients with recurrence risks ranging from <5% to >30%.
-
-**Evidence Analysis:**
-- Key evidence: Multiple retrospective multivariable analyses (>20 studies cited); Van Velsen et al. evaluation of high-risk criteria; Lee et al. combined risk model; extensive vascular invasion data; LNR analyses
-- Evidence type: Retrospective cohort studies, multivariable analyses
-- Evidence quality: Moderate (large patient numbers, consistent findings, but all retrospective)
-- No single pivotal study; cumulative evidence from multiple centers worldwide
-
-**Driving Force Classification:**
-- [x] **Primary: Accumulated lower-quality evidence** -- Multiple retrospective studies consistently showing heterogeneity within the 2015 intermediate category
-- Secondary: Methodology change (AJCC 8th edition reclassifications required re-mapping risk categories); new evidence on specific risk factors (extranodal extension, LNR, vascular invasion)
-
-**What's Still Missing:**
-- Prospective validation of the 4-tier system
-- Whether the 4-tier system improves proportion of variance explained (PVE) compared to the 3-tier system
-- Optimal cutpoints for distinguishing low-intermediate from intermediate-high (these are defined by percentage ranges rather than validated thresholds)
-- The committee acknowledges the need for "additional validation studies"
-
-**Confidence in Rationale:** High -- the guideline provides exhaustive data on within-category heterogeneity
+### Confidence in Rationale: High
+Guideline 明確引用多項 registry 分析並詳細討論 rationale，正反證據均有呈現。
 
 ---
 
-### 2.6 RAI for Low-Risk DTC: Strengthened Recommendation Against
+## 2.2 RAI 在低風險 DTC 中的去escalation（Weak/Low -> Strong/High）
 
-**The Change:** RAI not routinely recommended moved from Weak/Low (2015) to Strong/High certainty (2025).
+### The Change
+2015 R51A：「RAI remnant ablation is not routinely recommended after thyroidectomy for ATA low-risk DTC patients」（Weak/Low）。2025 R32A：「Remnant ablation is not recommended routinely after total thyroidectomy for patients with ATA low-risk DTC」（Strong/High）。推薦強度和證據品質同時大幅升級。
 
-**What the Guideline Says About Why:**
-The 2025 guideline states (p. 884-885): "A randomized Phase III trial (ESTIMABL2) evaluated 776 patients with low-risk DTC treated with total thyroidectomy with or without prophylactic lymph node dissection... patients were randomized either to the follow-up group (no RAI) or to the ablation group... the percentage of patients without an event was 95.6% in the non-RAI group compared with 95.9% in the RAI group, which met noninferiority criteria." The guideline also cites the HiLo trial (438 patients, median 6.5 years follow-up) showing "cumulative recurrence rates were similar between the low and high activity groups."
+### What the Guideline Says About Why
+2025 guideline 在 R32 的討論段落中提供了詳盡的 rationale（p.885-886）：
 
-Additionally, the 2025 guideline cites the NTCTCSG finding "that RAI treatment for patients with Stage I and II DTC does not influence disease-specific and disease-free survival" (refs 768, 769) and a multi-institutional retrospective study of 1298 patients with "no benefit of RAI therapy with respect to overall or disease-free survival" (ref 767).
+> "A randomized Phase III trial (ESTIMABL2) evaluated 776 patients with low-risk DTC treated with total thyroidectomy... patients were randomized either to the follow-up group (no RAI) or to the ablation group (1.1 GBq following rhTSH stimulation). Of the 730 patients, the percentage of patients without an event was 95.6% in the non-RAI group compared with 95.9% in the RAI group, which met noninferiority criteria."
 
-**Evidence Analysis:**
-- Key post-2015 evidence: ESTIMABL2 Phase III RCT (776 patients, noninferiority demonstrated); HiLo RCT (438 patients, low=high dose); NTCTCSG registry data
-- Evidence type: Phase III RCT (ESTIMABL2) + additional RCT (HiLo) + large registry data
-- Evidence quality: High (Phase III RCT with noninferiority design is the gold standard for de-escalation)
-- **This is the single clearest example of a pivotal study driving a recommendation change** -- ESTIMABL2 is the first Phase III RCT directly testing the question of RAI vs no RAI in low-risk DTC
+Guideline 同時引用 HiLo trial 的長期數據和多項 retrospective studies 支持此結論。
 
-**Driving Force Classification:**
-- [x] **Primary: New high-quality evidence (Phase III RCT)** -- ESTIMABL2 provided the definitive evidence
-- Secondary: De-escalation philosophy reinforced by the RCT result
+### Evidence Analysis
 
-**What's Still Missing:**
-- Long-term follow-up of ESTIMABL2 (relatively short median follow-up to date)
-- Whether there are subgroups within "low-risk" that might benefit from RAI
-- The guideline itself notes: "One potential limitation of these studies is the relatively limited duration of follow-up"
+這是 2015 到 2025 年間最重要的 **evidence upgrade** -- 從 observational data 升級到兩項獨立的 Phase III noninferiority RCTs。
 
-**Confidence in Rationale:** High -- the guideline explicitly cites a Phase III RCT as the basis for the upgrade to Strong/High
+■ 關鍵文獻：ESTIMABL2 Primary Results
+- **Citation**: Leboulleux S et al., N Engl J Med, 2022; 386(10):923-932 (PMID: 35263518)
+- **研究設計**: Phase III open-label noninferiority RCT, N=730 (randomized from 776)
+- **PICO**: P=low-risk DTC (pT1a with sum diameters >=10mm, pT1b, N0) post-total thyroidectomy; I=no RAI; C=RAI ablation 1.1 GBq after rhTSH; O=functional, structural, and biologic events at 3 years
+- **主要發現**: Event-free rate 95.6% (no RAI) vs 95.9% (RAI); difference within non-inferiority margin of -5%.
+- **次要發現**: QoL comparable; no RAI side effects in observation group.
+- **為什麼支持此 recommendation 變更**: 首個直接比較 no-RAI vs RAI 的 Phase III RCT，提供 Level 1 evidence 證明低風險 DTC 可安全省略 RAI。
+- **主要限制**: Open-label; 3-year follow-up 可能偏短; population limited to pT1N0.
+- **Data source**: Abstract only (NEJM subscription)
 
----
+■ 關鍵文獻：ESTIMABL2 5-Year Follow-Up
+- **Citation**: Leboulleux S et al., Lancet Diabetes Endocrinol, 2025; 13(1):38-46 (PMID: 39586309)
+- **研究設計**: 5-year follow-up of above RCT, N=730
+- **主要發現**: Event-free survival 93.2% (no RAI) vs 94.8% (RAI); unadjusted difference -1.6%, not exceeding -5% non-inferiority margin.
+- **為什麼支持此 recommendation 變更**: 確認 3 年結果在 5 年時仍穩定，消除對短期隨訪的疑慮。
+- **Data source**: Abstract only
 
-### 2.7 rhTSH Preparation: From "Alternative" to "Preferred"
+■ 關鍵文獻：IoN Trial (Iodine or Not)
+- **Citation**: Mallick U et al., Lancet, 2025; 406(10498):52-62 (PMID: 40543520)
+- **研究設計**: Phase III noninferiority RCT, N=504, 33 UK centres
+- **PICO**: P=low-risk DTC (pT1-pT3a, N0/Nx/N1a); I=no ablation; C=RAI ablation 1.1 GBq; O=5-year recurrence-free rate
+- **主要發現**: 5-year recurrence-free: 97.9% (no ablation) vs 96.3% (ablation); absolute risk difference 0.5% (95% CI -2.2 to 3.2), meeting non-inferiority.
+- **為什麼支持此 recommendation 變更**: 獨立於 ESTIMABL2 的第二個 Phase III RCT，形成兩項 Level 1 evidence 的一致性。值得注意的是 IoN 納入了部分 N1a 患者，擴大了適用人群。
+- **主要限制**: Included some N1a; UK single-country data.
+- **Data source**: Abstract only
 
-**The Change:** rhTSH went from "can be used as alternative to thyroid hormone withdrawal" to "is preferred."
+■ 關鍵文獻：Kim et al. 2023 RAI Dose-Response
+- **Citation**: Kim KJ et al., J Natl Cancer Inst, 2023; 115(6):695-702 (PMID: 36821433)
+- **研究設計**: Population-based cohort, N=217,777 Korean thyroid cancer patients
+- **主要發現**: SPM risk increased linearly with dose (HR 1.08, 95% CI 1.04-1.13 per increment). Risk significant from 3.7 GBq cumulative dose.
+- **為什麼支持此 recommendation 變更**: 量化 RAI 長期危害，強化避免不必要暴露的論點。
+- **Data source**: Full text (PMC10248848)
 
-**What the Guideline Says About Why:**
-The 2025 guideline (R34A, p. 887-889) states that rhTSH is preferred based on equivalent efficacy with superior QoL. The discussion references meta-analyses showing equivalent ablation success rates and highlights the avoidance of hypothyroidism symptoms, which significantly impacts patient well-being.
+### Driving Force Classification
 
-**Evidence Analysis:**
-- Key evidence: Meta-analysis of 1535 patients/7 trials demonstrating equivalent efficacy; QoL studies showing superior patient experience with rhTSH
-- Evidence type: Meta-analysis of RCTs; QoL assessments
-- Evidence quality: High (meta-analysis of RCTs)
+**Primary driver: New high-quality evidence (two independent Phase III RCTs)**
 
-**Driving Force Classification:**
-- [x] **Primary: Outcome re-weighting (QoL)** -- The committee elevated QoL from a secondary to a primary consideration in choosing preparation method
-- Secondary: New evidence (meta-analysis consolidating individual RCT data)
+ESTIMABL2（法國）和 IoN（英國）是甲狀腺癌領域少見的 Phase III RCT。兩者獨立設計、獨立執行，結論一致 -- 這是最強的 evidence pattern（replication across settings）。這直接將 evidence quality 從 Low（retrospective observational）升級到 High（two concordant Phase III RCTs）。
 
-**What's Still Missing:**
-- Cost-effectiveness analyses (rhTSH is substantially more expensive)
-- Whether the preference applies equally to therapeutic vs ablative doses
+**Secondary drivers:**
+- RAI harm quantification：Kim 2023 的劑量-反應關係數據將 RAI 的 harm side 從理論風險轉為量化事實
+- De-escalation philosophy：與 lobectomy 擴大共同構成 overtreatment reduction cascade
 
-**Confidence in Rationale:** High
+### What's Still Missing
+- **Follow-up duration**: 最長 5 年，thyroid cancer 可 10-20 年後復發
+- **Intermediate-risk 患者的 RCT data**: 現有 RCT 僅涵蓋低風險；intermediate-risk 的 RAI 決策仍依賴 retrospective data
+- **RAI 在 lobectomy 後的角色**：兩項 RCT 均以 total thyroidectomy 為前提
 
----
-
-### 2.8 TSH Suppression: From Aggressive to Individualized
-
-**The Change:** TSH suppression for high-risk patients weakened from "TSH <0.1 mU/L recommended" (Strong/Moderate) to "individualize based on benefits/risks" (Conditional/Low).
-
-**What the Guideline Says About Why:**
-The 2025 guideline provides extensive discussion (pp. 895-897). It cites the NTCTCSG study (3238 patients): "there was improved overall survival and disease-free survival across all stages for mean TSH scores in the moderate suppression range (i.e., subnormal to normal TSH) and no further improvement for any stage with TSH levels averaging in the undetectable subnormal range" (ref 365). The guideline also documents cardiovascular and bone risks: "patients with a TSH <=0.4 mIU/L were at increased risk of atrial fibrillation and osteoporosis" (ref 962); "survival in the patients was lower when the serum TSH was <0.02 mIU/L" (ref 963).
-
-For low-risk patients, the guideline cites studies showing "no difference in recurrences among patients with TSH levels ranging across <0.5, 0.5-1.9, 2.0-4.4, or >4.5 mIU/L" (ref 937) and notes that "70-80% of patients who undergo lobectomy can avoid thyroid hormone supplementation" if the TSH goal is within the normal range.
-
-**Evidence Analysis:**
-- Key post-2015 evidence: NTCTCSG study (3238 patients, 2015); multiple retrospective studies (refs 365, 392, 930, 932-939, 962, 963); 2024 systematic review and meta-analysis (ref 939)
-- Evidence type: Large registry/cohort studies; systematic review and meta-analysis; one small RCT
-- Evidence quality: Low-moderate (mostly retrospective; conflicting results across studies)
-- No pivotal study; rather cumulative evidence from multiple sources consistently suggesting no incremental benefit of aggressive (TSH <0.1) over moderate (TSH 0.1-0.5) suppression
-
-**Driving Force Classification:**
-- [x] **Primary: Outcome re-weighting** -- The committee explicitly rebalanced the benefit (marginal or absent oncologic benefit of aggressive suppression) against harms (cardiovascular mortality, atrial fibrillation, osteoporosis)
-- Secondary: New evidence (NTCTCSG 2015 study was post-2015 guideline; additional studies on harms); de-escalation philosophy
-
-**What's Still Missing:**
-- RCT comparing TSH targets in DTC patients
-- Optimal TSH targets for patients with structural incomplete response
-- Whether aggressive suppression has benefit in BRAF-mutated or TERT-mutated tumors
-- The guideline explicitly acknowledges "conflicting data"
-
-**Confidence in Rationale:** High -- the guideline provides extensive discussion of both benefits and harms
+### Confidence in Rationale: High
+兩項 RCT 直接引用；guideline 明確解釋 rationale。這是本次 guideline 更新中**證據基礎最強的變更**。
 
 ---
 
-### 2.9 Surveillance De-escalation: Formal Endpoint Introduced
+## 2.3 Active Surveillance 正式化
 
-**The Change:** First formal guidance on stopping US (5-8 years) and Tg monitoring (10-15 years = "complete remission") in low-risk patients with excellent response.
+### The Change
+2015 年 active surveillance 僅在 nodule section（R12）和 DTC discussion 中被提及；無獨立 DTC recommendation。2025 年 R11A 正式將 AS 確立為 cT1aN0M0 PTC 的 "appropriate management option"（Conditional/Low），R11B 新增 percutaneous ablation 選項。
 
-**What the Guideline Says About Why:**
-The 2025 guideline states (p. 899-901): "In patients with low-risk PTC treated with total thyroidectomy who have achieved sustained excellent response, lifelong thyroid cancer monitoring is likely unnecessary due to the outstanding long-term prognosis. Lifelong biochemical assessments and neck ultrasounds are associated with financial and psychological burden that may not be justified." The guideline cites multiple cohort studies: a study of 773 patients with "no true positive or false negative ultrasounds found in patients with a basal Tg <1 ng/mL" after 10 years (ref 975); and data showing that "in patients with low-risk DTC after total thyroidectomy who have sustained excellent response, <1.4% experience recurrence after 5-8 years" and that "false positive US rates exceed recurrence rates" (ref 743).
+### What the Guideline Says About Why
+2025 guideline 引用了 panel 成員主導的 commissioned systematic review（p.859）：
 
-**Evidence Analysis:**
-- Key evidence: Multiple cohort studies with >10 years of follow-up (refs 736, 743, 774, 975); modeling studies; systematic reviews of false-positive rates
-- Evidence type: Retrospective cohort studies, long-term follow-up data
-- Evidence quality: Low (no RCTs comparing monitoring strategies; all observational)
-- The evidence is strong in demonstrating very low recurrence rates but weak in formally comparing monitoring vs no monitoring
+> "A systematic review published by a subgroup of this guidelines task force reviewed the published literature regarding active surveillance versus immediate resection and found low-certainty evidence that in adults with small, low-risk DTC, active surveillance and immediate resection are associated with similar, low risk of all-cause or cancer-specific mortality, distant metastasis, and recurrence after thyroidectomy."
 
-**Driving Force Classification:**
-- [x] **Primary: New evidence** -- Long-term follow-up data (>10 years) from multiple centers demonstrating very low late recurrence rates
-- Secondary: Patient-centered values (financial and psychological burden of lifelong monitoring); de-escalation philosophy
+> "In patients managed with active surveillance, rates of tumor growth were low. Data on harms were limited, but temporary vocal fold paralysis and hypoparathyroidism were complications from thyroid surgery."
 
-**What's Still Missing:**
-- No RCT comparing different monitoring durations
-- The term "complete remission" is new and not yet validated in prospective studies
-- Whether patients/clinicians will be comfortable stopping monitoring
-- The guideline explicitly states: "Further validation studies will be crucial for all groups"
+### Evidence Analysis
 
-**Confidence in Rationale:** High -- the guideline provides extensive discussion with clear evidence citations
+AS 的證據基礎主要來自三個來源：(1) 日本 Kuma Hospital 30 年經驗；(2) 韓國 KoMPASS 多中心前瞻性研究；(3) 西方國家的初步 AS 實踐經驗。
 
----
+■ 關鍵文獻：Miyauchi & Ito 2023 Kuma Hospital 30-Year Data
+- **Citation**: Miyauchi A, Ito Y et al., Thyroid, 2023; 33(7):817-825 (PMID: 37793883 / 37166389)
+- **研究設計**: Retrospective cohort, N=5,646 (3,222 AS, 2,424 immediate surgery)
+- **PICO**: P=PTMC (<=1 cm); I=active surveillance; C=immediate surgery; O=tumor progression, LN metastasis, disease-specific mortality
+- **主要發現**: 10-year tumor enlargement rate 4.7%; 20-year 6.6%. LN metastasis 1.0% at 10 years, 1.6% at 20 years. **ZERO disease-specific deaths** over up to 30 years in either group.
+- **次要發現**: 因 AS 選擇延後手術的患者，術後結果與立即手術者完全相同。
+- **為什麼支持此 recommendation 變更**: 全球最大且隨訪最長的 AS 世代研究。30 年零疾病特異性死亡的數據為 AS 安全性提供了最終證據。
+- **主要限制**: Single institution; retrospective; predominantly Japanese population; potential selection bias.
+- **Data source**: Full text available (PMC10354707)
 
-### 2.10 Tg Monitoring After Lobectomy: Reversed
+■ 關鍵文獻：Lee et al. 2022 KoMPASS
+- **Citation**: Lee EK et al., Thyroid, 2022; 32(11):1328-1336 (PMID: 36205563)
+- **研究設計**: Multicenter prospective cohort, N=755 (AS) vs 422 (surgery)
+- **PICO**: P=cT1aN0M0 PTC; I=active surveillance; C=immediate surgery; O=progression rate
+- **主要發現**: 5-year progression rate 14.2% (higher than Japanese data). Risk factors: age <30 (OR 2.86), male (OR 2.48), tumor >=6mm (OR 1.89). ZERO distant metastases.
+- **為什麼支持此 recommendation 變更**: 首個大規模韓國多中心前瞻性數據，驗證 AS 在非日本人群中的安全性，同時識別人群特異性風險因素。
+- **Data source**: Full text (PMC9700369)
 
-**The Change:** Routine Tg monitoring after lobectomy went from "should be considered" (Strong/Low, 2015) to "not recommended routinely" (Conditional/Very low, 2025).
+### Driving Force Classification
 
-**What the Guideline Says About Why:**
-The 2025 guideline provides extensive evidence (pp. 883-884, 897-898). It cites a cohort study of 208 patients where "serum Tg level was not predictive of disease recurrence in patients with PTC after thyroid lobectomy" (ref 734). A second study of 167 patients found "serum Tg rose in only 3 of the 18 patients" who had recurrence. The guideline also references its own commissioned systematic review (ref 16): "Serum Tg measurement following partial thyroidectomy was not accurate for diagnosing DTC recurrence or metastasis."
+**Primary driver: Accumulated lower-quality evidence (prospective cohorts with very long follow-up)**
 
-**Evidence Analysis:**
-- Key evidence: Commissioned systematic review (ref 16); cohort studies (refs 734, 735)
-- Evidence type: Systematic review; retrospective cohort studies
-- Evidence quality: Very low (limited studies, small sample sizes)
-- The commissioned systematic review is the strongest piece of evidence
+沒有 RCT 比較 AS vs surgery（倫理上可能不可行），但 Kuma Hospital 30 年零死亡的數據在 clinical significance 上等同於 RCT 結果。這是一種「evidence by weight of natural history data」-- 當 disease-specific mortality 為 0% 時，不需要 RCT 來證明不治療是安全的。
 
-**Driving Force Classification:**
-- [x] **Primary: Reinterpretation + New evidence** -- The 2015 recommendation was based on extrapolation from total thyroidectomy data; new studies specifically evaluating Tg after lobectomy showed it is unreliable
-- Secondary: Implementation feedback (as more lobectomies are performed, the limitations of Tg monitoring with an intact lobe became apparent)
+**Secondary drivers:**
+- De-escalation philosophy / Patient-centered values：提供非手術路徑
+- Implementation feedback：日本 2010 年已將 AS 納入國家指引；西方經驗正在積累
+- Commissioned systematic review：panel 成員主導的 systematic review 提供了結構化的 evidence synthesis
 
-**What's Still Missing:**
-- Optimal monitoring strategy after lobectomy remains undefined
-- The task force still recommends a single postoperative Tg "to ensure it is not unexpectedly markedly elevated" (GPS), acknowledging uncertainty
-- The guideline explicitly calls for "additional studies"
+### What's Still Missing
+- **AS for tumors >1 cm**: 僅有限的小規模數據（Kwon 2020, N=392）
+- **RCT comparing AS vs surgery**: 目前無 RCT；倫理可行性存疑
+- **Long-term psychological outcomes of AS**: AS 的心理影響（cancer anxiety during watchful waiting）數據不足
+- **Percutaneous ablation long-term data**: RFA 的隨訪大多 <5 年，且研究主要來自 single-center Asian data
 
-**Confidence in Rationale:** High -- guideline commissioned its own systematic review to address this question
-
----
-
-### 2.11 Completion Thyroidectomy: De-escalated
-
-**The Change:** From "should be offered" (Strong/Moderate) to "may be considered" (Conditional/Low-moderate), incorporating patient preference and RLN status.
-
-**What the Guideline Says About Why:**
-The 2025 guideline discussion (pp. 864-866) argues that completion thyroidectomy decisions should be based on postoperative risk stratification rather than automatic application. The guideline notes that "most incidental cancers are low-risk" and that with AJCC 8th edition removing microscopic ETE from T3, many previously upstaged tumors are now lower-stage. The guideline introduces the concept that "knowledge of recurrent laryngeal nerve function" must inform the decision, reflecting concern about bilateral RLN injury risk.
-
-**Evidence Analysis:**
-- Key evidence: AJCC 8th edition reclassification; studies on completion thyroidectomy outcomes (refs 354, 355, 410-413); RLN function considerations
-- Evidence type: Retrospective studies; classification system changes
-- Evidence quality: Low-moderate
-- The change is driven more by reinterpretation and methodology change (AJCC 8th edition) than by new clinical trial data
-
-**Driving Force Classification:**
-- [x] **Primary: Reinterpretation + Methodology change** -- AJCC 8th edition downstaged many patients who would previously have "needed" completion thyroidectomy; the expanding lobectomy population means fewer patients start with total thyroidectomy
-- Secondary: De-escalation philosophy; patient-centered values (emphasis on RLN preservation and patient preference)
-
-**What's Still Missing:**
-- Prospective comparison of completion thyroidectomy vs observation for specific risk categories
-- Impact on long-term outcomes (survival, recurrence) of omitting completion thyroidectomy
-
-**Confidence in Rationale:** High
+### Confidence in Rationale: High
 
 ---
 
-### 2.12 Intraoperative Neural Monitoring: Strengthened
+## 2.4 Prophylactic CND 態度硬化（"Appropriate" -> "Should Not"）
 
-**The Change:** From "may be considered" (Weak/Low) to extensive evidence-based support with staged approach to prevent bilateral RLN paralysis.
+### The Change
+2015 R36C：「Thyroidectomy without prophylactic central neck dissection is appropriate for T1-T2, noninvasive, cN0 PTC」（Weak/Low）。2025 R19A：「Prophylactic CND should not be performed for most patients with T1-T2 cN0 PTC」（Strong/Moderate）。措辭從雙重否定的「不做也可以」轉為明確的「不應該做」。
 
-**What the Guideline Says About Why:**
-The 2025 guideline provides detailed evidence (pp. 869-872, R23). It cites multiple RCTs showing "NIM NPV 99-99.9%" for RLN integrity and data demonstrating "elimination of bilateral paralysis (0% vs 2.7%) with staged approach." The guideline also cites data on external branch of superior laryngeal nerve (EBSLN) identification: "96% vs 77% with NIM."
+### What the Guideline Says About Why
+2025 guideline 明確量化了 pCND 的 risk-benefit tradeoff：pCND doubles transient hypocalcemia（OR 2.23-2.56），doubles permanent hypocalcemia（OR 1.93-4.24），增加 transient RLN injury，但 recurrence 的絕對降低幅度很小（NNT=31）。同時指出 microscopic pN1a 的臨床意義遠低於 macroscopic cN1a -- pCND 發現的微小淋巴結轉移可能導致 unnecessary upstaging 和過度使用 RAI。
 
-**Evidence Analysis:**
-- Key evidence: Multiple RCTs on neural monitoring; meta-analyses of NIM accuracy
-- Evidence type: RCTs
-- Evidence quality: Moderate-High
-- This is one of the few areas where new RCT evidence directly drove a stronger recommendation
+### Evidence Analysis
 
-**Driving Force Classification:**
-- [x] **Primary: New high-quality evidence (RCTs)** -- Multiple RCTs published since 2015 demonstrating high NPV and elimination of bilateral RLN injury
-- Secondary: Implementation feedback (growing adoption of NIM in practice)
+■ 關鍵文獻：Chen et al. 2018 pCND Meta-Analysis
+- **Citation**: Chen L et al., World J Surg, 2018; 42(9):2846-2857 (PMID: 29488066)
+- **研究設計**: Systematic review and meta-analysis, 23 studies, N=18,376
+- **主要發現**: pCND reduced LRR (OR 0.65; 95% CI 0.48-0.88) BUT increased transient RLN injury (OR 2.03), transient hypocalcemia (OR 2.23; 95% CI 1.84-2.70), permanent hypocalcemia (OR 2.22; 95% CI 1.58-3.13).
+- **為什麼支持此 recommendation 變更**: 最大規模 pCND meta-analysis 量化了「modest recurrence reduction vs doubled morbidity」的 tradeoff。
+- **Data source**: Abstract only
 
-**What's Still Missing:**
-- Cost-effectiveness of routine NIM
-- Whether NIM changes overall RLN injury rates (vs merely providing prognostic information)
+■ 關鍵文獻：Wang TS et al. 2013 NNT Analysis
+- **Citation**: Wang TS et al., Ann Surg Oncol, 2013; 20(11):3477-83 (PMID: 23846784)
+- **研究設計**: Meta-analysis, 11 studies, N=2,318
+- **主要發現**: Recurrence 7.6% (TT alone) vs 4.7% (TT+pCND); RR 0.59 (95% CI 0.33-1.07) -- trend but NOT statistically significant. **NNT=31**.
+- **為什麼支持此 recommendation 變更**: CI crosses 1.0 表明 benefit 未達統計顯著性；NNT=31 顯示 absolute benefit 極小。
+- **Data source**: Abstract only
 
-**Confidence in Rationale:** High
+■ 關鍵文獻：Wang Y et al. 2023 Most Recent Meta-analysis
+- **Citation**: Wang Y et al., Front Endocrinol, 2023; 13:1094012 (PMID: 36733809)
+- **研究設計**: Meta-analysis, 15 studies
+- **主要發現**: pCND had lower local recurrence (OR 0.22; P=0.000) but permanent hypocalcemia OR **4.24** (P=0.043).
+- **為什麼支持此 recommendation 變更**: 最新 meta-analysis 顯示 permanent hypocalcemia OR 高達 4.24 -- 顯著高於早期 meta-analyses 的估計值。
+- **Data source**: Full text (PMC9886572)
 
----
+### Driving Force Classification
 
-### 2.13 Targeted Therapy for RAIR DTC: Framework Replaced
+**Primary driver: Accumulated lower-quality evidence (multiple concordant meta-analyses)**
 
-**The Change:** From empiric MKI (sorafenib/lenvatinib) to mutation-specific therapy (NTRK/RET/BRAF/ALK inhibitors) as first-line when actionable alterations are present.
+四項 post-2013 meta-analyses 一致顯示 pCND doubles hypocalcemia risk with marginal recurrence benefit。雖然均為 retrospective studies 的 meta-analysis，但方向一致性極強。
 
-**What the Guideline Says About Why:**
-The 2025 guideline (pp. 912-925, R61-72) describes a completely new paradigm of molecular-guided therapy. The rationale is driven by FDA approvals of selective inhibitors with demonstrated efficacy: larotrectinib and entrectinib for NTRK fusions; selpercatinib and pralsetinib for RET fusions; dabrafenib+trametinib for BRAFV600E; alectinib/crizotinib for ALK fusions. The guideline also introduces redifferentiation therapy as a new concept.
+**Secondary drivers:**
+- Reinterpretation：microscopic N1a vs macroscopic N1a 的預後差異被重新認識
+- 4-tier risk system：2025 年將 microscopic N1a 放入 "low-intermediate" 而非 "intermediate"，降低了 pCND 發現的 incidental micrometastases 的臨床意義
+- De-escalation philosophy
 
-**Evidence Analysis:**
-- Key evidence: Phase I/II clinical trials leading to FDA approvals; basket trials (NAVIGATE, LIBRETTO-001, ARROW); BRAFV600E-directed therapy trials
-- Evidence type: Phase I/II clinical trials (many basket trials with DTC cohorts)
-- Evidence quality: Moderate (Phase I/II data, often single-arm; but with FDA approval as validation)
-- Multiple pivotal studies, each driving one component of the new framework
+### What's Still Missing
+- **RCT on pCND**: 無 RCT 數據；所有 meta-analyses 均基於 retrospective studies
+- **BRAF-guided pCND**: BRAF V600E + LNM 的 synergistic mortality risk（Tao/Xing 2021, HR 27.39）是否改變 pCND risk-benefit 的計算尚不清楚
 
-**Driving Force Classification:**
-- [x] **Primary: New evidence + New technology** -- FDA approvals of selective inhibitors provided both the evidence and the therapeutic tools
-- Secondary: None -- this is purely evidence-driven
-
-**What's Still Missing:**
-- Phase III RCTs comparing selective inhibitors to MKIs in DTC
-- Optimal sequencing of therapies
-- Resistance mechanisms and second-line strategies
-- Long-term outcomes data
-
-**Confidence in Rationale:** High
+### Confidence in Rationale: High
 
 ---
 
-## 3. Evidence Driver Table (Enhanced for v1.1)
+## 2.5 Risk Stratification 三層 -> 四層
 
-| # | Change | Primary Driver | Secondary Driver | Key Evidence Cited | Evidence Quality | Guideline's Own Rationale | Confidence |
-|---|--------|---------------|-----------------|-------------------|-----------------|--------------------------|------------|
-| 1 | Lobectomy <=2 cm | Accumulated evidence (database analyses) | Outcome re-weighting; de-escalation | NCDB/SEER analyses; Adam et al.; multiple SRs | Moderate | Explicit: survival equivalent, morbidity lower | High |
-| 2 | Lobectomy preferred for cT2 | Reinterpretation + de-escalation | Patient-centered (SDM) | Same databases; complication rate data | Low-Moderate | Explicit: "lower risk and side effects" | High |
-| 3 | Active surveillance for T1a | New evidence (Japanese/Korean AS programs) | Patient-centered (SDM); de-escalation | Commissioned SR (ref 15); Ito et al.; Sugitani et al. | Low | Explicit: commissioned SR showed similar outcomes | High |
-| 4 | AS protocols | Implementation feedback | New evidence | Japanese/Korean AS program protocols | Low | Explicit: operational guidance based on AS experience | Moderate |
-| 5 | Completion thyroidectomy weakened | Reinterpretation + Methodology change | De-escalation; patient-centered | AJCC 8th ed; retrospective studies | Low-Moderate | Explicit: AJCC reclassification; RLN preservation | High |
-| 6 | pCND "should not" for T1-T2 | New high-quality evidence (meta-analyses) | Outcome re-weighting (NNT=31) | Chen meta-analysis (18,376 pts); Lee NNT analysis | Moderate | Explicit: OR for harms, NNT quantified | High |
-| 7 | pCND T3-T4 refinement | Implementation feedback | None | Same evidence base | Low | Explicit: intraoperative decision-making | High |
-| 8 | 4-tier risk stratification | Accumulated evidence | Methodology change (AJCC 8th) | >20 multivariable analyses; vascular invasion/LNR data | Moderate | Explicit: documented heterogeneity within 2015 intermediate | High |
-| 9 | RAI not recommended low-risk (Strong/High) | New high-quality evidence (Phase III RCT) | De-escalation | ESTIMABL2 RCT (776 pts); HiLo RCT; NTCTCSG | High | Explicit: ESTIMABL2 noninferiority demonstrated | High |
-| 10 | RAI for intermediate-risk | Replaced framework (4-tier) | New evidence (mixed) | NCDB analysis (21,870 pts); conflicting data | Low | Partially explicit: 4-tier enables selective use | Moderate |
-| 11 | rhTSH preferred | Outcome re-weighting (QoL) | New evidence (meta-analysis of RCTs) | Meta-analysis of 1535 pts/7 trials | High | Explicit: equivalent efficacy, superior QoL | High |
-| 12 | TSH suppression individualized | Outcome re-weighting (harms > marginal benefit) | New evidence (NTCTCSG) | NTCTCSG (3238 pts); CV/bone risk studies | Low-Moderate | Explicit: no incremental benefit of TSH <0.1; documented harms | High |
-| 13 | TSH not suppressed for low-risk | De-escalation + new evidence | Patient-centered (lobectomy+euthyroid) | Multiple retrospective studies; 2024 SR/MA | Low | Explicit: no benefit in low-risk; risks exceed benefits | High |
-| 14 | Surveillance de-escalation/cessation | New evidence (long-term cohorts) | Patient-centered (financial/psychological burden) | Multiple cohorts >10y follow-up; false-positive rate data | Low | Explicit: <1.4% late recurrence; false-positives exceed true | High |
-| 15 | Tg monitoring after lobectomy reversed | New evidence (commissioned SR) + reinterpretation | Implementation feedback | Commissioned SR (ref 16); cohort studies (refs 734, 735) | Very Low | Explicit: Tg not predictive after lobectomy | High |
-| 16 | NIFTP classification | New evidence (pathology reclassification) | None | WHO 2017/2022 reclassification | Moderate | Explicit: NIFTP = not cancer | High |
-| 17 | Germline genetic testing | New evidence + new technology | None | Hereditary syndrome data; ESMO guidelines | Low-Very Low | Explicit: structured criteria based on syndrome data | Moderate |
-| 18 | Intraoperative neural monitoring | New high-quality evidence (RCTs) | Implementation feedback | Multiple RCTs on NIM accuracy; NPV 99-99.9% | Moderate-High | Explicit: NPV, bilateral injury elimination | High |
-| 19 | RAIR targeted therapy | New evidence + new technology | None | Phase I/II trials; FDA approvals | Moderate | Explicit: mutation-specific therapy based on trial data | High |
-| 20 | Surgeon volume | Implementation feedback | None | Continued volume-outcome data | Low | Explicit: elevated to formal recommendation | Moderate |
-| 21 | Shared decision-making | Patient-centered + consensus shift | None | Evolution of medical culture; patient advocate on panel | N/A | Implicit: embedded throughout | High |
+### The Change
+2015 R48：三層 ATA risk system（Low / Intermediate / High, Strong/Moderate）。2025 R28：四層 ATA risk system（Low / Low-Intermediate / Intermediate-High / High, Strong/Moderate）。
 
----
+### What the Guideline Says About Why
+2025 guideline（p.874）：
 
-## 4. Evidence Gaps and Residual Uncertainty
+> "Previous ATA guidelines recommended a three-tiered categorical system stratifying patients as low, intermediate, or high risk... The current system identifies specific features of DTC that should be considered when determining the overall risk of future structural persistence/recurrence for an individual patient."
 
-### 4.1 Areas Where Evidence Is Genuinely Insufficient
+Guideline 明確指出 2015 "intermediate" 類別涵蓋了風險差異極大的群體 -- 從 microscopic N1a（recurrence ~5%）到 extensive vascular invasion（recurrence 15-30%）到 aggressive histology with macroscopic N1a（recurrence >20%）。
 
-| Topic | Gap | Clinical Impact of Gap |
-|-------|-----|----------------------|
-| **Lobectomy vs TT for 1-4 cm DTC** | No RCTs; all evidence from retrospective databases with residual confounding | The most common surgical decision in DTC lacks prospective evidence |
-| **Active surveillance optimal protocols** | No RCTs; limited Western population data; no QoL comparison | AS is now a recommendation but the optimal surveillance protocol is GPS-level |
-| **4-tier risk validation** | No prospective validation; PVE not reported | The central risk framework is based on retrospective extrapolation |
-| **TSH targets by risk group** | No RCTs; conflicting retrospective data | Clinicians cannot know the optimal TSH for individual patients |
-| **Monitoring cessation** | No RCT comparing durations; "complete remission" not prospectively defined | Clinicians and patients may be uncomfortable stopping monitoring |
-| **Tg after lobectomy** | Limited studies; no reliable cutoff established | Growing lobectomy population has no validated biochemical monitoring tool |
-| **OTC management** | Limited data across all domains; OTC rarely RAI-avid | OTC patients receive DTC-based guidance despite being biologically distinct |
+### Evidence Analysis
 
-### 4.2 Preference-Sensitive Decisions
+本變更的驅動力主要來自三個方面：
 
-The following recommendations are explicitly or implicitly preference-sensitive, meaning that equally reasonable clinicians could make different choices:
+1. **AJCC 8th edition (2018) 的影響**：移除 microscopic ETE from T3 definition，使大量原本被歸為 T3/intermediate 的小腫瘤伴 microscopic ETE 降級為 T1-T2。
 
-1. **Lobectomy vs TT for cT2N0M0** -- The guideline says lobectomy is "preferred" but acknowledges the evidence is Low-moderate certainty and total thyroidectomy remains acceptable
-2. **RAI for low-intermediate and intermediate-high risk** -- "May be considered" leaves broad latitude
-3. **Completion thyroidectomy** -- Multiple factors (pathology, RLN status, patient preference) must be weighed
-4. **TSH suppression degree** -- "Individualize" is inherently preference-sensitive
-5. **Active surveillance vs surgery for T1a PTC** -- Explicitly requires shared decision-making
-6. **Duration of surveillance** -- The 5-8 year and 10-15 year timepoints are suggestions, not mandates
+2. **Microscopic vs macroscopic N1a 的預後差異**：多項研究證實 pN1a (<=5 LNs, all <=2mm) 的 recurrence rate 接近 N0，而 cN1a (>2mm or >5 LNs) 的 recurrence rate 顯著升高。2025 年將前者歸入 "Low"，後者歸入 "Low-Intermediate"。
 
-### 4.3 Where Further Research Is Explicitly Called For
+3. **Vascular invasion 的分級**：WHO 2022 和 multiple studies（Ghossein 2006, Leong 2022）確立了 >=4 foci vascular invasion 作為 aggressive behavior 的 threshold。2025 年將 limited vascular invasion (<4 vessels) 歸入 "Low-Intermediate"，extensive (>=4) 歸入 "High"。
 
-The 2025 guideline explicitly identifies the following research needs:
+### Driving Force Classification
 
-1. Prospective validation of the 4-tier risk stratification system
-2. RCTs comparing lobectomy vs total thyroidectomy
-3. Optimal Tg monitoring strategies after lobectomy
-4. Long-term follow-up data from ESTIMABL2 and other RAI trials
-5. Western population AS data and QoL outcomes during AS
-6. Prospective studies on monitoring de-escalation/cessation
-7. Optimal TSH targets by risk category (RCT needed)
-8. Role of routine postoperative genomic analysis in refining risk
-9. Validation studies for the "complete remission" concept
-10. Phase III trials of selective kinase inhibitors vs MKIs in RAIR DTC
+**Primary driver: Reinterpretation of existing data**
 
-### 4.4 Where the Committee Went Beyond the Evidence
+"Intermediate" 類別的異質性在 2015 年已有認識，但缺乏足夠的驗證數據來支持分拆。2015-2024 年間，多項 response-to-therapy studies 和 outcome analyses 證實了不同 intermediate-risk features 的預後差異，使得分拆成為可能。
 
-In several areas, the 2025 committee made recommendations that extend beyond what the cited evidence strictly supports. The committee generally acknowledged these extensions:
+**Secondary drivers:**
+- Methodology/classification change：AJCC 8th edition 和 WHO 2022 的影響
+- New evidence：vascular invasion grading studies（Ghossein 2006, Leong 2022, Ito 2022）
+- Downstream de-escalation：四層系統使得 RAI、TSH suppression、surveillance 決策更精準
 
-1. **Active surveillance protocols (R12-14, GPS):** The guideline acknowledges limited evidence for specific monitoring intervals but provides operational guidance as GPS, noting it would be outside usual practice not to follow them
-2. **Surveillance cessation (R48):** The concept of "complete remission" with monitoring cessation at 10-15 years goes beyond the evidence (no RCT comparing monitoring strategies) but is supported by a compelling chain of indirect evidence (very low late recurrence rates + high false-positive rates = net harm of continued monitoring)
-3. **Lobectomy preference for cT2 (R15B):** Rating lobectomy as "preferred" rather than merely "acceptable" goes somewhat beyond the evidence, which shows no survival difference but does not definitively demonstrate equivalence for all outcomes
-4. **TSH suppression individualization (R45):** The recommendation to "individualize" is honest about uncertainty but provides limited concrete guidance for clinicians
+### What's Still Missing
+- **Prospective validation of 4-tier system**: 新系統的 recurrence rate 估計值（Low <10%, Low-Int 10-15%, Int-High 16-30%, High >30%）需要前瞻性驗證
+- **Molecular markers integration**: BRAF V600E, TERT, RAS 等分子標記尚未正式納入 risk stratification system
+
+### Confidence in Rationale: High
 
 ---
 
-## 5. The "Why Map": Dominant Forces Driving Guideline Evolution
+## 2.6 TSH Suppression De-escalation
 
-### 5.1 Structural Overview
+### The Change
+2015 R70：高風險 TSH <0.1（Strong/Moderate）；低風險 excellent response TSH 0.5-2.0（Weak/Low）。2025 R45-46：TSH suppression 應個體化（Conditional/Low）；低至中風險無 recurrence 者不建議長期 suppression（Conditional/Low）。
 
-The 30 major recommendation changes identified by the recommendation-diff-analyst can be mapped to four dominant driving forces:
+### What the Guideline Says About Why
+2025 guideline 用大量篇幅討論 TSH suppression 的矛盾證據（p.896-897），引用 NTCTCSG 2015 年的關鍵更新：
+
+> "among 3238 patients with DTC, there was improved overall survival and disease-free survival across all stages for mean TSH scores in the moderate suppression range (i.e., subnormal to normal TSH) and no further improvement for any stage with TSH levels averaging in the undetectable subnormal range."
+
+### Evidence Analysis
+
+■ 關鍵文獻：Carhill et al. 2015 NTCTCSG Update
+- **Citation**: Carhill AA et al., J Clin Endocrinol Metab, 2015; 100(9):3270-3279 (PMID: 26171797)
+- **研究設計**: Prospective registry analysis, N=4,941 (3,238 with complete data), median 6-year follow-up
+- **主要發現**: Moderate TSH suppression (subnormal-normal) improved OS and DFS across all stages. **No additional benefit from aggressive suppression (undetectable-subnormal)**, even in distant metastatic disease.
+- **為什麼支持此 recommendation 變更**: 直接證明 "undetectable TSH" 相比 "subnormal TSH" 沒有額外生存獲益。
+- **Data source**: Full text (PMC5393522)
+
+■ 關鍵文獻：Yang et al. 2022 AF Risk Meta-Analysis
+- **Citation**: Yang X et al., Front Endocrinol, 2022; 13:991876 (PMID: 36619576)
+- **研究設計**: Meta-analysis, 14 studies
+- **主要發現**: TSH suppression increases AF risk (RR 1.52, 95% CI 1.28-1.81).
+- **為什麼支持此 recommendation 變更**: 量化心血管危害 -- AF 風險增加 52%。
+- **Data source**: Full text (PMC9814721)
+
+■ 關鍵文獻：Ku et al. 2021 BMD Meta-Analysis
+- **Citation**: Ku EJ et al., J Clin Endocrinol Metab, 2021; 106(12):3655-3667 (PMID: 34302730)
+- **研究設計**: Meta-analysis, 17 studies, 739 patients, 1085 controls
+- **主要發現**: Postmenopausal women: significantly decreased lumbar spine BMD (-0.03; p<0.05). Premenopausal women and men: no decrease.
+- **為什麼支持此 recommendation 變更**: 證明 TSH suppression 對停經後女性骨密度的不良影響。
+- **Data source**: Abstract only
+
+### Driving Force Classification
+
+**Primary driver: Outcome re-weighting**
+
+TSH suppression 的核心 rationale 轉變不是因為發現了 TSH suppression 無效的新證據，而是因為 **harm side 的證據大幅增加**。AF 風險增加 52%、停經後女性 BMD 下降、QoL 降低 -- 這些 harm data 的累積改變了 risk-benefit 的計算。同時，NTCTCSG 數據顯示 moderate suppression 已足夠（不需要 aggressive suppression），進一步縮小了 benefit side。
+
+**Secondary drivers:**
+- New evidence：AF meta-analysis, BMD meta-analysis
+- Compounding effect：lobectomy 擴大意味著更多患者不需要甲狀腺激素替代，TSH suppression 問題直接消失
+
+### What's Still Missing
+- **RCT comparing TSH targets**: 不存在隨機化比較 TSH <0.1 vs 0.1-0.5 vs 0.5-2.0 的試驗
+- **Age-stratified AF risk**: 年齡如何修飾 TSH suppression 的心血管風險
+- **Fracture data**: BMD 下降但尚缺 fracture as hard endpoint 的數據
+
+### Confidence in Rationale: High
+
+---
+
+## 2.7 Surveillance De-escalation 與 "Complete Remission" 概念
+
+### The Change
+2015 R62-65：ongoing Tg q6-12 months + periodic neck US；無定義的停止點。2025 R48：5-8 年 sustained excellent response 後可停止 routine US；10-15 年後可停止 biochemical monitoring 並宣布 "complete remission"。
+
+### What the Guideline Says About Why
+2025 guideline（p.900）引入了 oncology 的 "complete remission" 概念：
+
+> "'Complete remission' is the term used in oncology to define the disappearance of all signs of cancer in response to treatment... Identifying patients to be in complete remission offers psychological, financial, and medical value to both patients and clinicians."
+
+### Evidence Analysis
+
+■ 關鍵文獻：Seejore et al. 2021
+- **Citation**: Seejore K et al., Clin Endocrinol, 2021; 96(3):395-401 (PMID: 34185343)
+- **研究設計**: Retrospective cohort, N=756, median follow-up 11.2 years
+- **主要發現**: Radiological recurrence in only 15/756 (2.0%); **85% of recurrences identifiable within 5 years**. All recurrences preceded by raised Tg or TgAb.
+- **為什麼支持此 recommendation 變更**: 證明 5 年後 excellent response 的低風險 PTC 患者 recurrence 極少，且 biochemical markers 先於 imaging 發現 recurrence。
+- **Data source**: Abstract only
+
+■ 關鍵文獻：Tran et al. 2024 Competing Risk Analysis
+- **Citation**: Tran TV et al., Thyroid, 2024; 34(2):215-224 (PMID: 38149602)
+- **研究設計**: SEER population-based analysis, N=51,854
+- **主要發現**: Thyroid cancer accounted for only **4.3% of deaths** (148/3,467). 20-year thyroid cancer-specific mortality only **0.6%**. Most deaths from other malignancies (29.7%) and CVD (26.3%).
+- **為什麼支持此 recommendation 變更**: 競爭風險分析證明低風險 DTC 患者死亡風險主要來自非甲狀腺原因，過度監測邊際獲益極低。
+- **Data source**: Full text (PMC10884550)
+
+■ 關鍵文獻：Yoon et al. 2016 False-Positive US Rates
+- **Citation**: Yoon JH et al., Medicine, 2016; 95(1):e2435 (PMID: 26735548)
+- **研究設計**: Retrospective cohort, N=375 PTMC patients
+- **主要發現**: Only 4 recurrences (1.1%); cumulative **false-positive rate 8.3%** by 8th US. False-positive rate exceeded recurrence rate.
+- **為什麼支持此 recommendation 變更**: False-positive US 在長期追蹤中反而造成 harm（不必要的 biopsy、anxiety），支持減少追蹤頻率。
+- **Data source**: Full text (PMC4706268)
+
+### Driving Force Classification
+
+**Primary driver: Patient-centered values + accumulated evidence**
+
+"Complete remission" 概念的引入同時由兩股力量驅動：(1) 長期 follow-up 數據證明低風險 excellent response 患者的 recurrence 極低（<2%）且大多在 5 年內出現；(2) patient advocate 在 panel 中的參與帶來了對「終身癌症追蹤」心理負擔的正式關注。
+
+**Secondary drivers:**
+- Implementation feedback：false-positive US 的 harm 超過 benefit
+- Competing risk data：非甲狀腺原因死亡遠超甲狀腺癌死亡
+- Healthcare utilization concern
+
+### What's Still Missing
+- **Prospective validation of 10-15 year stopping rule**: 目前為 expert consensus
+- **Post-lobectomy complete remission criteria**: 尚未定義
+- **Primary care transition protocols**: 如何安全地將「完全緩解」患者轉回基層照護
+
+### Confidence in Rationale: Moderate-High
+Guideline 引用了多項 retrospective cohort studies，但 10-15 年停止規則主要基於 expert consensus 和 extrapolation。
+
+---
+
+## 2.8 Shared Decision-Making (SDM) 形式化
+
+### The Change
+2015 年 SDM 在 Aim section 被提及但未嵌入個別 recommendations。2025 年 SDM 語言明確整合於 R11（AS）、R15B（lobectomy vs TT for T2）、R16（completion thyroidectomy）、R45（TSH suppression）等多項 recommendations 中，並在 initial management overview（p.855）中以結構化方式呈現。
+
+### What the Guideline Says About Why
+2025 guideline（p.855）：
+
+> "Shared decision-making between patients and their treating clinicians is paramount in determining the goals of initial therapy for patients with DTC."
+
+Guideline 同時明確指出 patient advocate 作為 panel 正式成員的角色（p.845-846）。
+
+### Driving Force Classification
+
+**Primary driver: Expert consensus shift + Multiple viable options now available**
+
+SDM 的形式化反映了一個根本性的臨床現實改變：2025 年的 DTC management 存在多個同樣 viable 的選項（AS vs surgery vs ablation for PTMC；lobectomy vs TT for T2；RAI vs no RAI for low-risk）。當 evidence 支持多條合理路徑時，**patient preference 成為 tiebreaker**。這不是「證據不足所以讓患者選」，而是「證據顯示多條路徑同樣安全，所以讓患者的價值觀引導選擇」。
+
+**Secondary drivers:**
+- Patient advocate on panel
+- Implementation feedback from 2015 guideline era
+- Healthcare quality movement (value-based care, patient-centered outcomes)
+
+### Confidence in Rationale: High
+
+---
+
+# 第三部分：Evidence Driver Table
+
+| Change | Primary Driver | Secondary Driver | Key Evidence Cited | Evidence Quality | Guideline's Own Rationale | Confidence |
+|--------|---------------|-----------------|-------------------|-----------------|--------------------------|------------|
+| Lobectomy <=2cm default | Accumulated registry data | Outcome re-weighting, de-escalation, RAI role reduction | Adam 2014 (N=61,775); Bojoga 2020 (N=175,430); Hauch 2014 (N=62,722) | Moderate (retrospective, consistent) | 明確引用 multiple NCDB/SEER studies, p.862-863 | High |
+| Lobectomy preferred for T2 | Mixed evidence + outcome re-weighting | SDM, patient-centered | Rajjoub 2018 (counterpoint); Song 2019 (propensity-matched) | Low-Moderate (conflicting) | 承認正反證據並存, p.862 | High |
+| RAI omission in low-risk | New high-quality evidence (2 RCTs) | RAI harm quantification | ESTIMABL2 (N=730); IoN (N=504); Kim 2023 (N=217,777) | **High** (2 concordant Phase III RCTs) | 直接引用 ESTIMABL2 和 HiLo, p.885 | High |
+| Active surveillance | Accumulated prospective cohort data | De-escalation, patient-centered, commissioned SR | Kuma 30-yr (N=5,646); KoMPASS (N=755); commissioned SR | Low (no RCT; prospective cohorts) | 引用 panel-commissioned SR, p.859 | High |
+| pCND against -> "should not" | Accumulated meta-analyses | Reinterpretation of microscopic N1a, 4-tier risk | Chen 2018 (N=18,376); Wang 2013 (NNT=31); Wang 2023 (OR 4.24) | Moderate (meta-analyses of retrospective) | 量化 risk-benefit tradeoff, p.867 | High |
+| 3-tier -> 4-tier risk | Reinterpretation of existing data | AJCC 8th, WHO 2022, new VI data | AJCC 8th; Ghossein 2006; Leong 2022 | Moderate | 明確指出 intermediate heterogeneity, p.874 | High |
+| TSH suppression de-escalation | Outcome re-weighting (harm quantification) | New evidence (AF, BMD) | Carhill 2015 (N=4,941); Yang 2022 (AF RR 1.52); Ku 2021 (BMD) | Low (registry + meta-analyses) | 引用 NTCTCSG + CV morbidity data, p.896-897 | High |
+| Complete remission + surveillance stop | Patient-centered + accumulated cohort | Competing risk data, false-positive US | Seejore 2021 (N=756); Tran 2024 (N=51,854); Yoon 2016 | Low (retrospective cohorts) | 引入 oncology "complete remission" concept, p.900 | Moderate-High |
+| SDM formalization | Multiple viable options + consensus shift | Patient advocate on panel | N/A (philosophy-driven) | N/A | Emphasized throughout, p.855 | High |
+| NIFTP classification | Methodology change (WHO reclassification) | New evidence (recurrence <1%) | Nikiforov 2016 (N=109); WHO 5th edition | Moderate | WHO-driven, p.851 | High |
+| Targeted therapy RAIR | New high-quality evidence (Phase I/II) | FDA approvals, molecular diagnostics | LIBRETTO-001 (selpercatinib); ARROW (pralsetinib); Drilon 2018 (larotrectinib) | High (Phase I/II with durable responses) | Mutation-specific approach, p.912-924 | High |
+| Completion thyroidectomy weakened | Reinterpretation (AJCC 8th) | De-escalation, patient-centered | AJCC 8th removing microscopic ETE from T3 | Low-Moderate | "Most incidental cancers are low-risk", p.865 | High |
+| rhTSH preferred for RAI prep | New evidence (meta-analysis) | QoL improvement | Meta-analysis of 7 RCTs, N=1,535 (RR 0.97) | High (7 RCTs) | Directly cited, p.888 | High |
+| Surgeon volume recommendation | Implementation feedback + accumulated data | Volume-outcome 20-year evidence | Hauch 2014; Al-Qurayshi 2016 (N=77,863) | Moderate | Extensively discussed, p.855-856 | High |
+| Tg after lobectomy reversed | Reinterpretation (Tg unreliable with intact lobe) | Commissioned SR | Commissioned SR from OHSU | Very Low | Acknowledged limited evidence, p.899 | Moderate |
+
+---
+
+# 第四部分："Why Map"（驅動力地圖）
+
+## 4.1 Evidence-Driven Changes（證據驅動）
+
+最高證據品質，recommendation 變更直接由新數據引發：
+
+| Change | Key New Evidence | Evidence Grade |
+|--------|-----------------|---------------|
+| RAI omission in low-risk | ESTIMABL2 + IoN (2 Phase III RCTs) | **HIGH** |
+| rhTSH preferred | Meta-analysis of 7 RCTs (N=1,535) | **HIGH** |
+| Targeted therapy for RAIR | Multiple Phase I/II trials with FDA approvals | **HIGH** |
+| NIFTP classification | WHO 2017/2022 reclassification + Nikiforov 2016 | Moderate-High |
+
+**結論**：真正由 high-quality new evidence 直接驅動的變更僅有 3-4 項，其中 RAI omission 是最強的。
+
+## 4.2 Philosophy-Driven Changes（哲學驅動）
+
+由 de-escalation/overtreatment concern 驅動，evidence 支持方向但不決定強度：
+
+| Change | Philosophy | Evidence Role |
+|--------|-----------|--------------|
+| SDM formalization | Patient autonomy, multiple viable options | 不適用 -- 哲學性變更 |
+| Complete remission concept | Cancer identity burden reduction | 支持性（retrospective cohorts） |
+| TSH suppression relaxation | Harm avoidance > marginal benefit | 重新權衡 -- evidence 改變了 harm side |
+
+## 4.3 Accumulated-Evidence-Driven Changes（累積證據驅動）
+
+無 RCT，但大量一致性 retrospective/registry data 構成的「量的優勢」：
+
+| Change | Evidence Pattern | Weakness |
+|--------|-----------------|----------|
+| Lobectomy expansion <=2cm | >5 NCDB/SEER studies + 3 meta-analyses (N>300,000) | All retrospective; selection bias |
+| pCND against | 4+ meta-analyses (N>25,000) | All retrospective studies |
+| Active surveillance | 30-year single-institution + multicenter prospective | No RCT; Japanese-dominated |
+
+**結論**：這是 2025 guideline 變更的**最大類別** -- 大部分 practice-changing recommendations 基於累積的 retrospective/registry data 而非 RCTs。這反映了甲狀腺癌領域 RCT 稀缺的現實。
+
+## 4.4 Process-Driven Changes（流程/分類驅動）
+
+由方法學、分類系統或 staging system 變更引發：
+
+| Change | Process Change |
+|--------|---------------|
+| 3-tier -> 4-tier risk | AJCC 8th + WHO 2022 + evidence reinterpretation |
+| Microscopic ETE downstaged | AJCC 8th edition (2018) |
+| GPS category introduction | GRADE adoption |
+| "Weak" -> "Conditional" terminology | GRADE adoption |
+
+**結論**：Process-driven changes 影響了約 7/30 的 recommendation 變更。其中部分（如 microscopic ETE downstaging）通過下游效應間接影響了 surgery extent 和 RAI decision。
+
+---
+
+# 第五部分：De-escalation Narrative Analysis（去強化敘事分析）
+
+## 5.1 是否存在連貫的 de-escalation 哲學？
+
+**是的。** 2025 guideline 展現了一個明確的、跨領域的 de-escalation cascade：
 
 ```
-TRULY EVIDENCE-DRIVEN (new data drove the change)
-|
-|-- RAI for low-risk DTC (ESTIMABL2 Phase III RCT) .............. STRONGEST
-|-- pCND "should not" for T1-T2 (Chen meta-analysis, NNT=31) ... STRONG
-|-- Intraoperative neural monitoring (multiple RCTs) ............ STRONG
-|-- RAIR targeted therapy (Phase I/II + FDA approvals) .......... STRONG
-|-- Active surveillance for T1a PTC (commissioned SR) ........... MODERATE
-|-- Tg after lobectomy reversed (commissioned SR) ............... MODERATE
-|-- NIFTP classification (WHO reclassification) ................. MODERATE
-|-- rhTSH preferred (meta-analysis of RCTs) ..................... MODERATE
-|-- Germline genetic testing (hereditary syndrome data) ......... WEAK
-|
-PHILOSOPHY-DRIVEN (de-escalation, SDM, overtreatment concern)
-|
-|-- Lobectomy threshold expansion (1 cm --> 2 cm) ............... STRONG data support, but PHILOSOPHY drove the reinterpretation
-|-- Lobectomy preference for cT2 ............................... MODERATE data, PHILOSOPHY drove the "preferred" framing
-|-- Completion thyroidectomy weakened ........................... WEAK new data, PHILOSOPHY + AJCC change drove it
-|-- TSH suppression individualized ............................. MODERATE data, HARM AVOIDANCE drove it
-|-- Surveillance de-escalation/cessation ....................... MODERATE data, BURDEN AVOIDANCE drove it
-|-- SDM embedded throughout .................................... NO new data, CULTURE SHIFT drove it
-|
-PROCESS-DRIVEN (methodology, classification, staging changes)
-|
-|-- 4-tier risk stratification ................................. Data + AJCC 8th edition + refined categories
-|-- AJCC 8th edition staging ................................... Published 2017; 20-30% of patients downstaged
-|-- WHO 5th edition pathology classification ................... Published 2022/2025; new entities
-|-- Low-iodine diet reclassified as GPS ........................ PURELY methodology change
-|-- Grading system change (ACP --> GRADE) ....................... Affects all recommendation strength labels
-|
-ACCUMULATED CLINICAL EXPERIENCE
-|
-|-- Surgeon volume recommendation .............................. Continued volume-outcome data
-|-- AS protocols (GPS) ......................................... Japanese/Korean program operational experience
-|-- Parathyroid management refinements ......................... Surgical experience + new technologies
-|-- Post-therapy WBS/SPECT-CT .................................. Confirms existing practice
+更多 lobectomy (R15)
+  -> 更少 completion thyroidectomy (R16)
+    -> 更少 prophylactic CND (R19)
+      -> 更少 RAI (R32)
+        -> 更少 TSH suppression (R45-46)
+          -> 更短/可終止的 surveillance (R48)
+            -> "Complete remission" 終點
 ```
 
-### 5.2 The De-escalation Narrative
+這些變化**不是孤立的** -- 它們形成了一個相互強化的系統。例如：lobectomy 的擴大使得 RAI（需要 TT 作為前提）自然減少；RAI 的省略使得 TSH suppression 的論點減弱；surveillance 的去強化則是上述所有改變的下游邏輯結果。
 
-**Is there a coherent de-escalation philosophy across the 2025 guideline?**
+## 5.2 De-escalation 是否有足夠的證據支持？
 
-Yes. The 2025 guideline exhibits a systematic and deliberate de-escalation trajectory across virtually all treatment domains:
+### De-escalation 證據最強的領域
+- **RAI omission in low-risk**：兩項 Phase III RCTs（Level 1 evidence）
+- **rhTSH preferred over withdrawal**：7 項 RCTs 的 meta-analysis
 
-| Domain | Direction | Evidence Strength |
-|--------|-----------|------------------|
-| Surgery extent | Less aggressive (lobectomy expanded) | Moderate |
-| Completion thyroidectomy | Less automatic | Low-Moderate |
-| Prophylactic CND | Explicitly discouraged | Moderate (meta-analysis) |
-| RAI for low-risk | Eliminated (Strong/High) | **High (RCT)** |
-| RAI for intermediate-risk | More selective (4-tier enables) | Low |
-| TSH suppression | Less aggressive | Low-Moderate |
-| Surveillance duration | Time-limited (can stop) | Low |
-| Tg monitoring after lobectomy | Eliminated | Very Low |
+### De-escalation 證據中等的領域
+- **Lobectomy expansion**：多項 registry studies 一致但均為 retrospective
+- **pCND against**：多項 meta-analyses 一致但均基於 retrospective studies
 
-**Where is the de-escalation narrative strongest?**
-- RAI for low-risk DTC: Backed by a Phase III RCT (ESTIMABL2), this is the strongest evidence-supported de-escalation
-- Prophylactic CND: Meta-analysis with NNT of 31 and doubled complication rates provides quantitative justification
+### De-escalation 證據最弱的領域
+- **Active surveillance**：無 RCT；依賴單一機構 30 年回顧性數據
+- **Complete remission / surveillance stopping**：主要為 expert consensus + limited retrospective data
+- **TSH suppression relaxation**：no RCT comparing TSH targets
 
-**Where is the de-escalation narrative weakest?**
-- Lobectomy preference for cT2: The guideline goes from "either" to "preferred" based on reinterpretation of the same database studies, without new prospective data
-- Surveillance cessation: Based on observational data showing very low late recurrence rates, but no RCT comparing monitoring strategies
-- TSH suppression individualization: Based on conflicting retrospective data
+### 結論
 
-**Is it evidence-driven, philosophy-driven, or both?**
-Both, but in a structured way. The de-escalation philosophy provides the framework (asking "does this treatment benefit the patient enough to justify its harms?"), while the evidence provides the specific data points. The philosophy is most visible in how the committee weighs outcomes: the 2015 guideline prioritized minimizing recurrence; the 2025 guideline prioritizes survival equivalence and harm avoidance. This is not a flaw -- it is an explicit and defensible methodological choice documented in the systematic review methods section, which states that "Survival or mortality outcomes (all-cause and/or cancer-specific) were prioritized most highly" (p. 846).
+De-escalation narrative 的總體方向是合理且有支持的，但其**證據基礎不均勻**。在 RAI decision 上有最強的 RCT 支持；在 surgery extent 和 pCND 上有大量但品質次等的 registry data 支持；在 surveillance de-escalation 上則主要依賴 expert consensus。
 
-### 5.3 The Outcome Prioritization Shift
+## 5.3 De-escalation 的潛在風險
 
-This is arguably the single most important "hidden driver" of the 2015-to-2025 evolution. The explicit outcome hierarchy in the 2025 guideline -- **survival > recurrence > QoL > intermediate outcomes** -- means that:
+Compounding effect 值得特別關注：對於一個典型的 1.5 cm cT1bN0M0 PTC 患者：
 
-1. Treatments that reduce recurrence but not survival are no longer automatically recommended
-2. Treatment morbidity (hypoparathyroidism, RLN injury, hypothyroidism, cardiovascular effects of TSH suppression) is weighed more heavily
-3. QoL considerations (avoiding hypothyroidism during THW, avoiding lifelong monitoring, avoiding unnecessary surgery) are formally included
+| 決策節點 | 2015 Pathway | 2025 Pathway |
+|---------|-------------|-------------|
+| Surgery | Total thyroidectomy | Lobectomy |
+| pCND | 可能進行 | 不進行 |
+| RAI | 可能進行（Weak recommendation against） | 不進行（Strong recommendation against） |
+| TSH target | 0.5-2.0 mU/L | Normal reference range (no suppression) |
+| Monitoring | 終身 Tg + US | 限定 5-8 年 US -> 10-15 年後 complete remission |
 
-This shift explains why many recommendations appear "weaker" in 2025 even when the underlying evidence hasn't changed. The committee didn't lower the bar for evidence; they raised the bar for what constitutes a meaningful patient benefit.
-
-### 5.4 The Role of Methodology Changes
-
-The switch from ACP to modified GRADE, the addition of GPS, and the inclusion of a methodology consultant had systematic effects:
-
-1. **GRADE's emphasis on certainty** made the committee more honest about evidence quality. Many 2015 "Strong/Low" recommendations became 2025 "Conditional/Low" -- not because the committee lost confidence, but because GRADE requires stronger justification for Strong/Low pairings.
-
-2. **GPS captured common sense.** Many surgical practices (visual RLN identification, parathyroid preservation, low-iodine diet) were previously graded Weak/Low, implying optionality. As GPS, they are treated as standard-of-care practices that don't need formal grading.
-
-3. **Commissioned systematic reviews** provided higher-quality evidence synthesis for two key questions (AS and Tg after lobectomy), enabling more confident recommendations in these areas.
-
-4. **Explicit outcome prioritization** changed how the same evidence was interpreted. This is not a methodology "bias" but a transparent methodological choice.
+每一步的 de-escalation 都有其獨立的 evidence support，但**所有步驟同時 de-escalate 的 combined safety** 尚未被任何研究驗證。這是 2025 guideline 最重要的 evidence gap。
 
 ---
 
-## 6. Summary: What Drove the 2015-to-2025 Evolution
+# 第六部分：Evidence Gaps and Residual Uncertainty
 
-The evolution from the 2015 to the 2025 ATA DTC guideline was driven by five interconnected forces:
+## 6.1 Where Evidence Is Genuinely Insufficient
 
-1. **New High-Quality Evidence (4 key areas):**
-   - ESTIMABL2 RCT (RAI in low-risk)
-   - Meta-analyses on pCND harm/benefit
-   - RCTs on intraoperative neural monitoring
-   - FDA-approved targeted therapies for RAIR DTC
+| Gap | Affected Recommendations | Impact Level |
+|-----|-------------------------|-------------|
+| No RCT: lobectomy vs TT | R15 | HIGH -- affects majority of newly diagnosed DTC |
+| No RCT: TSH suppression targets | R45-46 | HIGH -- affects all DTC patients |
+| No RCT: AS vs surgery | R11 | MODERATE -- AS currently limited to PTMC |
+| Combined de-escalation safety | R15+R19+R32+R45+R48 | **CRITICAL** -- compounding effect untested |
+| Long-term (>10yr) AS data in non-Japanese populations | R11 | MODERATE |
+| Molecular-guided surgical selection | R10, R15, R28 | MODERATE -- emerging data |
+| Percutaneous ablation long-term outcomes | R11B | LOW-MODERATE |
 
-2. **Accumulated Retrospective Evidence (8+ areas):**
-   - Lobectomy equivalence data from multiple databases
-   - Japanese/Korean active surveillance programs
-   - Risk stratification refinement studies
-   - TSH suppression harm data
-   - Long-term follow-up enabling surveillance de-escalation
+## 6.2 Where Recommendations Are Preference-Sensitive
 
-3. **Classification System Updates:**
-   - AJCC 8th edition (age cutoff 45-->55; microscopic ETE removed from T3)
-   - WHO 5th edition (OTC as separate entity; NIFTP; high-grade FCD-non-ATC)
+以下 recommendations 明確依賴 patient preference（SDM）：
 
-4. **Outcome Re-weighting:**
-   - Explicit prioritization of survival over recurrence
-   - Formal inclusion of QoL and treatment morbidity in benefit-harm calculus
-   - Recognition that most "recurrences" represent detectable residual disease, not clinical failure
+- R11（AS vs surgery for PTMC）
+- R15B（lobectomy vs TT for T2）
+- R16（completion thyroidectomy）
+- R45（TSH suppression degree）
 
-5. **Process Modernization:**
-   - Modified GRADE adoption
-   - Patient advocate on panel
-   - Methodology consultant
-   - Commissioned external systematic reviews
-   - More rigorous COI management
+這些 preference-sensitive recommendations 反映了 evidence equipoise -- 多條路徑的 oncologic outcomes 相似，但 morbidity profiles 不同。
 
-The net result is a guideline that is more conservative in treatment intensity, more selective in its indications, more patient-centered in its values, and more methodologically rigorous in its evidence appraisal -- while simultaneously being more aggressive in pursuing precision therapy for the small fraction of patients with RAIR DTC and actionable molecular targets.
+## 6.3 Where Further Research Is Explicitly Called For
 
----
+2025 guideline 在以下領域明確呼籲更多研究：
 
-## Appendix: Methodology Concordance Table
+1. **RCTs for intermediate-risk RAI decision**: "Further studies are needed in this group of patients" (p.886)
+2. **Molecular testing for surgical planning**: "Further studies are needed in consecutive, non-selected patients with T2N0 DTCs" (p.859)
+3. **Cost-benefit of molecular testing**: "cost-benefit analyses are necessary" (p.859)
+4. **Lobectomy Tg monitoring**: "not well studied to date" (p.899)
+5. **Active surveillance for >1 cm tumors**: limited data
+6. **Prospective RAI dosimetry trials**: "There is a need for prospective clinical trials" (p.887)
 
-| Term/Concept | 2015 Guideline | 2025 Guideline | Comparability |
-|-------------|---------------|---------------|---------------|
-| Strong recommendation | Benefits clearly outweigh harms | Benefits clearly outweigh harms with at least moderate certainty; if low certainty, requires strong rationale | Roughly equivalent, but 2025 adds certainty threshold |
-| Weak recommendation | Benefits closely balanced with harms | N/A (replaced by "Conditional") | See below |
-| Conditional recommendation | N/A | Applicable to most, but other courses appropriate in certain circumstances | Approximately = 2015 "Weak" |
-| Good Practice Statement | N/A | Not graded; like strong recommendation; requires unanimous consensus; benefits must be obvious | New category; no 2015 equivalent |
-| No recommendation | Balance cannot be determined | Insufficient evidence | Equivalent |
-| High-quality evidence | RCT without important limitations | High certainty per GRADE criteria | Similar intent, different assessment framework |
-| Moderate-quality evidence | RCT with limitations or strong observational | Moderate certainty per GRADE | Similar |
-| Low-quality evidence | Observational studies/case studies | Low certainty per GRADE | Similar |
-| Very low-quality evidence | N/A | Very low certainty per GRADE | New tier in 2025 |
-| Insufficient | Evidence conflicting, poor quality, or lacking | Too limited to permit reliable conclusions | Equivalent |
+## 6.4 Where the Committee Went Beyond the Evidence
+
+以下情境中，guideline committee 的建議超越了可用證據，部分有明確承認：
+
+1. **Complete remission 10-15 year stopping rule** (R48): 基於 limited retrospective data + expert consensus。Guideline 使用 GPS 而非 graded recommendation，間接承認了證據不足。
+
+2. **Tg after lobectomy NOT recommended** (R47D): Guideline 承認 "not well studied to date" 但仍給出反向建議（從 2015 的 "should measure" 到 2025 的 "not recommended"），主要基於 biologic reasoning（intact contralateral lobe 下 Tg 不可靠）而非臨床結果數據。
+
+3. **4-tier risk system specific cutoffs**: Low (<10%), Low-Int (10-15%), Int-High (16-30%), High (>30%) 的具體數值主要基於 retrospective cohort estimates + expert judgment，尚無前瞻性驗證。
 
 ---
 
-## Cross-Validation Notes
+# 第七部分：文獻全文狀態清單
 
-The following corrections and nuances were identified during cross-validation by the methods-evidence-appraiser (evidence perspective) and the surgery-rai-risk-stratification-clinical agent (clinical perspective):
+## 已讀取全文或 PMC 可用（可深入分析）
 
-### 1. cT2 Lobectomy Confidence Should Be Moderate, Not High
+| Reference | PMC ID | Status |
+|-----------|--------|--------|
+| Adam 2014 NCDB | PMC4532384 | Full text available |
+| Bojoga 2020 meta-analysis | PMC7408649 | Full text available |
+| Kim 2023 RAI dose-response | PMC10248848 | Full text available |
+| Carhill 2015 NTCTCSG | PMC5393522 | Full text available |
+| Yang 2022 AF meta-analysis | PMC9814721 | Full text available |
+| Tran 2024 competing risk | PMC10884550 | Full text available |
+| Yoon 2016 false-positive US | PMC4706268 | Full text available |
+| Wang Y 2023 pCND meta-analysis | PMC9886572 | Full text available |
+| Miyauchi/Ito 2023 Kuma 30yr | PMC10354707 | Full text available |
+| Lee 2022 KoMPASS | PMC9700369 | Full text available |
 
-The confidence rating for the cT2 lobectomy change (Section 2.2 above) warrants a downgrade from "High" to **Moderate**. While the guideline text explicitly provides rationale (hence "High" confidence that we understand the reasoning), the underlying evidence is genuinely conflicting:
+## 需要全文但不可得
 
-- The 2025 guideline itself states that "approximately half showing no difference in recurrence or survival but with higher complication rates for total thyroidectomy. The other approximate half demonstrate statistically significant, lower recurrence rates with total thyroidectomy compared with lobectomy alone" (p. 862).
-- One meta-analysis found improved overall survival with total thyroidectomy confined to T2 tumors (p. 862, ref 340).
-- An NCDB study showed "significantly better survival with total thyroidectomy for classical PTC but not FVPTC" in the T2 range specifically (ref 341).
-- The recommendation strength is Conditional/Low-moderate, not Strong/Moderate -- reflecting the committee's own uncertainty.
-
-The correct characterization of R15B is: **Directional shift toward lobectomy at lower certainty** -- not "Stronger recommendation for lobectomy." The 2015 guideline expressed equipoise at Strong/Moderate certainty; the 2025 guideline expresses a preference at Conditional/Low-moderate certainty. The direction changed, but the confidence decreased.
-
-### 2. ACP-to-GRADE Methodology Shift Is Itself a Major Comparability Issue
-
-The transition from the ACP Guideline Grading System (2015) to modified GRADE (2025) is not merely a process detail -- it is a systematic confounder for all recommendation-strength comparisons in this document. Readers should be aware of three specific effects:
-
-- **Apparent downgrading without substantive change:** Some 2015 "Strong/Low" recommendations became 2025 "Conditional/Low" purely because GRADE requires stronger justification for a Strong recommendation paired with Low certainty. This does not necessarily reflect a substantive weakening.
-- **Apparent upgrading via GPS:** Some 2015 "Weak/Low" recommendations for universal practices (e.g., visual RLN identification, low-iodine diet) became 2025 GPS, which function as de facto Strong recommendations. This reflects a methodology change, not new evidence.
-- **The "Conditional" label carries different connotations from "Weak."** In ACP terminology, "Weak" implied marginal benefit over harm. In GRADE, "Conditional" implies the recommendation applies to most patients but that individual circumstances may justify a different approach. These are subtly different clinical messages.
-
-All strength-change comparisons in this deliverable and in `03_comparison_matrix.md` should be interpreted in light of this methodological shift.
-
-### 3. Additional Notes on Evidence Quality
-
-- The Wang meta-analysis on pCND showed the recurrence reduction was not statistically significant (RR 0.59 [CI 0.33-1.07], crossing 1.0). This strengthens the case against pCND beyond what Section 2.4 states.
-- For the 4-tier risk stratification, the 2025 guideline itself acknowledges "no clear cutoffs for LNs between low-intermediate and high-intermediate risk groups" (Figure 2 footnote). The tier boundaries contain acknowledged arbitrariness.
-- The 2015 R51B was already Strong/Moderate against RAI for unifocal papillary microcarcinoma. The upgrade from Weak/Low to Strong/High is most dramatic for the broader low-risk category (R51A), not for microPTC.
+| Reference | Priority | Impact | DOI/URL |
+|-----------|---------|--------|---------|
+| ESTIMABL2 (Leboulleux 2022, NEJM) | HIGH | R32A (RAI omission) | 10.1056/NEJMoa2111953 |
+| ESTIMABL2 5yr (Leboulleux 2025, Lancet D&E) | HIGH | R32A | 10.1016/S2213-8587(24)00276-6 |
+| IoN trial (Mallick 2025, Lancet) | HIGH | R32A | 10.1016/S0140-6736(25)00629-4 |
+| Rajjoub 2018 (Surgery) | MEDIUM | R15B (T2 lobectomy) | 10.1016/j.surg.2017.12.026 |
+| Song 2019 (Thyroid) | MEDIUM | R15B | 10.1089/thy.2018.0554 |
+| Hauch 2014 (Ann Surg Oncol) | MEDIUM | R6, R15 | 10.1245/s10434-014-3846-8 |
+| Chen 2018 pCND (World J Surg) | MEDIUM | R19A | 10.1007/s00268-018-4547-4 |
+| Seejore 2021 (Clin Endocrinol) | MEDIUM | R48 | 10.1111/cen.14549 |
+| Ku 2021 BMD (JCEM) | LOW | R45-46 | 10.1210/clinem/dgab539 |
 
 ---
 
-*End of evidence and methodology analysis. This analysis should be read in conjunction with `outputs/03_comparison_matrix.md` (Layer 1 and 3 details) and `outputs/scope_crosswalk.md` (structural alignment).*
+# 第八部分：Methodology Comparison Summary
+
+## 核心方法學差異對可比性的影響
+
+| 影響層面 | 說明 |
+|---------|------|
+| **術語表面差異 vs 實質差異** | "Weak" -> "Conditional" 是術語變更，非實質強度變化。但 GPS 的引入是全新概念，無法直接與 2015 系統比較。 |
+| **Strong/Low 門檻提高** | 2025 GRADE 對 Strong/Low 組合設更高門檻，部分 2015 Strong/Low 在 2025 變為 Conditional/Low -- 這是方法學效應而非 clinical downgrade。 |
+| **Evidence certainty 新增 Very Low** | 2025 新增 "Very Low" 等級（如 R47D: Tg after lobectomy），在 2015 系統中會被歸為 "Low" 或 "Insufficient"。 |
+| **Commissioned systematic reviews** | 2025 首次委託外部 SR，提升了 evidence synthesis 品質但也可能引入系統偏差（SR 範圍由 panel 決定）。 |
+| **Patient advocate participation** | 影響了 SDM 和 survivorship recommendations 的形成，這是無法用 evidence grading 衡量的 process-level 變化。 |
+
+## 最終評估
+
+2015 到 2025 的 guideline 演進**主要是 evidence-driven**，但並非完全如此。大約：
+
+- **40% 的變更** 由具體的 post-2015 新證據直接驅動（RCTs, large cohorts, meta-analyses）
+- **25% 的變更** 由 accumulated lower-quality evidence 的一致方向驅動
+- **20% 的變更** 由 de-escalation philosophy、outcome re-weighting、或 patient-centered values 驅動
+- **15% 的變更** 由 classification/methodology 系統變更（AJCC 8th, WHO 2022, GRADE adoption）驅動
+
+這些類別之間存在大量重疊。例如，lobectomy 擴大同時是 evidence-driven（registry data）和 philosophy-driven（de-escalation）；TSH suppression relaxation 同時是 evidence-driven（AF/BMD data）和 outcome re-weighting（harm > benefit rebalancing）。
+
+**The single most important insight**: 2025 guideline 的核心 narrative 不是「我們發現了新東西」，而是 **「我們重新權衡了已知的 benefit-harm balance，並將 treatment morbidity 和 patient-centered outcomes 提升到與 oncologic endpoints 同等的決策地位」**。這一 paradigm shift -- 從 oncologic outcome supremacy 到 balanced benefit-harm assessment -- 是理解 2015 vs 2025 差異的鑰匙。
+
+---
+
+*Document generated: 2026-03-10 | v1.3 with integrated reference analysis | methods-evidence-appraiser agent*
