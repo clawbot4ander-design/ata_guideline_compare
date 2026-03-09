@@ -1,0 +1,12 @@
+# === Guideline full-text files (copyrighted) ===
+guidelines/*.pdf
+guidelines/*.md
+
+# === macOS ===
+.DS_Store
+*.swp
+*~
+
+# === Temporary ===
+*.tmp
+*.log
