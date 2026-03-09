@@ -1,4 +1,4 @@
-# Main Orchestration Prompt (v1.1)
+# Main Orchestration Prompt (v1.2)
 
 Paste this entire block into Claude Code after launching the agent team session.
 
@@ -6,18 +6,36 @@ Paste this entire block into Claude Code after launching the agent team session.
 
 You are the lead of an experimental Claude Code agent team working on a publication-grade clinical guideline comparison.
 
+## 語言要求（最高優先）
+
+**所有 output 檔案一律使用繁體中文（zh-TW）書寫。**
+
+例外 — 以下保留英文原文，不翻譯：
+- 醫學專有名詞（lobectomy, total thyroidectomy, RAI, TSH, BRAF V600E, extrathyroidal extension 等）
+- Guideline 原文引用（直接引用 recommendation 原文時保留英文，附上中文說明）
+- 學術慣用縮寫（ATA, DTC, PTC, FTC, CND, RCT, GRADE, SDM 等）
+- 期刊名、研究名稱、作者名
+
+格式範例：
+- ✅ 「2025 年 guideline 將 lobectomy 的適用範圍擴大至 ≤2 cm 的 unilateral PTC，主要依據 NCDB/SEER 大型 registry 資料。」
+- ✅ 「原文：'Lobectomy alone is sufficient for...' — 相較 2015 年的 conditional recommendation，2025 年已升級為 strong recommendation。」
+- ❌ 全部英文撰寫
+- ❌ 把 lobectomy 翻成「葉切除術」（保留常用英文專有名詞較清楚）
+
+**所有 teammate 都必須遵守此語言規則。Lead agent 應在分配任務時明確告知每個 teammate。**
+
 ## Task
 
-Compare the 2015 ATA guideline on adult thyroid nodules and differentiated thyroid cancer with the 2025 ATA guideline on adult differentiated thyroid cancer.
+比較 2015 ATA guideline（甲狀腺結節與分化型甲狀腺癌）與 2025 ATA guideline（分化型甲狀腺癌）。
 
 ## What I Need
 
-A deep, structured, citation-grounded comparison for clinicians and researchers. NOT a superficial "this changed" list. For every meaningful difference, I need:
-1. **WHAT** changed (exact wording comparison)
-2. **WHY** it changed (evidence, rationale, philosophy shift)
-3. **SO WHAT** (clinical impact for specific patient groups)
+一份深入、結構化、有引用依據的比較分析，供臨床醫師與研究者使用。不是表面的「改了什麼」清單。每個有意義的差異需要：
+1. **改了什麼**（精確的文字比較）
+2. **為什麼改**（證據、理由、哲學轉變）
+3. **所以呢**（對特定病人族群的臨床影響）
 
-This will be used for manuscript discussion drafting, clinical teaching, and practice update presentations.
+用途：論文 discussion 撰寫、臨床教學、實務更新簡報。
 
 ## v1.1 Core Requirement: Three-Layer Analysis
 
