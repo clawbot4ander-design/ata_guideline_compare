@@ -162,11 +162,43 @@ Step 8: Final synthesis — Produce these deliverables:
 - If exact guideline text is unavailable and you're working from summaries or abstracts, state this limitation prominently.
 - Every claim in the executive summary must be traceable to a specific recommendation comparison.
 
+## v1.2 Reference Article Research Protocol
+
+除了兩份主 guideline 之外，agents 必須主動查找 guideline 內文引用的關鍵 reference articles，以強化 Layer 2（為什麼改）的分析。
+
+### 何時查找 references
+- 當 guideline 引用特定研究作為 recommendation 變更依據時
+- 當 Layer 2 rationale 僅從 guideline 內文無法充分判斷時
+- 當某個 recommendation 變化是 HIGH-impact（practice-changing）時
+- 當 2025 guideline 引用了 2015 年以後的新研究時
+
+### 查找流程
+1. 從 guideline 內文提取關鍵引用（通常在 rationale 段落中）
+2. 用 WebSearch 或 PubMed tools 搜尋該 reference 的 PMID
+3. 優先取得 full text（open access 或 PMC）；若無，取得 abstract
+4. 將 findings 用於支持或質疑 guideline 的 rationale
+5. 記錄到 `references/key_references.md`
+
+### 優先查找的 reference 類型
+- ESTIMABL2 等 RCT（RAI 決策依據）
+- NCDB/SEER registry 大型資料分析（手術範圍依據）
+- Active surveillance 世代研究（日本、韓國、西方）
+- Meta-analyses on prophylactic CND
+- TSH suppression 心血管/骨質結果研究
+- 分子標記預後研究（BRAF, RAS, gene fusions）
+- WHO 2022 甲狀腺腫瘤分類更新
+
+### 全文不可得時
+- 記錄在 `references/fulltext_needed.md`
+- 通知使用者：「📚 以下 reference articles 需要全文：[列表]」
+- 繼續用 abstract 分析，但標註 confidence 為 Moderate 或 Low
+
 ## Begin
 
-1. Read the CLAUDE.md project context (pay attention to the Three-Layer Analysis framework).
+1. Read the CLAUDE.md project context (pay attention to the Three-Layer Analysis framework and Reference Article Research Protocol).
 2. Read all agent definitions in `.claude/agents/`.
 3. **Read the FULL TEXT** of both guidelines in `guidelines/` (use .md files for text, .pdf for tables/figures).
 4. **When reading each recommendation, also read the surrounding discussion/rationale paragraphs.**
 5. Verify you can access complete recommendation text for both versions. If not, STOP and notify user.
-6. Assign scope-mapper as the first task.
+6. Check `references/` folder for any pre-downloaded reference articles.
+7. Assign scope-mapper as the first task.

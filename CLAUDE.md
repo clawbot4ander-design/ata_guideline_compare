@@ -150,6 +150,51 @@ ALL agents MUST work from the FULL TEXT of both guidelines, not summaries or abs
 5. **Do NOT rely on**: Abstracts, press releases, patient summaries, or secondary sources when full text is available.
 6. **Rationale extraction**: When reading each recommendation, ALSO read the discussion/rationale paragraphs that follow it in the guideline. These paragraphs often explain WHY the recommendation was made or changed. Extract this rationale.
 
+## Reference Article Research Protocol（v1.2 新增）
+
+除了兩份主 guideline 之外，agents 必須主動查找 guideline 內文引用的關鍵 reference articles，以強化 Layer 2（為什麼改）的分析深度。
+
+### 何時需要查找 reference articles
+
+- 當 guideline 內文引用特定研究作為 recommendation 變更的依據時
+- 當 Layer 2 rationale 無法僅從 guideline 內文判斷時
+- 當某個 recommendation 變化是 HIGH-impact（practice-changing）時
+- 當 2025 guideline 引用了 2015 年以後的新研究時
+
+### 查找流程
+
+1. **從 guideline 內文提取引用**：找出支持 recommendation 變更的關鍵 reference（通常在 rationale 段落中）
+2. **搜尋 PubMed**：用 WebSearch 或 PubMed 搜尋該 reference 的 PMID
+3. **取得內容**：
+   - 優先取得 full text（若為 open access 或 PMC 收錄）
+   - 若無 full text，取得 abstract
+   - 若 abstract 也無法取得，記錄該 reference 並通知使用者
+4. **用於分析**：將 reference article 的 findings 用於支持或質疑 guideline 的 rationale
+5. **記錄到 references/**：將重要 reference 的 metadata 和 abstract 摘要存入 `references/key_references.md`
+
+### 優先查找的 reference 類型
+
+- ESTIMABL2 等 RCT（RAI 決策依據）
+- NCDB/SEER registry 大型資料分析（手術範圍依據）
+- Active surveillance 世代研究（日本、韓國、西方資料）
+- Meta-analyses on prophylactic CND
+- TSH suppression 心血管/骨質結果研究
+- 分子標記預後研究（BRAF, RAS, gene fusions）
+- WHO 2022 甲狀腺腫瘤分類更新
+
+### 全文不可得時的處理
+
+若某篇關鍵 reference 無法取得全文：
+1. 記錄在 `references/fulltext_needed.md`，格式：
+   ```
+   - [PMID] [標題] [期刊] [年份]
+     WHY needed: [這篇支持哪個 recommendation 變更]
+     Status: abstract only / not available
+   ```
+2. 通知使用者：
+   > "📚 以下 reference articles 需要全文以完善分析，目前僅有 abstract：[列表]。請協助下載全文並放入 references/ 資料夾。"
+3. 繼續使用 abstract 進行分析，但在 output 中標註 confidence 為 Moderate 或 Low
+
 ## Google Drive Sync
 
 Project outputs are synced to Google Drive folder:
