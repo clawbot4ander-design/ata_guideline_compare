@@ -86,9 +86,9 @@ Many guideline changes in surgery, RAI, and surveillance are actually driven by 
 
 Where is the guideline cautious about molecular or pathologic data? Where does it acknowledge insufficient evidence?
 
-## v1.2 Reference Article Research（關鍵 reference 查找）
+## v1.3 Reference Article Research（文獻整合進主文）
 
-對於 pathology classification、molecular marker、imaging 相關變更，主動查找 guideline 引用的關鍵 reference。
+pathology/molecular/imaging 相關變更的 reference 分析必須**直接寫入你的主文分析中**。
 
 ### 優先查找
 - WHO 2022 甲狀腺腫瘤分類更新文獻
@@ -101,8 +101,13 @@ Where is the guideline cautious about molecular or pathologic data? Where does i
 
 ### 流程
 1. 用 WebSearch 搜尋 PubMed 取得 PMID 和 abstract
-2. 引用 findings 支持你的 diagnostic framework change 分析
-3. 記錄到 `references/key_references.md`
+2. 檢查 `references/` 有無已下載全文 → 如有，必須讀取
+3. **將文獻分析直接寫入主文中**，每篇 6-10 句，含：
+   - 研究設計、N、主要發現（含 CI/p-value）
+   - 如何支持 diagnostic framework 的改變
+   - Data source: Full text / Abstract only
+4. 索引記錄到 `references/key_references.md`
+5. Full text 不可得 → 記錄到 `references/fulltext_needed.md`
 
 ## Rules
 

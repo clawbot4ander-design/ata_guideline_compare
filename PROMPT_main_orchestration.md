@@ -1,4 +1,4 @@
-# Main Orchestration Prompt (v1.2)
+# Main Orchestration Prompt (v1.3)
 
 Paste this entire block into Claude Code after launching the agent team session.
 
@@ -37,9 +37,9 @@ You are the lead of an experimental Claude Code agent team working on a publicat
 
 用途：論文 discussion 撰寫、臨床教學、實務更新簡報。
 
-## v1.1 Core Requirement: Three-Layer Analysis
+## v1.3 Core Requirement: Three-Layer Analysis + Reference Integration
 
-Every recommendation difference must be analyzed in THREE layers:
+Every recommendation difference must be analyzed in THREE layers, with **reference article content directly integrated into the analysis text**（不是只列清單）：
 
 **Layer 1: Observation** — What exactly changed in wording, strength, or scope?
 **Layer 2: Rationale** — WHY did it change? This is the most critical layer. Options include:
@@ -55,6 +55,36 @@ Every recommendation difference must be analyzed in THREE layers:
 - If the guideline does NOT explain why, say so and state your best inference with confidence level
 
 **Layer 3: Clinical Impact** — Who is affected, what changes in practice, and is it high-impact or fine-tuning?
+
+### ★★★ v1.3 變動說明模板 — 每個 HIGH-impact 變動必須包含 ★★★
+
+```
+■ 變動說明（完整詳細，5-10 句段落，review article 風格）
+(1) 此 recommendation 的歷史脈絡——ATA 過去怎麼寫？為什麼？
+(2) 2015 推薦原文（完整引用，含 Rec 編號、strength、evidence quality）
+(3) 2025 推薦原文（完整引用，含 Rec 編號、strength、evidence quality）
+(4) 具體改了什麼——哪些字、概念、數值、條件、適用族群
+(5) 為什麼改——觸發的研究或事件（試驗名稱、N=、PMID、核心結果含 CI）
+(6) 如果是語氣改變：引用 2015 和 2025 原文措辭，分析語氣強弱變化及意涵
+(7) 如果是 evidence quality 改變：指出哪個研究導致升降級
+(8) 這個改變代表什麼趨勢或典範轉移
+
+■ 關鍵文獻介紹（每篇 6-10 句，直接寫在主文中）
+- 研究名稱、作者、期刊、年份、PMID
+- 研究設計、PICO（population, intervention, comparator, outcome）
+- 主要發現（HR/OR/RR + 95% CI + p-value、absolute risk difference）
+- 為什麼重要、主要限制
+- ★ 如果全文在 references/ 中→讀取全文補充方法學細節
+- ★ 如果僅有 abstract→標註「based on abstract only」
+
+■ 2015 vs 2025 差異對照表
+| 面向 | 2015 | 2025 | 差異說明 |
+|------|------|------|----------|
+| 推薦原文 | "完整引用" | "完整引用" | 具體差異 |
+| Evidence Quality | Grade X | Grade Y | 原因 |
+| 適用族群 | ... | ... | 擴大/縮小 |
+| Recommendation Strength | Strong/Weak | Strong/Weak | 改變原因 |
+```
 
 ## Critical Context
 
@@ -162,9 +192,11 @@ Step 8: Final synthesis — Produce these deliverables:
 - If exact guideline text is unavailable and you're working from summaries or abstracts, state this limitation prominently.
 - Every claim in the executive summary must be traceable to a specific recommendation comparison.
 
-## v1.2 Reference Article Research Protocol
+## v1.3 Reference Article Research Protocol（文獻整合進主文）
 
-除了兩份主 guideline 之外，agents 必須主動查找 guideline 內文引用的關鍵 reference articles，以強化 Layer 2（為什麼改）的分析。
+★★★ 核心原則：reference article 的內容必須**直接整合進主文分析**，不是只列在 `references/key_references.md`。★★★
+
+`references/key_references.md` 是索引清單；真正的分析內容要寫在各 agent 的 output 檔案中。
 
 ### 何時查找 references
 - 當 guideline 引用特定研究作為 recommendation 變更依據時
@@ -176,22 +208,42 @@ Step 8: Final synthesis — Produce these deliverables:
 1. 從 guideline 內文提取關鍵引用（通常在 rationale 段落中）
 2. 用 WebSearch 或 PubMed tools 搜尋該 reference 的 PMID
 3. 優先取得 full text（open access 或 PMC）；若無，取得 abstract
-4. 將 findings 用於支持或質疑 guideline 的 rationale
-5. 記錄到 `references/key_references.md`
+4. **將 findings 直接寫入主文分析**（用「關鍵文獻介紹」模板，每篇 6-10 句）
+5. 同時記錄索引到 `references/key_references.md`
+
+### 文獻在主文中的呈現（每篇 6-10 句）
+```
+■ 關鍵文獻：[研究名稱]
+- **Citation**: [作者 et al., 期刊, 年份] (PMID: [number])
+- **研究設計**: [RCT/prospective cohort/registry/meta-analysis], N=[number]
+- **PICO**: P=[population], I=[intervention], C=[comparator], O=[primary outcome]
+- **主要發現**: [HR/OR/RR + 95% CI + p-value; absolute risk difference if available]
+- **次要發現**: [key secondary endpoints]
+- **為什麼重要**: [如何支持 guideline recommendation 的改變]
+- **主要限制**: [bias risk, generalizability, follow-up duration]
+- **Data source**: Full text / Abstract only
+```
 
 ### 優先查找的 reference 類型
-- ESTIMABL2 等 RCT（RAI 決策依據）
+- ESTIMABL2, HiLo, IoTA 等 RCT（RAI 決策依據）
 - NCDB/SEER registry 大型資料分析（手術範圍依據）
-- Active surveillance 世代研究（日本、韓國、西方）
+- Active surveillance 世代研究（Ito, Sugitani, Tuttle cohorts）
 - Meta-analyses on prophylactic CND
 - TSH suppression 心血管/骨質結果研究
-- 分子標記預後研究（BRAF, RAS, gene fusions）
+- 分子標記預後研究（BRAF, RAS, gene fusions, TCGA）
 - WHO 2022 甲狀腺腫瘤分類更新
 
+### 已下載全文
+- 檢查 `references/` 資料夾中的全文檔案
+- 如有全文→必須讀取，補充方法學細節（abstract 沒有的）
+
 ### 全文不可得時
-- 記錄在 `references/fulltext_needed.md`
-- 通知使用者：「📚 以下 reference articles 需要全文：[列表]」
-- 繼續用 abstract 分析，但標註 confidence 為 Moderate 或 Low
+- 記錄在 `references/fulltext_needed.md`（附 Priority: High/Medium/Low）
+- 繼續用 abstract 分析，但標註「based on abstract only」
+- 最終報告末尾統一列出需全文清單：
+  - ✅ 已分析（有全文）
+  - 📋 Abstract 足夠
+  - 🔴 仍需下載（附：原因、需看什麼部分、影響哪個 Rec、DOI/URL）
 
 ## Begin
 

@@ -135,24 +135,30 @@ A visual/structured summary of the dominant forces driving guideline evolution:
 - Which are process-driven (methodology change)?
 - Which are driven by accumulated clinical experience?
 
-## v1.2 Reference Article Research（關鍵 reference 查找）
+## v1.3 Reference Article Research（文獻整合進主文 — 你是最重要的文獻 agent）
 
-你是最需要查找 reference articles 的 agent。當 guideline 內文引用特定研究來支持某個 recommendation 變更時，你應主動查找該研究。
+你是最需要查找 reference articles 的 agent。reference 分析必須**直接寫入你的 output 主文中**，不是只列在清單裡。
 
 ### 查找流程
 1. 從 guideline rationale 段落提取引用的 key studies（作者、年份、期刊）
 2. 用 WebSearch 搜尋 PubMed：`site:pubmed.ncbi.nlm.nih.gov [作者] [年份] [關鍵字]`
 3. 取得 abstract（或 full text，若 open access）
-4. 將 findings 用於你的 Evidence Analysis 和 Driving Force Classification
-5. 記錄到 `references/key_references.md`，格式：
-   ```
-   ## [Topic]
-   - **PMID**: [number]
-   - **Citation**: [作者 et al., 期刊, 年份]
-   - **Key finding**: [一句話摘要]
-   - **Supports recommendation**: [哪個 recommendation 變更]
-   - **Full text available**: Yes/No
-   ```
+4. 檢查 `references/` 資料夾有無已下載全文 → 如有，**必須讀取全文**
+5. **將文獻分析直接寫入主文中**，使用「關鍵文獻介紹」模板（每篇 6-10 句）：
+
+```
+■ 關鍵文獻：[研究名稱]
+- **Citation**: [作者 et al., 期刊, 年份] (PMID: [number])
+- **研究設計**: [RCT/prospective cohort/registry/meta-analysis], N=[number]
+- **PICO**: P=[population], I=[intervention], C=[comparator], O=[primary outcome]
+- **主要發現**: [HR/OR/RR + 95% CI + p-value; absolute risk difference]
+- **次要發現**: [key secondary endpoints]
+- **為什麼支持此 recommendation 變更**: [1-2 句]
+- **主要限制**: [bias risk, generalizability, follow-up]
+- **Data source**: Full text / Abstract only
+```
+
+6. 同時記錄索引到 `references/key_references.md`
 
 ### 優先查找
 - ESTIMABL2, HiLo, IoTA 等 RCT
@@ -162,9 +168,13 @@ A visual/structured summary of the dominant forces driving guideline evolution:
 - TSH suppression cardiovascular/bone outcome studies
 - BRAF/RAS/fusion prognostic studies
 
+### 全文在 references/ 中
+- **必須讀取**，補充方法學細節（randomization, blinding, endpoint definition, power calculation, ITT/mITT, missing data handling）
+- 這些是 abstract 沒有的關鍵方法學資訊
+
 ### 全文不可得時
-- 記錄在 `references/fulltext_needed.md`
-- 繼續用 abstract 分析，標註 confidence
+- 記錄在 `references/fulltext_needed.md`（附 Priority 和影響哪個 Rec）
+- 繼續用 abstract 分析，標註「based on abstract only」
 - 通知 lead agent
 
 ## Rules

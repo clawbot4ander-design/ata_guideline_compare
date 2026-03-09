@@ -106,22 +106,40 @@ Identify and classify every recommendation-level difference between the 2015 and
 11. Management of recurrent/persistent disease
 12. Shared decision-making language — **WHY formalized now?**
 
-## v1.2 Reference Article Research（關鍵 reference 查找）
+## v1.3 Reference Article Research（文獻整合進主文）
 
-對於 HIGH-impact 的 recommendation 變更（Priority Topics 中的項目），當 guideline 引用特定研究但 Layer 2 rationale 仍不夠清楚時，主動查找該 reference article。
+對於 HIGH-impact 的 recommendation 變更，reference article 分析必須**直接寫入 Layer 2 主文中**，不是只列清單。
+
+### 何時查找
+- Layer 2 Rationale Confidence 為 Low 時 — **必須**查找
+- HIGH-impact change（影響多數病人或重大決策）— **應該**查找
+- 2025 guideline 引用 post-2015 新研究時 — **應該**查找
+- 已經是 High confidence 且有 guideline 明確 rationale — 可跳過
 
 ### 查找流程
 1. 從 guideline rationale 段落找出引用的 key studies
 2. 用 WebSearch 搜尋 PubMed 取得 PMID 和 abstract
-3. 用 abstract findings 強化你的 Layer 2 分析
-4. 記錄到 `references/key_references.md`
-5. 若 full text 不可得，記錄到 `references/fulltext_needed.md`
+3. 檢查 `references/` 資料夾有無已下載全文
+4. **將文獻分析直接寫入 Layer 2 中**，使用以下模板：
 
-### 何時查找
-- Layer 2 Rationale Confidence 為 Low 時 — 必須查找
-- HIGH-impact change（影響多數病人或重大決策）— 應該查找
-- 2025 guideline 引用 post-2015 新研究時 — 應該查找
-- 已經是 High confidence 且有 guideline 明確 rationale — 可跳過
+```
+■ 關鍵文獻：[研究名稱]
+- Citation: [作者 et al., 期刊, 年份] (PMID: [number])
+- 研究設計: [type], N=[number]
+- 主要發現: [HR/OR/RR + 95% CI + p-value]
+- 為什麼支持此 recommendation 變更: [1-2 句]
+- Data source: Full text / Abstract only
+```
+
+5. 同時記錄索引到 `references/key_references.md`
+6. 若 full text 不可得，記錄到 `references/fulltext_needed.md`
+
+### v1.3 變動說明模板（每個 HIGH-impact 變動必須包含）
+
+遵循 PROMPT_main_orchestration.md 中的 v1.3 變動說明模板：
+- 變動說明 5-10 句 review article 風格段落
+- 關鍵文獻介紹每篇 6-10 句，直接寫在主文中
+- 2015 vs 2025 差異對照表
 
 ## Critical Instructions
 

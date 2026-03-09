@@ -1,4 +1,4 @@
-# Project: ATA 2015 vs 2025 DTC Guideline Comparison (v1.2)
+# Project: ATA 2015 vs 2025 DTC Guideline Comparison (v1.3)
 
 ## 語言要求 / Language Requirement
 
@@ -150,9 +150,9 @@ ALL agents MUST work from the FULL TEXT of both guidelines, not summaries or abs
 5. **Do NOT rely on**: Abstracts, press releases, patient summaries, or secondary sources when full text is available.
 6. **Rationale extraction**: When reading each recommendation, ALSO read the discussion/rationale paragraphs that follow it in the guideline. These paragraphs often explain WHY the recommendation was made or changed. Extract this rationale.
 
-## Reference Article Research Protocol（v1.2 新增）
+## Reference Article Research Protocol（v1.3 升級 — 文獻整合進主文）
 
-除了兩份主 guideline 之外，agents 必須主動查找 guideline 內文引用的關鍵 reference articles，以強化 Layer 2（為什麼改）的分析深度。
+★★★ 核心改變（v1.2 → v1.3）：reference article 分析必須**直接整合進各 agent 的 output 主文中**，寫成 review article 風格的段落。`references/key_references.md` 只是索引清單，真正的分析在主文裡。★★★
 
 ### 何時需要查找 reference articles
 
@@ -163,37 +163,50 @@ ALL agents MUST work from the FULL TEXT of both guidelines, not summaries or abs
 
 ### 查找流程
 
-1. **從 guideline 內文提取引用**：找出支持 recommendation 變更的關鍵 reference（通常在 rationale 段落中）
-2. **搜尋 PubMed**：用 WebSearch 或 PubMed 搜尋該 reference 的 PMID
-3. **取得內容**：
-   - 優先取得 full text（若為 open access 或 PMC 收錄）
-   - 若無 full text，取得 abstract
-   - 若 abstract 也無法取得，記錄該 reference 並通知使用者
-4. **用於分析**：將 reference article 的 findings 用於支持或質疑 guideline 的 rationale
-5. **記錄到 references/**：將重要 reference 的 metadata 和 abstract 摘要存入 `references/key_references.md`
+1. **從 guideline 內文提取引用**：找出支持 recommendation 變更的關鍵 reference
+2. **搜尋 PubMed**：用 WebSearch 搜尋 PMID
+3. **取得內容**：優先 full text（open access/PMC）→ 其次 abstract
+4. **檢查 references/ 資料夾**：若有已下載全文，**必須讀取**
+5. **★ 直接寫入主文 ★**：用「關鍵文獻介紹」模板（每篇 6-10 句）寫入 agent 的 output 中
+6. **記錄索引**：同時更新 `references/key_references.md`
+
+### 關鍵文獻介紹模板（寫在主文中，每篇 6-10 句）
+
+```
+■ 關鍵文獻：[研究名稱]
+- **Citation**: [作者 et al., 期刊, 年份] (PMID: [number])
+- **研究設計**: [RCT/prospective cohort/registry/meta-analysis], N=[number]
+- **PICO**: P=[population], I=[intervention], C=[comparator], O=[primary outcome]
+- **主要發現**: [HR/OR/RR + 95% CI + p-value; absolute risk difference]
+- **次要發現**: [key secondary endpoints]
+- **為什麼支持此 recommendation 變更**: [1-2 句]
+- **主要限制**: [bias risk, generalizability, follow-up duration]
+- **Data source**: Full text / Abstract only
+```
 
 ### 優先查找的 reference 類型
 
-- ESTIMABL2 等 RCT（RAI 決策依據）
+- ESTIMABL2, HiLo, IoTA 等 RCT（RAI 決策依據）
 - NCDB/SEER registry 大型資料分析（手術範圍依據）
-- Active surveillance 世代研究（日本、韓國、西方資料）
+- Active surveillance 世代研究（Ito, Sugitani, Tuttle cohorts）
 - Meta-analyses on prophylactic CND
 - TSH suppression 心血管/骨質結果研究
-- 分子標記預後研究（BRAF, RAS, gene fusions）
+- 分子標記預後研究（BRAF, RAS, gene fusions, TCGA）
 - WHO 2022 甲狀腺腫瘤分類更新
 
-### 全文不可得時的處理
+### 全文在 references/ 中時
 
-若某篇關鍵 reference 無法取得全文：
-1. 記錄在 `references/fulltext_needed.md`，格式：
-   ```
-   - [PMID] [標題] [期刊] [年份]
-     WHY needed: [這篇支持哪個 recommendation 變更]
-     Status: abstract only / not available
-   ```
-2. 通知使用者：
-   > "📚 以下 reference articles 需要全文以完善分析，目前僅有 abstract：[列表]。請協助下載全文並放入 references/ 資料夾。"
-3. 繼續使用 abstract 進行分析，但在 output 中標註 confidence 為 Moderate 或 Low
+- **必須讀取全文**，補充方法學細節：randomization, blinding, endpoint definition, power calculation, ITT/mITT, missing data handling
+- 這些是 abstract 沒有的關鍵資訊
+
+### 全文不可得時
+
+1. 記錄在 `references/fulltext_needed.md`（附 Priority: High/Medium/Low）
+2. 繼續用 abstract 分析，在主文中標註「based on abstract only」
+3. 最終報告末尾統一列出需全文清單：
+   - ✅ 已分析（有全文）
+   - 📋 Abstract 足夠
+   - 🔴 仍需下載（附：原因、需看什麼部分、影響哪個 Rec、DOI/URL）
 
 ## Google Drive Sync
 

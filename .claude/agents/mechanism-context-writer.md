@@ -59,9 +59,9 @@ Provide the biological, epidemiologic, and conceptual context that helps explain
 - TSH suppression morbidity (bone loss, atrial fibrillation, quality of life) — **what cardiovascular outcome data?**
 - How these morbidities inform the de-escalation philosophy — **the calculus: marginal oncologic benefit vs definite treatment harm**
 
-## v1.2 Reference Article Research（關鍵 reference 查找）
+## v1.3 Reference Article Research（文獻整合進主文）
 
-作為 narrative architect，你需要查找支持 overarching conceptual narrative 的 landmark studies。
+作為 narrative architect，landmark studies 必須**直接引用在你的 Discussion 主文中**，不是放在另一個清單。
 
 ### 優先查找
 - 甲狀腺癌 overdiagnosis/overtreatment 綜述文獻（Welch, Davies, Ahn）
@@ -73,8 +73,14 @@ Provide the biological, epidemiologic, and conceptual context that helps explain
 
 ### 流程
 1. 用 WebSearch 搜尋 PubMed 取得 PMID 和 abstract
-2. 用 landmark study findings 支撐你的 conceptual narrative
-3. 記錄到 `references/key_references.md`
+2. 檢查 `references/` 有無已下載全文 → 如有，必須讀取
+3. **將 landmark study findings 直接寫入你的 narrative 段落中**，每篇 6-10 句：
+   - Citation（作者、期刊、年份、PMID）
+   - 研究設計、population、key findings（含數據）
+   - 為什麼這篇研究推動了 guideline 的方向性轉變
+   - Data source: Full text / Abstract only
+4. 索引記錄到 `references/key_references.md`
+5. Full text 不可得 → 記錄到 `references/fulltext_needed.md`
 
 ## Important Constraints
 
