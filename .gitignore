@@ -1,12 +1,15 @@
-# === Guideline full-text files (copyrighted) ===
+# Guidelines (PDF copyright)
 /guidelines/*.pdf
 /guidelines/*.md
 
-# === macOS ===
-.DS_Store
-*.swp
-*~
+# Project config (keep private)
+CLAUDE.md
+PROMPT_main_orchestration.md
+GOOGLE_DRIVE_SYNC.md
+README_SETUP.md
+run_ata_team.sh
+sync_to_gdrive.sh
+.claude/
 
-# === Temporary ===
-*.tmp
-*.log
+# System
+.DS_Store
