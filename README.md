@@ -1,16 +1,18 @@
-ATA 2015 vs 2025 甲狀腺癌指引比較分析
-專案簡介
-本專案系統性比較美國甲狀腺學會（ATA）2015 與 2025 版甲狀腺癌管理指引，產出結構化的臨床差異分析報告。
+# ATA 2015 vs 2025 甲狀腺癌指引比較分析
 
-每項重大變動均以三個層次進行分析：
+## 專案簡介
 
-Layer 1 — 改了什麼（Observation）：2015 vs 2025 的具體條文差異
-Layer 2 — 為什麼改（Rationale）：驅動變動的關鍵研究與證據
-Layer 3 — 臨床影響（Clinical Impact）：對臨床決策流程的實質影響
+本專案系統性比較 ATA 2015 與 2025 版甲狀腺癌管理指引，產出結構化臨床差異分析報告。
 
-文獻整合
-關鍵參考文獻分析直接整合進各 agent 的產出主文中（review article 風格），每篇文獻包含：PICO 設計、主要發現（HR/OR/CI/p-value）、臨床意義、研究限制。共整合 18 篇 fulltext PDF 進行深度分析。
-產出檔案
+### 三層分析架構
+
+- **Layer 1 — 改了什麼**：2015 vs 2025 具體條文差異
+- **Layer 2 — 為什麼改**：驅動變動的關鍵研究與證據
+- **Layer 3 — 臨床影響**：對臨床決策的實質影響
+
+### 文獻整合
+
+```
 outputs/
 ├── 01_executive_summary.md          # 執行摘要
 ├── 02_top10_practice_changing.md     # 十大臨床實務改變
@@ -22,12 +24,10 @@ outputs/
 ├── recommendation_diff.md            # 完整建議差異對照
 ├── scope_crosswalk.md                # 章節範疇交叉對照
 └── cross_validation_*.md             # 交叉驗證報告
-參考文獻
-references/ 包含 18 篇核心全文 PDF 及文獻索引，涵蓋：
+```
 
-ESTIMABL2（低風險 DTC 放射碘劑量）
-IoN Trial（lobectomy vs total thyroidectomy）
-WHO 2022 甲狀腺腫瘤分類
-Selpercatinib / Larotrectinib（標靶治療）
-pCND meta-analysis、ETE 定義、AJCC 分期等
+18 篇 fulltext PDF 直接整合進主文（review article 風格），含 PICO、HR/OR/CI/p-value。
 
+## 產出規模
+
+7,836 行繁體中文分析，涵蓋執行摘要、十大實務改變、比較矩陣、證據方法學、臨床實施、病理影像分子、討論理由等。
