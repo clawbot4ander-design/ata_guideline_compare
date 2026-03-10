@@ -10,6 +10,23 @@
 
 ---
 
+## 目錄索引（Table of Contents）
+
+- [本文件閱讀指引](#本文件閱讀指引)
+- [1. Lobectomy 適用範圍擴大至 ≤2 cm 為強力預設](#1-lobectomy-適用範圍擴大至-2-cm-為強力預設)
+- [2. 低風險 DTC 的 RAI：Strong/High Evidence 反對使用](#2-低風險-dtc-的-raistrong-high-evidence-反對使用)
+- [3. 預防性 CND：「Strong 推薦不做」（⚠️ 非 Conditional）](#3-預防性-cndstrong-推薦不做-非-conditional)
+- [4. 術後風險分層：3 級 → 4 級系統（RAI 和 TSH 決策精細化）](#4-術後風險分層3-級--4-級系統rai-和-tsh-決策精細化)
+- [5. TSH 抑制動態化：靜態 Initial Risk → Dynamic Response-to-Therapy](#5-tsh-抑制動態化靜態-initial-risk--dynamic-response-to-therapy)
+- [6. 監測終點定義：5–8 年 US，10–15 年「Complete Remission」](#6-監測終點定義58-年-us1015-年complete-remission)
+- [7. Active Surveillance 正式獲得背書（從 2015 R12 提升）](#7-active-surveillance-正式獲得背書從-2015-r12-提升)
+- [8. cT2（2–4 cm）的 Lobectomy：Conditional Preference（確定性較低）](#8-ct224-cm的-lobectomyconditional-preference確定性較低)
+- [9. RAI-Refractory DTC 的 Precision Oncology（突變特異性靶向治療）](#9-rai-refractory-dtc-的-precision-oncology突變特異性靶向治療)
+- [10. Completion Thyroidectomy 降級（Conditional 取代 Strong）](#10-completion-thyroidectomy-降級conditional-取代-strong)
+- [複合效應：病患旅程的轉型性改變](#複合效應病患旅程的轉型性改變)
+
+---
+
 ## 本文件閱讀指引
 
 每項變更包含以下面向：
