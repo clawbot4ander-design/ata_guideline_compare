@@ -3,39 +3,13 @@
 此檔案記錄分析過程中需要全文但目前僅有 abstract（或完全無法取得）的 reference articles。
 請使用者協助下載全文並放入 `references/` 資料夾。
 
-**Updated:** 2026-03-10 (all agents v1.3 complete)
+**Updated:** 2026-03-10 (v1.4 -- 9 previously listed items resolved; 2 remain)
+
+**v1.4 note:** The surgery-rai-risk-stratification-clinical agent directly read 9 PDFs from the `references/` folder that were previously listed here as "Abstract only." Those entries have been removed from this file and marked as resolved in `references/key_references.md`.
 
 ---
 
-## High Priority
-
-- **PMID 35263518** -- ESTIMABL2 Primary Results, N Engl J Med 2022
-  - WHY needed: Pivotal RCT for RAI omission in low-risk DTC (R32A change from Weak/Low to Strong/High)
-  - Need: randomization details, event definitions, subgroup analyses, per-protocol vs ITT results
-  - Status: Abstract only (NEJM subscription required)
-  - Priority: **High**
-  - DOI: 10.1056/NEJMoa2111953
-
-- **PMID 39586309** -- ESTIMABL2 5-Year Follow-Up, Lancet Diabetes Endocrinol 2025
-  - WHY needed: Long-term confirmation of RAI omission safety
-  - Need: late recurrence events, patterns of failure, subgroup by tumor features
-  - Status: Abstract only (Lancet subscription required)
-  - Priority: **High**
-  - DOI: 10.1016/S2213-8587(24)00276-6
-
-- **PMID 40543520** -- IoN Trial Primary Results, Lancet 2025
-  - WHY needed: Independent RCT confirmation of ESTIMABL2 (together = dual RCT evidence base)
-  - Need: inclusion criteria detail (N1a included?), sensitivity analyses, per-protocol population
-  - Status: Abstract only (Lancet subscription required)
-  - Priority: **High**
-  - DOI: 10.1016/S0140-6736(25)00629-4
-
-- **PMID 29488066** -- Chen et al. 2018 pCND Meta-Analysis, World J Surg
-  - WHY needed: Largest pCND meta-analysis (N=18,376); supports R19A against pCND
-  - Need: subgroup by tumor size (T1 vs T2), forest plots, heterogeneity analysis, sensitivity analysis
-  - Status: Abstract only
-  - Priority: **High**
-  - DOI: 10.1007/s00268-018-4547-4
+## High Priority (Still Needed)
 
 - **PMID 35288841** -- Baloch et al. 2022 WHO 5th Edition Overview, Endocr Pathol
   - WHY needed: Authoritative source for entire 2025 pathology classification framework (Table 3, Fig. 2)
@@ -43,85 +17,49 @@
   - Status: Abstract only (subscription required)
   - Priority: **High**
   - DOI: 10.1007/s12022-022-09707-3
+  - Affects: `outputs/06_pathology_imaging_molecular.md` Section 1A
 
 - **PMID 32846061** -- Wirth et al. 2020 Selpercatinib (LIBRETTO-001), N Engl J Med
-  - WHY needed: Core evidence for R68 RET-targeted therapy recommendation
-  - Need: RET fusion-positive thyroid cancer subgroup details, duration of response, PFS curves
+  - WHY needed: Core evidence for R68 RET-targeted therapy recommendation (Strong/Moderate)
+  - Need: RET fusion-positive thyroid cancer subgroup details, duration of response, PFS curves, safety
   - Status: Abstract only (NEJM subscription required)
   - Priority: **High**
   - DOI: 10.1056/NEJMoa2005651
+  - Affects: `outputs/06_pathology_imaging_molecular.md` Section 1B
 
-## Medium Priority
+---
 
-- **PMID 29426618** -- Rajjoub et al. 2018, Surgery
-  - WHY needed: Key counterpoint for lobectomy in T2 conventional PTC
-  - Need: adjustment variables, subgroup by histologic variant, survival curves
-  - Status: Abstract only
-  - Priority: **Medium**
-  - DOI: 10.1016/j.surg.2017.12.026
-
-- **PMID 24943236** -- Hauch et al. 2014, Ann Surg Oncol
-  - WHY needed: Source of "7.6% vs 14.5%" complication rates cited in 2025 guideline
-  - Need: complication definitions, surgeon volume thresholds, type of complications breakdown
-  - Status: Abstract only
-  - Priority: **Medium**
-  - DOI: 10.1245/s10434-014-3846-8
-
-- **PMID 30375260** -- Song et al. 2019, Thyroid
-  - WHY needed: Key propensity-matched analysis for lobectomy 1-4 cm
-  - Need: matching variables, sensitivity analysis, recurrence pattern details
-  - Status: Abstract only
-  - Priority: **Medium**
-  - DOI: 10.1089/thy.2018.0554
-
-- **PMID 34185343** -- Seejore et al. 2021, Clin Endocrinol
-  - WHY needed: Key evidence for surveillance de-escalation (R48)
-  - Need: time-to-recurrence distribution, Tg trajectory before structural recurrence
-  - Status: Abstract only
-  - Priority: **Medium**
-  - DOI: 10.1111/cen.14549
-
-- **PMID 34302730** -- Ku et al. 2021 BMD Meta-Analysis, JCEM
-  - WHY needed: TSH suppression bone morbidity evidence (R45-46)
-  - Need: fracture risk data (not just BMD), subgroup by suppression degree
-  - Status: Abstract only
-  - Priority: **Medium**
-  - DOI: 10.1210/clinem/dgab539
+## Medium Priority (Abstract Sufficient for Current Analysis)
 
 - **PMID 28438293** -- Shaha 2017, Oral Oncol
-  - WHY needed: MSKCC expert review on ETE prognostic insignificance; supports microscopic ETE demotion
+  - WHY: MSKCC expert review on ETE prognostic insignificance; supports microscopic ETE demotion
   - Status: Abstract only
-  - Priority: **Medium**
 
 - **PMID 29663333** -- Park et al. 2018, Br J Surg
-  - WHY needed: Strap muscle ETE prognostic data (T3b validation)
+  - WHY: Strap muscle ETE prognostic data (T3b validation)
   - Status: Abstract only
-  - Priority: **Medium**
 
 - **PMID 29672723** -- Tran et al. 2018, JCEM
-  - WHY needed: AJCC 7th vs 8th staging comparison for PTC
+  - WHY: AJCC 7th vs 8th staging comparison for PTC
   - Status: Abstract only
-  - Priority: **Medium**
 
 - **PMID 16534796** -- Ghossein et al. 2006, Cancer
-  - WHY needed: Landmark study establishing >=4 foci vascular invasion threshold
+  - WHY: Landmark study establishing >=4 foci vascular invasion threshold
   - Status: Abstract only
-  - Priority: **Medium**
 
 - **PMID 36031639** -- Leong et al. 2022, World J Surg
-  - WHY needed: Validation of >=4 foci threshold with HR data in 292 FTC cases
+  - WHY: Validation of >=4 foci threshold with HR data in 292 FTC cases
   - Status: Abstract only
-  - Priority: **Medium**
 
 - **PMID 35491160** -- Ito et al. 2022, Endocr J
-  - WHY needed: Continuous gradient model for vascular invasion risk in FTC
+  - WHY: Continuous gradient model for vascular invasion risk in FTC
   - Status: Abstract only
-  - Priority: **Medium**
 
 - **PMID 35171708** -- Groussin et al. 2022, Thyroid
-  - WHY needed: Larotrectinib redifferentiation case series; supports R78
+  - WHY: Larotrectinib redifferentiation case series; supports R78
   - Status: Abstract only
-  - Priority: **Medium**
+
+---
 
 ## Low Priority (Abstract Sufficient)
 
@@ -133,7 +71,27 @@
 
 ---
 
-## Already Available (Full Text)
+## Resolved in v1.4 (Previously Listed Here -- Now Full Text)
+
+The following 9 articles were listed as "Abstract only" in v1.3 and have been resolved by direct PDF reading in the v1.4 surgery-rai-risk-stratification-clinical agent session:
+
+| PMID | Article | PDF Filename | Read in v1.4 |
+|------|---------|--------------|--------------|
+| 35263518 | ESTIMABL2 primary (NEJM 2022) | PMID_35263518_NEJMoa2111953.pdf | Yes |
+| 40543520 | IoN Trial (Lancet 2025) | PMID_40543520_1-s2.0-S0140673625006294.pdf | Yes |
+| 39586309 | ESTIMABL2 5-year (Lancet DE 2025) | PMID_39586309_1-s2.0-S2213858724002766.pdf | Yes |
+| 29488066 | Chen pCND meta-analysis (WJS 2018) | PMID_29488066_chen2018.pdf | Yes |
+| 29426618 | Rajjoub NCDB (Surgery 2018) | PMID_29426618_rajjoub2018.pdf | Yes |
+| 24943236 | Hauch NIS (ASO 2014) | PMID_24943236_hauch2014.pdf | Yes |
+| 30375260 | Song propensity-matched (Thyroid 2019) | PMID_30375260_song2019.pdf | Yes |
+| 34185343 | Seejore DRS (Clin Endocrinol 2021) | PMID_34185343_seejore2021.pdf | Yes |
+| 34302730 | Ku BMD meta-analysis (JCEM 2021) | PMID_34302730_dgab539.pdf | Yes |
+
+Full-text methodology details from all 9 are now integrated in `outputs/05_clinical_implementation.md` (v1.4).
+
+---
+
+## Already Available Full Text (Reference)
 
 ### Surgery/RAI/Surveillance Domain
 - PMID 25203876 -- Adam 2014 (PMC4532384)
@@ -148,7 +106,7 @@
 - PMID 38149602 -- Tran 2024 competing risk (PMC10884550)
 - PMID 36733809 -- Wang Y 2023 pCND meta-analysis (PMC9886572)
 
-### Pathology/Molecular Domain (NEW in v1.3)
+### Pathology/Molecular Domain
 - PMID 27078145 -- Nikiforov 2016 NIFTP (PMC5539411)
 - PMID 36964880 -- Basolo 2023 WHO practical (PMC10199828)
 - PMID 26122000 -- Wang 2015 margins/ETE MSKCC (PMC4968280)

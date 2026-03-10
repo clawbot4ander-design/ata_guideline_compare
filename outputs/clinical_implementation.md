@@ -1,12 +1,11 @@
 # Redirect Notice
 
-This file has been superseded by `05_clinical_implementation.md` (v1.3).
+This file has been superseded by `05_clinical_implementation.md` (v1.4).
 
 Please refer to **`outputs/05_clinical_implementation.md`** for the current version, which includes:
-- v1.3 reference article integration directly into Layer 2 text
+- v1.4 full-text reference integration (18 PDFs directly read)
 - Traditional Chinese (zh-TW) with English medical terms preserved
-- 9 clinical workflows (expanded from 7)
-- 22 key reference articles analyzed with PICO/HR/CI/p-value
-- Cross-validation corrections incorporated
-
-The old English v1.1 content previously in this file has been archived.
+- 7 core clinical workflows with complete Three-Layer analysis
+- All key reference articles with full-text methodology details
+- v1.3 cross-validation corrections incorporated
+- IoN Trial, ESTIMABL2 5-year, Chen pCND, Rajjoub, Song, Hauch, Seejore, Ku — all full-text verified

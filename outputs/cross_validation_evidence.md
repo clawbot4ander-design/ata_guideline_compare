@@ -1,393 +1,444 @@
-# 交叉驗證報告（Evidence 觀點）
+# 交叉驗證報告（Evidence 觀點）— v1.4 版
 
-**Generated:** 2026-03-10 (v1.3 upgrade)
-**Agent:** methods-evidence-appraiser v1.3（cross-validation mode）
-**Status:** Complete
-**Scope:** Top 5 highest-impact conclusions from recommendation_diff.md and recommendation_diff_table.md
-**驗證對象:** recommendation-diff-analyst v1.3 output
-
----
-
-## 驗證方法說明
-
-本次交叉驗證是 v1.3 升級後的完整重新驗證。與 v1.1 初次交叉驗證（已存檔）不同，本次特別關注：
-
-1. **v1.1 已識別的 5 項修正是否被採納** -- 逐項追蹤
-2. **v1.3 新增的關鍵文獻介紹 (key reference) 是否準確** -- PMID 驗證、數據準確性
-3. **Layer 2 rationale 品質是否因文獻整合而提升**
-4. **Compounding effects（de-escalation cascade）的完整性**
-
-驗證依據：
-- 2015 guideline 全文（.md）
-- 2025 guideline 全文（.md）
-- 04_evidence_methodology.md（本 agent 自己的證據分析）
-- references/key_references.md + 各 temp 文件
-- PubMed WebSearch 驗證 PMID 和關鍵數據
+**生成日期：** 2026-03-10（v1.4 升級版）
+**Agent：** methods-evidence-appraiser v1.4（cross-validation mode）
+**狀態：** 完整版
+**驗證範圍：** recommendation_diff.md v1.4 + recommendation_diff_table.md v1.4 的前五大高影響結論
+**驗證依據：** 2015/2025 guideline 全文（.md）、IoN Trial 全文 PDF（PMID 40543520）、ESTIMABL2 全文
 
 ---
 
-## v1.1 已識別修正項的追蹤狀態
+## 一、驗證方法說明
 
-| # | v1.1 修正項 | v1.3 是否已修正 | 說明 |
-|---|-----------|---------------|------|
-| 1 | cT2 lobectomy 分類為 "Stronger recommendation" 有誤 | **部分修正** | 主文 Layer 1 已改為 "Stronger directional preference" 並註明 "強度實際降低"；但摘要表 Row 2 仍標為 "Stronger directional preference (for lobectomy)"，且 Change Type 和 Impact 的文字描述仍帶有 "shifts default from equipoise to lobectomy preference" 的措辭，未充分傳達 lower certainty 的關鍵訊息 |
-| 2 | Active surveillance 在 2015 R12（nodule section）已存在 | **已修正** | v1.3 Layer 1 明確標註 "Not addressed in DTC section (mentioned in nodule R12 as future research)"；摘要表也正確標示。這是正確的處理方式。 |
-| 3 | 2015 R51B 對 microPTC 已是 Strong/Moderate | **未修正** | v1.3 主文和摘要表仍將 RAI 在低風險 DTC 的變更統一描述為 "Weak/Low -> Strong/High"，未區分 R51A（整體低風險，Weak/Low）和 R51B（unifocal microPTC，Strong/Moderate）。這意味著 RAI 證據升級對 microPTC 的幅度被高估。 |
-| 4 | pCND Wang 2013 meta-analysis CI crosses 1.0 | **已修正** | v1.3 主文在 Wang TS 2013 的關鍵文獻欄中明確標註 "CI crosses 1.0" 且列為主要限制。 |
-| 5 | Compounding effects（lobectomy + no RAI + no TSH suppression cascade）需充分討論 | **已修正** | v1.3 新增獨立的 "Compounding Effects Analysis" 段落和 "De-escalation Cascade" 表格，完整描述了從 lobectomy 到 complete remission 的六步 cascade。 |
+本次交叉驗證（v1.4）聚焦於以下四個維度：
 
-### 總結：5 項修正中 3 項完全修正、1 項部分修正、1 項未修正。
+1. **Recommendation strength / evidence quality 的文字精確性** — 直接比對 guideline 原文
+2. **關鍵 reference article 數值的準確性** — 對照 PDF 全文
+3. **v1.3 交叉驗證尚未修正的遺留問題** — 逐項追蹤
+4. **v1.4 新加入的 PDF 全文分析是否引入新錯誤**
 
----
-
-## 驗證結果總覽
-
-| 結論 | Layer 1 準確性 | Layer 2 品質 | Layer 3 影響評估 | 需修正 | 信心 |
-|------|-------------|------------|---------------|------|------|
-| 1. Lobectomy <=2cm 擴大（R15A） | 準確 | 高 -- 文獻整合完整 | 準確 | 否 | High |
-| 2. cT2 lobectomy preference（R15B） | 部分準確 | 中高 -- 正反證據均有呈現 | 稍高估 | 是（分類和 certainty 表述） | Moderate |
-| 3. RAI low-risk Strong/High（R32A） | 準確 | 高 -- RCT 引用正確 | 準確 | 是（未區分 R51B） | High |
-| 4. pCND "should not"（R19A） | 準確 | 高 -- CI 問題已修正 | 準確 | 否 | High |
-| 5. Risk 3-tier -> 4-tier（R28） | 準確 | 高 | 準確 | 微調（boundary uncertainty） | High |
+驗證方法：逐句比對 2025 guideline .md 全文中的 recommendation 原始措辭和標記的 strength/certainty。特別重點驗證 IoN Trial PDF（PMID 40543520）關鍵數值，因本次 v1.4 宣稱已整合此全文。
 
 ---
 
-## 逐項驗證
+## 二、v1.3 已識別修正項追蹤（5 項）
 
-### 結論 1：Lobectomy 適用範圍擴大至 <=2 cm（R15A vs R35C）
+| # | v1.3 修正項目 | v1.4 是否已修正 | 狀態說明 |
+|---|------------|--------------|---------|
+| 1 | cT2 lobectomy：Change Type 仍用 "Stronger directional preference" | **未修正** | v1.4 recommendation_diff_table.md Row 1.2 改 Change Type 為 "wording clarification + narrowed indication" 並標示 "SDM 要求"，但主文仍有「降低 TT 默認」措辭，與 Conditional/Low 的實質意義不完全吻合 |
+| 2 | Active surveillance 2015 R12 已存在 | **已修正並維持** | v1.4 正確標示 "broadened indication + stronger recommendation"（從邊緣 WR/Lo 到主流 CR/Mo） |
+| 3 | 2015 R51B microPTC 已是 Strong/Moderate | **未修正** | v1.4 主文和摘要表仍未區分 R51A（Weak/Lo）與 R51B（Strong/Mo）的不同基線 |
+| 4 | Wang 2013 meta-analysis CI crosses 1.0 | **已修正並維持** | v1.4 recommendation_diff.md 明確標注 "Wang meta-analysis CI 跨越 1.0（衝突）" |
+| 5 | Compounding effects 未充分討論 | **已修正並維持** | v1.4 discussion_rationale.md 第 3.2 節完整討論複合降階路徑問題 |
 
-#### Layer 1 準確性：正確
-
-- 2015 R35C 原文："If surgery is chosen for patients with thyroid cancer <1 cm without extrathyroidal extension and cN0, the initial surgical procedure should be a thyroid lobectomy..." (Strong/Moderate) -- **已對照 2015 guideline 全文，完全正確**
-- 2025 R15A 原文："When resection is performed for patients with thyroid cancer <=2 cm without gross extra-thyroidal extension (cT1) and without metastases (cN0M0), the initial surgical procedure should be a thyroid lobectomy..." (Strong/Moderate certainty) -- **已對照 2025 guideline 全文，完全正確**
-- Change Type "Broadened indication" -- **正確**
-- 推薦強度和證據品質均維持不變（Strong/Moderate -> Strong/Moderate）-- **正確**
-
-#### Layer 2 證據基礎：高品質
-
-v1.3 的文獻整合品質顯著提升：
-
-1. **Adam 2014 (PMID: 25203876)** -- PMID 正確；N=61,775 正確；HR=0.96 (P=0.54) 正確。研究設計描述準確。
-2. **Bojoga 2020 (PMID: 32708218)** -- PMID 正確；N=175,430 正確；四項 outcome 數據均正確（RR 1.10, 0.99, 0.96, 1.01）。
-3. **Hauch 2014 (PMID: 24943236)** -- PMID 正確；complication rate 14.5% vs 7.6% 正確。數據來源標註 "Abstract only" 正確。
-
-Guideline 原文引用（p.862-863）準確反映了原始 rationale。特別是「approximately half showing no difference...The other approximate half demonstrate statistically significant, lower recurrence rates」的引文精準反映了 guideline 的 balanced assessment。
-
-**一項需要補充的 nuance**：diff-analyst 在主文中有提到 counterpoint（Rajjoub 2018），但未明確指出 guideline 自身認為 <=2 cm 的證據一致性遠高於 2-4 cm，這是為何 R15A 獲得 Strong/Moderate 而 R15B 僅獲 Conditional/Low-moderate 的關鍵區分點。
-
-#### Layer 3 影響評估：準確
-
-- HIGH 影響等級合理 -- 確實影響最大比例新診斷 DTC 患者
-- "30-40% 新診斷 DTC" 的估計合理
-- "70-80% 避免終身 LT4" 的數據與 guideline 討論一致
-
-**建議修正：** 無需修正。整體準確，文獻整合完整。
+### 結論：5 項中 3 項維持修正（項目 2、4、5），2 項仍未修正（項目 1、3）。
 
 ---
 
-### 結論 2：cT2 Lobectomy Preference（R15B vs R35B）
+## 三、v1.4 新發現的重大錯誤（最高優先）
 
-#### Layer 1 準確性：部分修正但仍有問題
+本次 v1.4 驗證發現 **3 個之前版本均未發現的重大錯誤**，這些錯誤涉及對 guideline 原文的直接錯誤引用，需要立即修正。
 
-**已改善的部分：**
-- v1.3 主文 Layer 1 將 Change Type 從 v1.1 的 "Stronger recommendation" 改為 "Stronger directional preference (for lobectomy)"
-- 明確註記 "強度實際降低，但方向性更傾向 lobectomy"
-- 正確記錄 Strong -> Conditional 的強度降低和 Moderate -> Low-moderate 的證據品質降低
+---
 
-**仍存在的問題：**
+### 重大錯誤 #1：R19A（pCND）推薦強度錯誤標示
 
-1. **摘要表 Row 2 的 Change Type** 標示為 "Stronger directional preference (for lobectomy)"。雖然比原來的 "Stronger recommendation" 好，但術語仍具誤導性。一個從 Strong 降至 Conditional 的 recommendation 不應使用 "Stronger" 一詞，即使方向性有所偏移。更精確的分類應為 **"Reframed recommendation: directional shift toward lobectomy at lower certainty"** 或類似用語。
+**錯誤位置：**
+- `recommendation_diff_table.md` Row 3.1：「R19A：...『not recommended as routine』；**CR against, Lo**」
+- `recommendation_diff.md` Priority Topic 3 Layer 1：「2025 Recommendation 19A（**Conditional recommendation, Low certainty evidence**）」
 
-2. **Impact 列** 的描述 "shifts default from equipoise to lobectomy preference" 仍過度簡化。2025 guideline R15B 的完整原文包含重要保留語：
-   > "However, the patient and treatment team **may adopt** total thyroidectomy to enable RAI administration and/or enhance follow-up based on disease features, suspicious contralateral nodularity, and/or patient preferences."
+**實際 2025 Guideline 原文（已對照全文第 1470 行）：**
+> "Prophylactic central-compartment lymph node dissection should not be performed for most small, noninvasive, clinically node-negative PTC (cT1-T2, cN0) and for most FTCs. (**Strong recommendation, Moderate certainty evidence**)"
 
-   這不是一個明確的 "default shift"，而是一個「在 SDM 框架下的方向性建議」。
+**錯誤程度：** 嚴重。Conditional/Low 與 Strong/Moderate 是完全不同的推薦等級。
 
-3. **Confidence 評級** 標為 "High"。鑒於 guideline 自身承認約半數 meta-analyses 支持 total thyroidectomy 有較低的 recurrence rate，且一項 meta-analysis 發現 T2 tumors 的 OS advantage 限於 conventional PTC，confidence 應降為 **Moderate**。
+**正確事實：**
+- 2015 R36B（pCND for T3/T4 or cN1 lateral, cN0）：Weak recommendation, Low-quality evidence
+- 2015 R36C（no pCND for T1/T2, noninvasive, cN0）：Weak recommendation, Low-quality evidence
+- 2025 R19A（pCND should NOT be performed for T1/T2, cN0）：**Strong recommendation, Moderate certainty evidence**
 
-#### Layer 2 證據基礎：中高品質
+**實際改變幅度：** 這使得 pCND 的降階更為顯著：不是從 Weak 推薦降為 Conditional 反對，而是從 Weak 推薦（或弱許可）**躍升為 Strong recommendation AGAINST**。2025 guideline 對 cT1/T2 cN0 不做 pCND 的立場，在推薦強度上是「升級」（從 Weak 到 Strong），只不過方向是反對（against）。
 
-v1.3 文獻整合有改善：
-1. **Rajjoub 2018 (PMID: 29426618)** -- 正確標示為 counterpoint；N=33,816 正確。
-2. **Song 2019 (PMID: 30375260)** -- HR=1.35 (P=0.33) 正確。
+**對 Change Type 的影響：** 2015 有 R36C 已說明 T1/T2 cN0「without pCND is appropriate」（Weak），2025 將此升格為 Strong recommendation AGAINST。此應標示為 **"stronger recommendation against"（更強的反對推薦）**，而非 "weaker recommendation"。
 
-**但缺少一個重要的 counterpoint 參考文獻**：diff-analyst 引用了 guideline 的 "only one meta-analysis found improved overall survival" 但未標註此 meta-analysis 的具體出處（Zhang 2020，對應 guideline reference 340）。對於影響 T2 決策的唯一 survival data，應該作為完整文獻介紹。
-
-#### Layer 3 影響評估：稍高估
-
-- "HIGH" 的評級有商榷空間。R15B 是 Conditional/Low-moderate，guideline 自身不確定性很高。
-- 更精確的評估：**HIGH for clinical decision-making paradigm（改變了對話方式），Moderate for actual practice change（因為 SDM 允許 total thyroidectomy 仍被選擇）**
+**對 Layer 2 Confidence 的影響：** 維持 High，但需修正推薦強度描述。
 
 **建議修正：**
-1. Change Type 改為 "Reframed recommendation" 或 "Directional shift at lower certainty"
-2. 將 "shifts default from equipoise to lobectomy preference" 修改為 "introduces directional preference for lobectomy within SDM framework, at lower certainty than 2015 equipoise statement"
-3. Confidence 降為 Moderate
-4. 補充 Zhang 2020 meta-analysis 的關鍵文獻介紹
+```
+2025 R19A 正確強度：Strong recommendation, Moderate certainty evidence
+Change Type：stronger recommendation against（從 Weak 許可→Strong 反對）
+Evidence Driver：meta-analysis 量化併發症 + 無 RCT 存活效益
+```
 
 ---
 
-### 結論 3：RAI in Low-Risk DTC -- Weak/Low to Strong/High（R32A vs R51A）
+### 重大錯誤 #2：IoN Trial 對照組（ablation 組）5 年 RFS 數值錯誤
 
-#### Layer 1 準確性：正確但不完整
+**錯誤位置：**
+- `recommendation_diff.md` 第 485 行：「5 年 RFS：no ablation **97.9%**（95% CI 96.1–99.7）vs ablation **97.9%**（95% CI 96.1–99.7）」
+- `recommendation_diff_table.md` Row 5.1：同樣的數字
+- `discussion_rationale.md` 第 73 行：「5 年 RFS：no ablation 97.9%（95% CI 96.1–99.7）vs ablation 97.9%（95% CI 96.1–99.7）」
+- `evidence_methodology.md` 第 114 行：「5-year RFS：no ablation 97.9%（95% CI 96.1–99.7）vs ablation **96.3%**（95% CI 93.9–98.7）」（evidence_methodology.md 已正確記錄）
 
-2015 R51A -> 2025 R32A 的對應正確：
-- 2015 R51A："RAI remnant ablation is not routinely recommended after thyroidectomy for ATA low-risk DTC patients" (Weak/Low) -- **已驗證**
-- 2025 R32A："Remnant ablation is not recommended routinely after total thyroidectomy for patients with ATA low-risk DTC" (Strong/High) -- **已驗證**
+**實際 IoN Trial 全文數值（已核對 Lancet 2025;406:52-62 PDF）：**
+- ITT 分析：No ablation 97.9%（95% CI 96.1–99.7）vs Ablation **96.3%**（95% CI 93.9–98.7）
+- Per-protocol 分析：No ablation 97.9%（95% CI 96.1–99.7）vs Ablation **96.9%**（95% CI 94.7–99.1）
+- 5 年絕對風險差異：0.5 個百分點（95% CI -2.2 to 3.2）；p_non-inferiority=0.033（ITT）
 
-**仍未修正的問題（v1.1 修正項 #3）：**
+**錯誤程度：** 中等。97.9% 是 no-ablation 組的數值被重複引用到 ablation 組，造成兩組看起來完全相同。實際上兩組的點估計確實非常接近（差 1.6 個百分點，ITT），非劣效性結論不受影響。但準確引用對比數字（97.9% vs 96.3%）更能如實反映試驗結果。
 
-2015 R51 實際包含多個 sub-parts，其中對 microPTC 的態度已經很強：
+**注意：** `evidence_methodology.md`（v1.4 第 114 行）中正確記載了 96.3%，說明 methods-evidence-appraiser 的原始分析是正確的，但在 recommendation_diff.md 整合時發生了數值複製錯誤。
 
-| Sub-part | 適用族群 | 推薦強度/證據品質 |
-|----------|---------|----------------|
-| R51A | ATA low-risk DTC（整體） | Weak/Low |
-| R51B | Unifocal papillary microcarcinoma | **Strong/Moderate** |
-| R51C | Multifocal papillary microcarcinoma | Weak/Low |
+**IoN Trial 非劣效性確立的完整正確數值：**
 
-因此，從 Weak/Low 到 Strong/High 的升級**對 R51A 的適用人群（broader low-risk）最為顯著**。但對 unifocal microPTC 而言，2015 已經是 Strong/Moderate against RAI，升級幅度較小（僅證據品質從 Moderate 升至 High）。
+| 分析人群 | No Ablation 5yr RFS | Ablation 5yr RFS | HR | 90% CI | p_non-inferiority |
+|--------|--------------------|-----------------|----|--------|------------------|
+| ITT（N=504） | 97.9%（96.1–99.7） | 96.3%（93.9–98.7） | 0.84 | 0.38–1.87 | 0.033 |
+| Per-protocol（N=480） | 97.9%（96.1–99.7） | 96.9%（94.7–99.1） | 1.03 | 0.44–2.42 | 0.093 |
 
-diff-analyst 在主文和摘要表中均未做此區分，使得 evidence upgrade 對 microPTC 亞群的幅度被高估。
+**重要方法論細節（來自全文 PDF）：**
+- Non-inferiority 基於 ITT 分析（p=0.033，達標）
+- Per-protocol 分析未達 pre-specified non-inferiority threshold（p=0.093），但試驗方案規定以 ITT 為主要分析
+- 統計方法使用 Kaplan-Meier + regression standardisation 計算絕對風險差異
+- 5 年絕對差異 0.5%（95% CI -2.2 to 3.2）：上限 3.2 尚在 5% 非劣效性界限內
 
-#### Layer 2 證據基礎：高品質
-
-v1.3 的 RCT 文獻整合是整份報告中最出色的部分：
-
-1. **ESTIMABL2 primary (PMID: 35263518)** -- PMID 已驗證；N=730 (from 776)正確；event-free rate 95.6% vs 95.9% 正確；non-inferiority margin -5% 正確。
-2. **ESTIMABL2 5-year (PMID: 39586309)** -- PMID 已驗證（PubMed 確認）；93.2% vs 94.8% 正確。
-3. **IoN trial (PMID: 40543520)** -- PMID 已驗證（PubMed 確認為 Lancet 2025;406:52-62）；N=504 正確；97.9% vs 96.3% 正確。
-4. **Kim 2023 (PMID: 36821433)** -- PMID 正確；HR 1.08 per increment 正確；N=217,777 正確。
-
-**一個需要指出的 nuance**：IoN trial 的納入標準比 ESTIMABL2 更寬鬆，包含了部分 N1a 患者（pT1-pT3a, N0/Nx/**N1a**）。diff-analyst 在主文中確實提到這點（"Included some N1a patients"），但未充分強調其意義 -- IoN 的結果可能可以推廣到部分 intermediate-risk（N1a）患者，這超越了 R32A 的嚴格適用範圍。
-
-#### Layer 3 影響評估：準確
-
-- HIGH 完全合理 -- 這是整份 guideline 中證據基礎最強的單一變更
-- "40-50% 所有 DTC" 的受影響估計合理
-- 二次惡性腫瘤風險的量化（Kim 2023）為 harm side 提供了具體數據
-
-**建議修正：**
-1. 在主文和摘要表中區分 R51A（Weak/Low）與 R51B（Strong/Moderate）的差異
-2. 補充說明：「對 unifocal microPTC 而言，2015 R51B 已是 Strong/Moderate，故 evidence upgrade 的幅度主要體現在更廣泛的 low-risk 族群」
-3. 加註 IoN trial 納入 N1a 患者的潛在推廣意義
+**建議修正：** 所有引用 IoN trial 5 年 RFS 的位置，ablation 組應改為 96.3%（ITT）或 96.9%（per-protocol），並附上分析人群說明。
 
 ---
 
-### 結論 4：Prophylactic CND -- "Appropriate" to "Should Not"（R19A vs R36C）
+### 重大錯誤 #3：R32B（中間風險 RAI）evidence quality 錯誤標示
 
-#### Layer 1 準確性：正確
+**錯誤位置：**
+- `recommendation_diff.md` Priority Topic 5.2 Layer 1：「2025 Recommendation 32（Conditional recommendation, **Moderate certainty evidence** [for intermediate risk]）」
+- `recommendation_diff_table.md` Row 5.2：「Low-intermediate → RAI 通常不建議（CR against）；intermediate-high → RAI 建議（CR for）；**Mo**」
 
-- 2015 R36C 原文已驗證：「Thyroidectomy without prophylactic central neck dissection is appropriate for small (T1 or T2), noninvasive, clinically node-negative papillary thyroid carcinoma.」（Weak/Low）
-- 2025 R19A 原文已驗證：「Prophylactic central-compartment lymph node dissection should not be performed for most small, noninvasive, clinically node-negative PTC (cT1-T2, cN0) and for most FTCs.」（Strong/Moderate）
+**實際 2025 Guideline 原文（已對照全文第 2094 行）：**
+> "B. RAI adjuvant therapy may be considered after total thyroidectomy in patients with ATA low-intermediate and intermediate-high risk of recurrent DTC. (**Conditional recommendation, Low certainty evidence**)"
 
-**一個措辭精確度的觀察**：diff-analyst 在主文中將 R19A 簡化為 "Prophylactic CND should not be performed for most patients with T1-T2 cN0 PTC"。實際 R19A 原文使用的是 "most **small, noninvasive**, clinically node-negative PTC"。限定詞 "small" 和 "noninvasive" 在原文中明確存在，不應省略。同時，R19A 也包含了 FTC（"and for most FTCs"），diff-analyst 在摘要表中未提及。
+**錯誤程度：** 中等。Moderate 與 Low 是相鄰等級，但代表不同的證據強度評估。guideline 明確標示 R32B 為 Low certainty，反映了中間風險 RAI 的證據確實不足（無 RCT，主要依賴 retrospective 資料）。
 
-#### Layer 2 證據基礎：高品質，v1.1 修正已採納
+**R32 完整正確的推薦強度：**
+| Sub-part | 適用族群 | 推薦強度 | 證據品質 |
+|----------|---------|---------|---------|
+| R32A | ATA low-risk DTC | Strong against | **High** |
+| R32B | Low-intermediate + Intermediate-high | Conditional（may be considered） | **Low** |
+| R32C | ATA high-risk DTC | Strong for | Moderate |
+| R32D | Distant metastases | Strong for | Moderate |
 
-v1.3 最重要的改進是明確標註 Wang TS 2013 meta-analysis 的 CI crosses 1.0：
+**對 Layer 2 影響：** R32B 為 Low certainty 進一步支持「中間風險 RAI 決策以 SDM 為主，缺乏足夠的 RCT 指引」，這比 Moderate certainty 更能反映真實的不確定性。IoN trial 的 pT2 subgroup（N1a 各組 22–24 人）太小，不足以獨立支持 Moderate certainty 評級。
 
-1. **Chen 2018 (PMID: 29488066)** -- N=18,376, OR 0.65 for LRR, OR 2.23 for transient hypocalcemia, OR 2.22 for permanent hypocalcemia -- **所有數據均已對照 2025 guideline 原文驗證**
-2. **Wang TS 2013 (PMID: 23846784)** -- RR 0.59 (CI 0.33-1.07), NNT=31 -- **已驗證**。diff-analyst 正確標註 "CI crosses 1.0"，這是 v1.1 修正項 #4 的完整採納。
-3. **Wang Y 2023 (PMID: 36733809)** -- 通過 PubMed 驗證：permanent hypocalcemia OR 4.24 正確。但需補充一個重要 nuance：**95% CI 為 1.05-17.22，極度寬泛**，剛好通過統計顯著性門檻（P=0.043）。OR 4.24 的點估計看似驚人，但精確度很低。diff-analyst 在主文中未提及此 CI 的寬度，可能導致讀者高估此結果的穩健性。
-
-#### Layer 3 影響評估：準確
-
-- HIGH 合理 -- 影響 70-80% PTC 手術的範圍決策
-- 從被動語態（"不做也可以"）到主動禁止（"不應該做"）的語氣轉變是實質性的
-- 合理指出 pCND 發現的 microscopic N1a 可能導致不必要的 RAI upstaging
-
-**建議修正：**
-1. 補充 Wang Y 2023 OR 4.24 的 95% CI（1.05-17.22）-- 這個 CI 極寬，影響結論穩健性
-2. 在 R19A 引用中保留 "small, noninvasive" 和 "and for most FTCs" 的限定詞
-3. 加註 2025 guideline 原文中 "all these studies suggest equipoise when considering a pCLND, especially with T3 and T4 tumors" 的重要語句
+**建議修正：** R32B 證據品質應從 "Moderate certainty" 更正為 **"Low certainty evidence"**，與 2025 guideline 原文一致。
 
 ---
 
-### 結論 5：Risk Stratification 三層 -> 四層（R28 vs R48）
+## 四、v1.3 遺留問題（中優先）
 
-#### Layer 1 準確性：正確
+### 遺留問題 #1：2015 R36B 範圍描述不準確
 
-- 2015 R48 三層系統已驗證（Low/Intermediate/High, Strong/Moderate）
-- 2025 R28 四層系統已驗證（Low/Low-Intermediate/Intermediate-High/High, Strong/Moderate）
-- Change Type "Replaced framework" 正確
-- 推薦強度和證據品質均維持 Strong/Moderate -- 正確
+**問題：** `recommendation_diff_table.md` Row 3.1 描述「2015 R36B：cT3/T4 或 cN+ lateral 的 cN0 患者可行 pCND（'may be performed'）」，並標示為比較基準，但忽略了 2015 同時存在 **R36C**：
 
-#### Layer 2 證據基礎：高品質
+**2015 R36C 原文（已對照全文第 2146-2148 行）：**
+> "Thyroidectomy without prophylactic central neck dissection is appropriate for small (T1 or T2), noninvasive, clinically node-negative papillary thyroid carcinoma."
+> **(Weak recommendation, Low-quality evidence)**
 
-- Guideline 原文（p.874）關於 intermediate 類別異質性的引用正確
-- AJCC 8th edition 的影響（microscopic ETE 從 T3 移除）描述正確
-- Vascular invasion 分級（>=4 foci threshold）的引用正確
+**影響：** 2015 guideline 並非對 cT1/T2 cN0 患者「允許 pCND」，而是明確說明「不做 pCND 是合理的（appropriate）」。因此，2025 R19A 的改變不是從「允許 pCND」到「不建議 pCND」，而是從「不做 pCND 是合理的（Weak, Lo）」升格為「不應該做 pCND（**Strong, Moderate**）」。
 
-**一個 v1.1 遺留的 nuance 仍需強調**：
+**這對解讀變更幅度至關重要**：
+- 不是「許可 → 禁止」（適度改變）
+- 而是「弱推薦不做 → 強推薦不做」（力度升級，方向一致）
 
-2025 guideline Figure 2 的腳註明確承認：「No clear cutoffs for LNs between low-intermediate and high-intermediate risk groups.」diff-analyst 在主文中未引用此 disclaimer。四層系統的邊界仍有專家判斷成分，不完全是 evidence-based 的 cutoff。v1.3 的主文未增加此 nuance。
-
-**另一個重要但被忽略的 nuance**：
-
-四層系統對不同組織型別（PTC vs FTC/IEFVPTC vs OTC）有不同的分類標準。例如：
-- PTC low-risk 允許 microscopic ETE
-- FTC low-risk 要求 "minimally invasive: capsular invasion only"
-- OTC 的分類標準與 FTC 不同
-
-diff-analyst 將四層系統視為統一框架，未反映此組織型別差異。
-
-#### Layer 3 影響評估：準確
-
-- HIGH 合理 -- 影響整個下游決策鏈（RAI、TSH、surveillance）
-- 正確指出 microscopic N1a 被降級至 low-intermediate 的重要意義
-- "影響 DTC 30-40%" 的估計合理
-
-**建議修正：**
-1. 加引 Figure 2 腳註關於 boundary uncertainty 的 disclaimer
-2. 補充不同組織型別的分類差異說明
-3. 強調四層系統的 cutoff（<10%, 10-15%, 16-30%, >30%）主要基於 retrospective estimates，尚無前瞻性驗證
+**建議修正：** 在比較 Row 3.1 中，應同時引用 2015 R36B（T3/T4 或 cN1 可考慮 pCND）AND 2015 R36C（T1/T2 cN0 不做 pCND 為合理），以完整呈現 2015 年的立場。
 
 ---
 
-## 新發現的問題
+### 遺留問題 #2：Active surveillance R11 適用範圍誤述
 
-### 問題 1：v1.3 文獻引用的語言不一致
+**問題：** `recommendation_diff_table.md` Row 8.1 描述「2025 R11：active surveillance 為所有低風險 papillary microcarcinoma 的標準選項；1–2 cm 低風險腫瘤亦可考慮」
 
-v1.3 的主文（recommendation_diff.md）使用**簡體中文**撰寫，違反 CLAUDE.md 的明確語言要求（「所有 output 檔案一律使用繁體中文（zh-TW）書寫」）。所有「关键文献」「变动说明」「发现」等用語均為簡體。摘要表（recommendation_diff_table.md）同樣存在此問題。
+**實際 2025 R11A 原文（已對照全文第 1254 行）：**
+> "Active surveillance **may be offered** as an appropriate management option for some patients with cT1aN0M0 PTCs... (**Conditional recommendation, Low certainty evidence**)"
 
-這在 04_evidence_methodology.md 中已正確使用繁體中文，因此不是系統性問題，而是 recommendation-diff-analyst agent 的特定問題。
+**注意：** R11 僅涵蓋 **cT1a（≤1 cm）**，並非摘要表所說的「1–2 cm 低風險腫瘤亦可考慮」。若 1–2 cm 的數據來源於 guideline 討論段落的敘述而非 recommendation 本文，應明確區分「Recommendation 文字」vs「討論段落建議」。
 
-### 問題 2：Wang Y 2023 OR 4.24 的穩健性問題
+**追加確認：** 2025 guideline R11B 涵蓋了 ultrasound-guided percutaneous ablation 作為 cT1aN0M0 PTC 的替代選項，也未提及 1–2 cm。`recommendation_diff.md` 主文 Section 8.1 的 Layer 1 中正確引用了 R11A 原文，但 recommendation_diff_table.md 的摘要有過度概括。
 
-diff-analyst 和 evidence-appraiser 均引用 Wang Y 2023 的 permanent hypocalcemia OR 4.24 作為反對 pCND 的重要證據。但經 PubMed 驗證，此 OR 的 95% CI 為 1.05-17.22（P=0.043）。CI 下界僅 1.05，幾乎不顯著。此結果可能因單一研究的刪除而失去統計顯著性。在引用此數據時應加上 CI，讓讀者自行評估穩健性。
-
-### 問題 3：IoN trial 對 intermediate-risk 的潛在推廣未被充分探討
-
-IoN trial 納入了部分 N1a 患者（pT1-pT3a, N0/Nx/**N1a**），這與 ESTIMABL2 的嚴格 N0 納入標準不同。IoN 的正面結果可能意味著 RAI omission 可安全推廣到部分 intermediate-risk（特別是 microscopic N1a）患者。diff-analyst 在主文中提到但未深入分析此推廣意義。2025 R32B（intermediate-risk RAI 為 Conditional/Low）的不確定性可能因 IoN 數據而需要重新評估。
-
-### 問題 4：De-escalation cascade 的 combined safety 未受到充分質疑
-
-diff-analyst 的 Compounding Effects Analysis 正確描述了 de-escalation cascade 的結構，但未充分強調：**每一步的 de-escalation 都有其獨立的 evidence support，但所有步驟同時 de-escalate 的 combined safety 尚未被任何研究驗證。** 04_evidence_methodology.md 已將此標註為 "CRITICAL" evidence gap，但 recommendation_diff.md 的討論語氣偏向正面，未以同等力度提出此風險。
-
-### 問題 5：ESTIMABL2 的 population scope 有一個容易被忽略的限制
-
-ESTIMABL2 的納入標準是 "pT1a with sum diameters >=10mm" 和 "pT1b, N0"。這意味著 pT1a 單一腫瘤 <10mm 的患者（如 unifocal 7mm PTC）不在 ESTIMABL2 的研究範圍內。諷刺的是，這些最低風險的患者恰恰是 2015 R51B 已經以 Strong/Moderate 反對 RAI 的群體。diff-analyst 在文獻介紹中列出了 ESTIMABL2 的 PICO，但未明確指出此 scope gap。
+**建議修正：** 摘要表 Row 8.1 應將 R11 的適用範圍明確限定為 **cT1aN0M0（≤1 cm）**，1–2 cm 的討論應另行標注為「討論段落建議，非 Recommendation 原文」。
 
 ---
 
-## 同意的結論（無需修正）
+### 遺留問題 #3：R32A 對 microPTC 亞群的升級幅度仍未區分
 
-1. **Lobectomy <=2 cm 為 Strong default（R15A vs R35C）**-- Layer 1-3 均準確，文獻整合完整，guideline 原文引用精確。這是 v1.3 中最完善的 change analysis。
+**延續 v1.3 第 3 項未修正問題。**
 
-2. **Active surveillance 正式化（R11 vs 2015 R12 nodule）**-- v1.1 的修正已被採納（正確標註 2015 nodule section 已提及 AS）。文獻整合（Kuma 30yr、KoMPASS）準確。
+2015 R51 包含：
+- R51A（ATA 低風險 DTC 整體）：**Weak recommendation, Low-quality evidence** against RAI
+- R51B（unifocal papillary microcarcinoma）：**Strong recommendation, Moderate-quality evidence** against RAI
+- R51C（multifocal papillary microcarcinoma）：**Weak recommendation, Low-quality evidence** against RAI
 
-3. **pCND 態度硬化（R19A vs R36C）**-- v1.1 的 CI crosses 1.0 修正已採納。Layer 2 rationale 有實質提升。Chen 2018 和 Wang 2013 的數據引用正確。
+2025 R32A（所有 low-risk DTC）：**Strong recommendation, High certainty evidence** against RAI
 
-4. **RAI low-risk evidence upgrade（R32A vs R51A）**-- 兩項 RCT（ESTIMABL2、IoN）的 PMID 和關鍵數據均已驗證。這是整份報告中證據品質最高的變更。
+對 **unifocal microPTC** 族群，升級幅度是 **Strong/Moderate → Strong/High**（中等升級：同樣 Strong，但證據品質從 Moderate 升至 High）。
 
-5. **Surveillance de-escalation and "complete remission"（R48）**-- Seejore 2021 和 Tran 2024 的引用正確。"Complete remission" 概念的引入有充分的 guideline 原文支持。
+對**更廣泛的 low-risk DTC（non-micro T1, N0）**，升級幅度是 **Weak/Low → Strong/High**（重大升級）。
 
-6. **Compounding Effects 段落**-- v1.3 新增此段落完整回應了 v1.1 修正項 #5。De-escalation cascade 的結構描述清晰。
-
-7. **TSH suppression de-escalation（R45-46 vs R70）**-- Carhill 2015、Yang 2022、Ku 2021 的數據引用正確。Outcome re-weighting 的 rationale 合理。
-
-8. **Risk stratification 4-tier（R28 vs R48）**-- 結構性變更描述正確。AJCC 8th 和 intermediate heterogeneity 的 rationale 有 guideline 原文支持。
-
----
-
-## 不同意的結論（需修正）
-
-### 1. cT2 Lobectomy 的分類仍需進一步修正
-
-**問題**：Change Type 為 "Stronger directional preference (for lobectomy)"。
-
-**理由**：一個從 Strong/Moderate 降至 Conditional/Low-moderate 的 recommendation，在任何合理的分類體系中都不應使用 "Stronger" 一詞，即使方向性有所偏移。"Stronger" 暗示力度增加，而事實上 guideline 在此議題上的確定性降低了。
-
-**建議替代分類**："Reframed with directional preference at lower certainty" 或 "Directional shift (toward lobectomy), reduced certainty"
-
-**影響**：此分類問題可能導致臨床醫師誤以為 2025 guideline 更「堅定」地推薦 lobectomy for T2，而實際上 guideline 的態度是「方向性偏好但不確定」。
-
-### 2. RAI 證據升級幅度未區分 microPTC vs broader low-risk
-
-**問題**：整體描述暗示 RAI 在所有低風險 DTC 中經歷了從 Weak/Low 到 Strong/High 的巨大升級。
-
-**理由**：2015 R51B 對 unifocal microPTC 已是 Strong/Moderate against RAI。升級幅度的「新聞價值」主要在於更廣泛的 low-risk 族群（non-micro T1, N0），而非 microPTC。
-
-**建議修正**：加入一句關鍵區分：「需注意 2015 R51B 對 unifocal microPTC 已是 Strong/Moderate against RAI，因此 evidence upgrade 的主要影響在於擴大至 broader low-risk 族群。」
-
-### 3. Wang Y 2023 OR 4.24 引用缺少 CI
-
-**問題**：OR 4.24 被單獨引用，未附 CI（1.05-17.22）。
-
-**理由**：一個 CI 如此寬泛的 OR 不應作為獨立的強力論據。95% CI 下界 1.05 意味著結果僅 marginally significant。
-
-**建議修正**：引用 OR 4.24 時必須附上 "95% CI 1.05-17.22, P=0.043"，讓讀者了解此估計的不精確性。
+v1.4 主文和摘要表仍統一描述為「證據品質 Mo → Hi，基於 RCT」，未做此重要亞群分析。**ESTIMABL2 的主要研究人群是 pT1am（多灶性 microPTC，每灶 ≤1 cm，總徑 ≥10 mm）和 pT1b（1–2 cm），而非最低風險的單發 7 mm PTC。** 這個 scope nuance 仍然缺失。
 
 ---
 
-## 文獻 PMID 驗證結果
+## 五、逐項驗證總覽（TOP 5 高影響變更）
 
-| 文獻 | 引用的 PMID | 驗證狀態 | 備註 |
-|------|-----------|---------|------|
-| Adam 2014 | 25203876 | 已驗證 | Ann Surg 2014 |
-| Bojoga 2020 | 32708218 | 已驗證 | J Clin Med 2020 |
-| Hauch 2014 | 24943236 | 已驗證 | Ann Surg Oncol 2014 |
-| Rajjoub 2018 | 29426618 | 已驗證 | Surgery 2018 |
-| Song 2019 | 30375260 | 已驗證 | Thyroid 2019 |
-| ESTIMABL2 primary | 35263518 | 已驗證 | NEJM 2022 |
-| ESTIMABL2 5yr | 39586309 | **已驗證** (PubMed) | Lancet D&E 2025 |
-| IoN trial | 40543520 | **已驗證** (PubMed) | Lancet 2025;406:52-62 |
-| Kim 2023 SPM | 36821433 | 已驗證 | J Natl Cancer Inst 2023 |
-| Chen 2018 pCND | 29488066 | 已驗證 | World J Surg 2018 |
-| Wang TS 2013 | 23846784 | 已驗證 | Ann Surg Oncol 2013 |
-| Wang Y 2023 | 36733809 | **已驗證** (PubMed) | Front Endocrinol 2023; OR 4.24 (CI 1.05-17.22) |
-| Miyauchi/Ito 2023 | 37166389 | 已驗證 | Thyroid 2023 |
-| Lee 2022 KoMPASS | 36205563 | 已驗證 | Thyroid 2022 |
-| Carhill 2015 | 26171797 | 已驗證 | JCEM 2015 |
-| Yang 2022 AF | 36619576 | 已驗證 | Front Endocrinol 2022 |
-| Ku 2021 BMD | 34302730 | 已驗證 | JCEM 2021 |
-| Seejore 2021 | 34185343 | 已驗證 | Clin Endocrinol 2021 |
-| Tran 2024 | 38149602 | 已驗證 | Thyroid 2024 |
+### 結論 1：Lobectomy ≤2 cm 升格為 Strong 推薦（R15A vs 2015 R35C）
 
-**結論：所有 19 個 PMID 均已驗證正確。** 無一錯誤。v1.3 的文獻品質控制良好。
+**Layer 1 正確性：正確**
+
+- 2025 R15A 原文已核對：「should be a thyroid lobectomy...（Strong recommendation, Moderate certainty evidence）」— 完全正確
+- 2015 R35C 的引用（Strong/Moderate for ≤1 cm）也已核對正確
+- Change Type「broadened indication + 維持 Strong/Moderate 強度」— 正確
+
+**Layer 2 Evidence 準確性：高**
+
+| 文獻 | 引用數值 | 驗證結果 |
+|-----|---------|---------|
+| Hauch 2014（PMID 24943236） | TT 併發症 OR 2.15（CI 1.99–2.33）；高量外科醫師 OR 1.824 | 全文核對：正確 |
+| Rajjoub 2018（PMID 29426618） | CPTC 2.0–3.9 cm HR 1.53（CI 1.06–2.19, P=0.022）；≤1.9 cm HR 0.76（P=0.16）；FVPTC 無差異 | 全文核對：正確 |
+| Song 2019（PMID 30375260） | 配對後 HR=1.35（CI 0.40–1.36, P=0.33）；2–4 cm HR=0.93（P=0.902） | 全文核對：正確（CI 略有誤：0.40–1.36 應為 0.79–2.28，但結論不受影響）|
+
+**重要 nuance（仍未完全體現）：** 2025 guideline 原文第 1342 行明確承認「approximately half showing no difference in recurrence or survival...The other approximate half demonstrate statistically significant, lower recurrence rates with total thyroidectomy」。這種平衡評估是 guideline 委員會基於「harm outweighs limited benefit」的判斷，而非因為所有證據均一致支持 lobectomy。Layer 2 呈現了這個 nuance（Rajjoub 2018 作為 counterpoint），但「Strong recommendation」的確立是基於 harm-benefit 分析，而非單純的 oncologic equivalence。
+
+**整體判定：AGREE（整體準確，有小幅數值校正需求）**
 
 ---
 
-## 整體評估
+### 結論 2：cT2 PTC 手術決策以 SDM 框架下的 Conditional recommendation 取代（R15B）
 
-### v1.3 相較 v1.1 的改進
+**Layer 1 正確性：正確（已從 v1.3 部分改善）**
 
-1. **文獻整合品質顯著提升** -- 關鍵文獻介紹模板的引入使 Layer 2 rationale 有了具體的數據支撐，而非僅引用 guideline 文字
-2. **v1.1 修正項大部分已採納** -- 5 項中 3 項完全修正、1 項部分修正
-3. **Compounding effects analysis** 是重要的新增內容
-4. **PMID 準確率 100%** -- 包括 2025 年新發表的文獻（ESTIMABL2 5yr, IoN）
+2025 R15B 原文已核對：「For patients with low risk, unilateral thyroid cancer >2 and ≤4 cm (cT2N0M0), thyroid lobectomy **may be the preferred initial surgical treatment** due to significantly lower risk and side effects. However, the patient and treatment team may adopt total thyroidectomy...（Conditional recommendation, Low-moderate certainty evidence）」
 
-### 仍需改進之處
+重要：2025 R15B 的確定性表述是 **"Low-moderate certainty evidence"**（低至中等），不是純粹的 Low 或 Moderate。v1.4 摘要表標示為 "CR, Lo" 略有簡化，但差異不大。
 
-1. **cT2 lobectomy 分類** -- 仍使用 "Stronger" 術語，需改為反映 lower certainty 的分類
-2. **R51B microPTC 區分** -- 仍未採納 v1.1 修正項 #3
-3. **Wang Y 2023 CI 缺失** -- 關鍵文獻引用 OR 4.24 但未附 CI
-4. **語言問題** -- 主文使用簡體中文，違反 CLAUDE.md 要求
-5. **Combined de-escalation safety** -- 未充分質疑所有步驟同時 de-escalate 的 untested combined effect
+**v1.4 的 Change Type 已從 v1.3 的 "Stronger directional preference" 改為 "wording clarification + narrowed indication"，但 v1.4 主文（recommendation_diff.md）的 Layer 1 標題仍是「由 bilateral 偏好轉為 conditional lobectomy」，方向性描述偏向積極（暗示 lobectomy 是「更推薦」的選項），而 2025 原文其實只是說「may be preferred due to lower risk」，並且後半句提供了 TT 的合理選擇空間。**
+
+**Layer 2 Evidence 準確性：高，但仍有一項未修正問題**
+
+- Rajjoub 2018：CPTC 2.0–3.9 cm HR 1.53（正確）— 作為 counterpoint 呈現正確
+- Song 2019：HR 0.93（P=0.902）（正確）— 與 Rajjoub 衝突的資料正確標示
+
+未修正的問題：guideline 提到「only one meta-analysis found improved overall survival with total thyroidectomy over lobectomy, but the benefit was confined to T2 primary tumors」（reference 340，推測為 Zhang 2020 meta-analysis）。v1.4 仍未提供此 meta-analysis 的具體文獻介紹，這是支持「cT2 仍有 TT 生存優勢」論點的關鍵 counterevidence。
+
+**整體判定：PARTIALLY AGREE（主要結論正確，但 Change Type 表述仍略偏樂觀）**
+
+---
+
+### 結論 3：低風險 DTC 不使用 RAI 升格為 Strong/High（R32A）
+
+**Layer 1 正確性：正確（最重要的核對）**
+
+- 2025 R32A 原文已核對：Strong recommendation, **High certainty evidence** — 正確
+- 2025 R32B（中間風險）已核對：Conditional, **Low certainty evidence** — **v1.4 標示為 Moderate（錯誤，見重大錯誤 #3）**
+
+**Layer 2 Evidence 準確性：RCT 引用高品質，但存在已識別的數值錯誤**
+
+ESTIMABL2 Primary（PMID 35263518）核對：
+
+| 引用數值 | 驗證來源 | 結果 |
+|---------|---------|-----|
+| N=730 (evaluable) | 全文 | 正確 |
+| No-RAI 組 3 年無事件率 95.6%（CI 93.0–97.5） | 全文 | 正確 |
+| RAI 組 3 年無事件率 95.9%（CI 93.3–97.7） | 全文 | 正確 |
+| 差異 -0.3%（90% CI -2.7 to 2.2） | 全文 | 正確 |
+| 非劣效性界限 5 個百分點 | 全文 | 正確 |
+
+ESTIMABL2 5-year（PMID 39586309）核對：
+
+| 引用數值 | 驗證來源 | 結果 |
+|---------|---------|-----|
+| No-RAI 組 5 年無事件率 93.2%（CI 90.1–95.4） | 全文 | 正確 |
+| RAI 組 5 年無事件率 94.8%（CI 91.9–96.7） | 全文 | 正確 |
+| 差異 -1.6%（90% CI -4.5 to 1.4） | 全文 | 正確 |
+
+IoN Trial（PMID 40543520）核對（依據 Lancet PDF 全文）：
+
+| 引用數值 | 實際 ITT 數值 | recommendation_diff.md 描述 | 正確性 |
+|---------|-------------|--------------------------|------|
+| No ablation 5yr RFS | 97.9%（CI 96.1–99.7） | 97.9%（CI 96.1–99.7） | **正確** |
+| Ablation 5yr RFS | **96.3%**（CI 93.9–98.7） | **97.9%**（CI 96.1–99.7）— **錯誤** | **數值錯誤** |
+| 絕對差異 | 0.5%（95% CI -2.2 to 3.2） | 0.5%（90% CI -2.2 to 3.2） | **注意：原文應為 95% CI，不是 90% CI**（見下） |
+| HR（ITT） | 0.84（90% CI 0.38–1.87） | 未明確列出 HR | 補充資訊 |
+| p_non-inferiority | 0.033（ITT） | 0.033 | 正確 |
+
+**關於 CI 的特別說明：** IoN trial 主要統計分析以 90% CI 計算非劣效性，但同時也報告了 95% CI 的絕對差異。evidence_methodology.md 第 114 行正確記錄了「5 年絕對 risk difference：-0.5 個百分點（ITT，90% CI -1.8 to 2.7；95% CI -2.2 to 3.2）」，說明 -2.2 to 3.2 是 95% CI。recommendation_diff.md 標示「90% CI -2.2 to 3.2」是錯誤的（應為 95% CI）。
+
+**per-protocol 分析的重要限制（v1.4 未充分提及）：**
+IoN trial per-protocol 分析（N=480）的非劣效性 p 值為 0.093，**未達 pre-specified 0.05 threshold**。意味著 per-protocol 分析實際上未達到非劣效性標準。試驗方案規定以 ITT 為主要分析（p=0.033，達標），但 per-protocol 的不一致性是 IoN trial 的重要方法論限制，在引用時應明確說明。v1.4 所有版本的文件均未提及 per-protocol 分析未達非劣效性這一點。
+
+**整體判定：PARTIALLY AGREE（RCT 結論正確，但 ablation 組 RFS 數值錯誤，CI 標注有誤，per-protocol 分析未達標準未被提及）**
+
+---
+
+### 結論 4：pCND 由被允許（Weak）改為明確不建議（更正後：Strong 反對）
+
+**Layer 1 正確性：存在重大錯誤（見重大錯誤 #1）**
+
+**已核對的正確事實：**
+- 2015 R36B：Weak/Low，針對 T3/T4 或 cN1（lateral）的 cN0 患者，pCND「should be considered」
+- 2015 R36C：Weak/Low，針對 T1/T2 noninvasive cN0，「without pCND is appropriate」
+- 2025 R19A：**Strong recommendation, Moderate certainty evidence**，針對 T1/T2 cN0，「should NOT be performed」
+- 2025 R19B：Conditional recommendation, Low certainty evidence，針對 T3/T4 cN0，「may be considered」
+
+**錯誤摘要：**
+1. v1.4 將 R19A 標示為 CR/Lo（應為 SR/Mo）— 錯誤
+2. v1.4 未引用 2015 R36C（已說明 T1/T2 不做 pCND 是合理的）
+3. v1.4 將此 Change Type 標示為 "weaker recommendation"（應為 "stronger recommendation against"）
+
+**重新評估 Change Type：**
+- 2015 立場：T1/T2 cN0 不做 pCND「appropriate」（Weak, Lo）
+- 2025 立場：T1/T2 cN0 不做 pCND「should not be performed」（**Strong, Mo**）
+- 正確 Change Type：**stronger recommendation against**（方向一致，但強度顯著升級）
+
+**Layer 2 Evidence 準確性：高，核心數值正確**
+
+| 文獻 | 關鍵數值 | 驗證結果 |
+|-----|---------|---------|
+| Chen 2018（PMID 29488066） | LRR OR 0.65（CI 0.48–0.88）；永久低血鈣 OR 2.22（CI 1.58–3.13） | 已對照 2025 guideline 第 1480 行引用：正確 |
+| Wang TS 2013（CI 0.33–1.07）| RR 0.59（CI 0.33–1.07）；NNT=31 | 已對照 2025 guideline 第 1480 行引用：正確。CI 跨越 1.0 已在 v1.3 修正後維持 |
+| Hughes et al. | 5年 RFS 96.6%；central neck RFS 99.1% | 已在 2025 guideline 第 1482 行找到：正確 |
+
+**一個已識別的 nuance（v1.3 標注但 v1.4 未充分採納）：**
+2025 guideline 原文（第 1482 行）明確說：「All these studies suggest equipoise when considering a pCLND, especially with T3 and T4 tumors.」
+
+這個「equipoise」表述與 Strong recommendation against 之間存在一定的緊張關係——guideline 委員會的推薦用詞（Strong against）比其自身引用的文獻 meta-analysis 結論（equipoise）更為強硬。這值得在 Layer 2 中明確指出：「guideline 委員會的 Strong recommendation against 比引用文獻本身的 equipoise 結論更為強烈，反映了委員會在 benefit-harm balance 上的判斷性決定。」
+
+**整體判定：DISAGREE（R19A 強度標示錯誤，改變方向描述錯誤）**
+
+---
+
+### 結論 5：術後風險分層系統 3 級 → 4 級重構（R28）
+
+**Layer 1 正確性：正確**
+
+- 2025 R28 為 Good Practice Statement（框架性 recommendation），描述四層風險分類
+- 3→4 層的重構描述正確
+- 各層定義（low / low-intermediate / intermediate-high / high）的描述基本準確
+
+**一個輕微的術語問題：** v1.4 摘要表 Row 4.1 標示「R28（GPS）」，但 GPS（Good Practice Statement）的意義是「委員會認為合理的最佳實踐，無需系統性回顧支持」。四層風險分層本身仍有具體的 evidence basis（AJCC 8th、vascular invasion 分類研究），將其標示為 GPS 可能低估了其證據基礎。更準確的描述是「部分以文獻為基礎的框架性 GPS」。
+
+**Layer 2 Evidence 準確性：高**
+
+| 文獻 | 關鍵數值 | 驗證結果 |
+|-----|---------|---------|
+| Ghossein 2006（PMID 16534796） | ≥4 VI foci 預後最強因子（P<0.0001） | 全文已讀：正確 |
+| Leong 2022（PMID 36031639） | EAFTC ≥4 foci 遠端轉移 HR 5.89（P=0.004） | 全文已讀：正確 |
+| Ito 2022（PMID 35491160） | VI(2+) OR 7.324（P<0.001）| 全文已讀：正確 |
+
+**一個仍未修正的 nuance（v1.3 已識別）：**
+2025 guideline Figure 2 腳註明確承認：「No clear cutoffs for LNs between low-intermediate and high-intermediate risk groups.」v1.4 文件均未引用此免責聲明，導致讀者可能認為四層系統的邊界比實際上更加確定。
+
+**整體判定：AGREE（整體準確，有小幅補充需求）**
+
+---
+
+## 六、v1.3 Cross-validation 已要求修正的 6 項是否全部落實
+
+依 MEMORY.md 記錄，v1.3 cross-validation 指出 6 項修正需納入 v1.4：
+
+| # | 修正項目 | v1.4 落實狀態 |
+|---|---------|------------|
+| 1 | cT2 lobectomy：Strong→Conditional（not "stronger"） | **未完全修正**：Change Type 改為 "wording clarification + narrowed indication"，但主文描述仍有偏差 |
+| 2 | Active surveillance：elevated/expanded from 2015 R12（not "newly added"） | **已修正**：v1.4 正確標示 "broadened indication" |
+| 3 | 2015 R51B for microPTC 已是 Strong/Moderate | **未修正** |
+| 4 | pCND Wang meta-analysis CI crosses 1.0 | **已修正並維持** |
+| 5 | Compounding effects 需完整討論 | **已修正並維持** |
+| 6 | Intermediate-risk RAI 升級至 HIGH impact | **已修正**：摘要表標示為 HIGH |
+
+**結論：6 項中 4 項已修正（2、4、5、6），2 項仍未修正（1、3）。**
+
+---
+
+## 七、新發現的問題摘要（v1.4 版本首次識別）
+
+| 優先級 | 問題描述 | 影響範圍 | 建議修正方向 |
+|------|---------|---------|-----------|
+| **P0（立即）** | R19A 強度標示錯誤：CR/Lo → 應為 SR/Mo | recommendation_diff_table.md Row 3.1；recommendation_diff.md Section 3.1 | 更正強度，Change Type 改為 "stronger recommendation against" |
+| **P0（立即）** | IoN trial ablation 組 5yr RFS 數值錯誤：97.9% → 應為 96.3%（ITT）| 多個 output 檔案（recommendation_diff.md, discussion_rationale.md, 02_top10, 03_matrix） | 更正為 96.3%（ITT）或 96.9%（per-protocol），附分析人群說明 |
+| **P1（高）** | R32B evidence quality 錯誤：Moderate → 應為 Low | recommendation_diff.md 5.2；recommendation_diff_table.md Row 5.2 | 更正為 Low certainty evidence |
+| **P1（高）** | 2015 R36C 未被引用，導致 pCND change type 描述不準確 | recommendation_diff.md 3.1；recommendation_diff_table.md Row 3.1 | 補充 2015 R36C，重新評估 Change Type |
+| **P2（中）** | IoN trial 90% CI vs 95% CI 標注錯誤（-2.2 to 3.2 是 95% CI） | recommendation_diff.md 5.1；evidence_methodology.md 已正確記錄 | 更正標注 |
+| **P2（中）** | IoN per-protocol 分析未達非劣效性（p=0.093）未被提及 | 所有 IoN trial 討論段落 | 補充此方法論限制 |
+| **P2（中）** | Active surveillance R11 適用範圍過度概括（應限 cT1a，非 1–2 cm） | recommendation_diff_table.md Row 8.1 | 更正為 cT1a（≤1 cm），1–2 cm 標注為討論段落而非 Recommendation |
+| **P3（低）** | 四層風險系統邊界不確定性（Figure 2 腳註）未引用 | evidence_methodology.md；discussion_rationale.md | 補充 Figure 2 免責聲明 |
+| **P3（低）** | 2015 R51B microPTC 區分仍缺失 | recommendation_diff.md 5.1；recommendation_diff_table.md | 補充 R51A vs R51B 的不同基線說明 |
+
+---
+
+## 八、整體品質評估
+
+### v1.4 的優勢
+
+1. **關鍵 RCT 文獻整合深度高**：ESTIMABL2（primary + 5-year）、IoN Trial 的方法學細節均有全文支持，PMID 均已驗證
+2. **Compounding effects 分析完整**：discussion_rationale.md 第 3.2 節對複合降階路徑的未驗證性有誠實評估
+3. **pCND meta-analysis 的 CI 問題已修正**：Wang 2013 CI 跨越 1.0 已明確標注
+4. **4 級風險分層的 FTC/OCA 文獻基礎完整**：Ghossein 2006、Leong 2022、Ito 2022 全文引用正確
+
+### v1.4 需要修正的核心問題
+
+1. **3 個重大錯誤**（P0-P1）需要在任何公開或臨床使用前修正：
+   - R19A 強度錯誤（SR/Mo 誤為 CR/Lo）
+   - IoN trial 數值錯誤（ablation 97.9% 誤為 96.3%）
+   - R32B 證據品質錯誤（Low 誤為 Moderate）
+
+2. **2 個遺留問題**（仍未修正 v1.3 問題）：
+   - cT2 Change Type 術語
+   - microPTC vs broader low-risk 的 RAI 升級幅度區分
 
 ### 整體品質評級
 
-**Good -- 需要 targeted corrections（5 項具體修正），無重大事實錯誤。**
+**Acceptable with critical corrections required（可接受，但需立即修正 3 個重大錯誤後才可公開使用）**
 
-v1.3 的核心優勢在於文獻整合深度和 PMID 驗證的可靠性。核心弱點在於 cT2 lobectomy 的分類術語和 R51B 區分的持續缺失。這些修正不影響報告的整體結論方向，但會提升學術精確度。
-
----
-
-## 給 Lead Orchestrator 的建議
-
-1. **Priority 1（立即修正）**：cT2 lobectomy Change Type -- 避免使用 "Stronger"，改用中性術語
-2. **Priority 2（建議修正）**：RAI section 區分 R51A vs R51B 的不同 baseline
-3. **Priority 3（建議修正）**：Wang Y 2023 OR 4.24 附上 95% CI
-4. **Priority 4（全文修正）**：recommendation_diff.md 和 recommendation_diff_table.md 從簡體中文改為繁體中文
-5. **Priority 5（補充）**：在 Compounding Effects 段落加入明確的 combined safety evidence gap 警告
+v1.4 的核心論述方向正確：低風險 DTC 的降階趨勢有 RCT 支持（RAI），手術範圍的降階有大型 registry 支持（lobectomy），pCND 的降階有 meta-analysis 支持（害多於利）。主要問題是在推薦強度的精確標示上存在可被糾正的錯誤，這些錯誤不影響整體結論方向，但影響報告的學術可信度。
 
 ---
 
-*Document generated: 2026-03-10 | v1.3 cross-validation | methods-evidence-appraiser agent*
+## 九、關鍵數值核對表（IoN Trial 全文確認）
 
-Sources:
-- [IoN Trial - PubMed](https://pubmed.ncbi.nlm.nih.gov/40543520/)
-- [IoN Trial - The Lancet](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)00629-4/fulltext)
-- [ESTIMABL2 5-year - PubMed](https://pubmed.ncbi.nlm.nih.gov/39586309/)
-- [ESTIMABL2 5-year - Lancet D&E](https://www.thelancet.com/journals/landia/article/PIIS2213-8587(24)00276-6/fulltext)
-- [Wang Y 2023 pCND Meta-Analysis - PubMed](https://pubmed.ncbi.nlm.nih.gov/36733809/)
-- [Wang Y 2023 pCND Meta-Analysis - Frontiers](https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2022.1094012/full)
+以下為依據 Lancet 2025;406:52-62 全文 PDF 核對的正確數值，應作為所有 output 的修正依據：
+
+| 指標 | ITT 分析（主要） | Per-protocol 分析（次要） |
+|-----|--------------|----------------------|
+| No ablation 5yr RFS | 97.9%（95% CI 96.1–99.7） | 97.9%（95% CI 96.1–99.7） |
+| Ablation 5yr RFS | **96.3%（95% CI 93.9–98.7）** | 96.9%（95% CI 94.7–99.1） |
+| HR | 0.84（90% CI 0.38–1.87） | 1.03（90% CI 0.44–2.42） |
+| 絕對差異 | 0.5%（95% CI -2.2 to 3.2）| — |
+| p_non-inferiority | **0.033（達標）** | **0.093（未達標）** |
+| N enrolled | 504 | 480（per-protocol） |
+| Median follow-up | No ablation 6.8 yr；Ablation 6.6 yr | — |
+| Total recurrences | 17（No ablation 8, Ablation 9） | — |
+
+**非劣效性確立依據：** 以 ITT 分析為主要分析，p=0.033 達到預先設定的 5% 單側 alpha。Per-protocol 未達標（p=0.093）是一個重要的方法學限制，應在所有引用此試驗的地方明確說明。
+
+---
+
+## 十、給 Lead Orchestrator 的行動建議
+
+**Priority 0（立即執行，影響學術可信度）：**
+
+1. 修正 recommendation_diff.md 和 recommendation_diff_table.md 中 **R19A 的推薦強度**：CR/Lo → SR/Mo，Change Type 改為 "stronger recommendation against"
+2. 修正所有引用 IoN trial 的位置，ablation 組 5yr RFS 改為 **96.3%（ITT）**，補充 per-protocol p=0.093 未達標的方法論限制
+3. 修正 R32B 的 evidence quality：Moderate → **Low certainty evidence**
+
+**Priority 1（建議在最終發布前修正）：**
+
+4. 在 pCND 分析中補充 **2015 R36C** 原文，完整呈現 2015 的雙重立場（T3/T4 可考慮 pCND + T1/T2 不做 pCND 也合理）
+5. 更正 IoN trial 絕對差異的 CI 標注：「90% CI -2.2 to 3.2」→「**95% CI -2.2 to 3.2**」
+
+**Priority 2（在 v1.5 整合時修正）：**
+
+6. 補充 RAI section 中 **R51B microPTC 的基線區分**（Strong/Moderate → Strong/High 是較小幅度升級）
+7. 補充 **4 級風險分層邊界不確定性**（Figure 2 腳註）
+8. 補充 **active surveillance R11 適用範圍**：限 cT1a（≤1 cm），而非 1–2 cm
+
+---
+
+*v1.4 交叉驗證完成日期：2026-03-10*
+*methods-evidence-appraiser agent — cross-validation mode*
+*驗證依據：2025 ATA guideline 全文 .md（第 1252–1510 行；第 2091–2105 行）；IoN Trial PDF（PMID 40543520，Lancet 2025;406:52-62）；ESTIMABL2 全文；2015 ATA guideline 全文 .md（第 2136–2148 行）*

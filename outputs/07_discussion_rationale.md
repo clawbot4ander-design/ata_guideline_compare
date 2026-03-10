@@ -1,10 +1,10 @@
 # Discussion 與論述基礎：Guideline 演進背後的 WHY
 
 **Deliverable:** 07 of 07
-**Project:** ATA 2015 vs 2025 DTC Guideline Comparison (v1.3)
-**Generated:** 2026-03-10 (v1.3 upgrade)
-**Source Agent:** mechanism-context-writer v1.3
-**Status:** Final -- v1.3 reference-integrated edition
+**Project:** ATA 2015 vs 2025 DTC Guideline Comparison (v1.4)
+**Generated:** 2026-03-10 (v1.4 cross-validation corrections applied)
+**Source Agent:** mechanism-context-writer v1.3 → lead-orchestrator v1.4
+**Status:** Final -- v1.4 edition (cross-validation corrections applied)
 
 ---
 
@@ -142,7 +142,8 @@
 - **Citation**: Mallick U et al., Lancet, 2025; 406(10498):52-62 (PMID: 40543520)
 - **研究設計**: Phase III non-inferiority RCT, N=504, 33 UK centres
 - **PICO**: P=low-risk DTC (pT1-pT3a, N0/Nx/N1a); I=no ablation; C=RAI ablation 1.1 GBq; O=5-year recurrence-free rate
-- **主要發現**: 5-year recurrence-free rates: 97.9% (no ablation) vs 96.3% (ablation); absolute risk difference 0.5% (95% CI -2.2 to 3.2), meeting non-inferiority criterion。
+- **主要發現**: 5-year recurrence-free rates: 97.9% (no ablation) vs 96.3% (ablation); absolute risk difference 0.5% (95% CI -2.2 to 3.2), meeting non-inferiority criterion (ITT analysis)。
+- **[v1.4 方法學補充]**: Per-protocol 分析的 p for non-inferiority = 0.093，未達預設之 0.05 閾值，意即 ITT 確立非劣效性，但 per-protocol 分析不支持。此差異值得注意：當有較多 cross-over（ablation 組患者未接受 RAI）時，ITT 結果可能高估非劣效性。Guideline 引用 ITT 結果是統計學慣例（intent-to-treat is the primary analysis in non-inferiority trials），但讀者應理解 per-protocol 的臨界結果是整體結論的一個不確定因素。
 - **為什麼推動了 guideline 的方向性轉變**: 獨立於 ESTIMABL2 的第二個 Phase III RCT 確認相同結論。IoN 的入組範圍更廣（包含 N1a 和 pT3a），增加了結果的外部效度。兩項 RCT 的一致性為 guideline 委員會提供了充分信心將推薦從 Weak/Low 升級至 Strong/High。
 - **Data source**: Abstract only (Lancet subscription)
 
@@ -161,8 +162,9 @@
 
 ### 連結到具體 Recommendation 變更
 - R32A（low-risk DTC 不使用 RAI：Weak/Low → Strong/High）← ESTIMABL2 + IoN 雙 RCT
+- **R32B（intermediate-risk DTC 的 RAI 決策）**：[v1.4 修正] R32B 的推薦強度為 **Conditional/Low certainty evidence**（非 Moderate）。Low-intermediate 和 intermediate-high 兩個 sub-tier 共用同一個 Conditional/Low "may be considered" 推薦，並無獨立的 stronger directive。這反映了 intermediate-risk RAI 領域 RCT 證據的根本缺乏：ESTIMABL2 和 IoN 均**排除**了 N1b、pT3b、pT4a 等高風險特徵的患者——恰恰是構成 intermediate-high 分類的核心族群。因此，2025 guideline 雖然能對 low-risk 做出 Strong/High 的反向推薦，卻只能對 intermediate-risk 給出 Conditional/Low 的不確定性推薦，指出 RAI「may be considered」並需 SDM。
 - R33（RAI therapy 的適應症更明確）← 風險效益重新校準
-- R34A（rhTSH 從 "alternative" 升為 "preferred"）← 當需要 RAI 時的 QoL 考量
+- R34A（rhTSH 從 "alternative" 升為 "preferred"：Strong/High certainty）← 當需要 RAI 時，rhTSH 的等效性及 QoL 優勢已有 Level I 證據支持
 - R41（RAI 二次惡性腫瘤風險的 counseling 要求加強）← Kim 2023 dose-response data
 
 ---
@@ -314,6 +316,8 @@ TSH suppression de-escalation 的邏輯核心是一項關鍵發現：**moderate 
 - R48（定義 surveillance stopping rules 和 complete remission）← Seejore 2021 + false-positive data + competing risk
 - R47D（lobectomy 後不常規監測 Tg）← Tg 在有殘留甲狀腺組織時不可靠的認知轉變
 
+> **[v1.4 關鍵澄清]** "Complete remission" 概念（R48）**僅適用於接受 total thyroidectomy ± RAI 的患者**，其定義依賴於 suppressed Tg < 0.2 ng/mL（excellent response criteria）。Lobectomy 患者因殘留正常甲狀腺組織，Tg 無法作為 tumor marker，**無法進入 complete remission 路徑（R48.2/R48.4）**；其 follow-up 遵循 R48.5/R48.6（Good Practice Statement 層級），採用 clinical assessment + US 為主的監測方案，stopping rules 尚未被正式 recommendation 所規範。此一區別是臨床實施中的關鍵陷阱：不應將 total thyroidectomy 患者的「complete remission at 10-15 years」概念外推至 lobectomy 患者。
+
 ---
 
 ## 2.8 分子分型與精準醫學：為什麼現在能更好地區分風險？
@@ -453,3 +457,27 @@ SDM 的正式化反映了三個匯流因素：
 2025 ATA DTC guideline 的方向性轉變——從治療極大化到治療適切化——不是突然的轉向，而是 30 年來流行病學洞見、RCT 證據、治療危害量化和患者中心價值觀匯流的結果。其核心智識訊息是：**在一個 20 年疾病特異性死亡率僅 0.6% 的疾病中，治療的首要原則應是「primum non nocere」——首先，不造成傷害。** 當我們能夠量化 total thyroidectomy 的併發症、RAI 的二次惡性腫瘤風險、TSH suppression 的心房顫動風險，並將之與極低的疾病特異性死亡率相比時，de-escalation 便不再是「做得更少」的保守策略，而是「做得更對」的精準策略。
 
 然而，de-escalation 並非無限制的退縮。2025 guideline 在 RAIR DTC 的 targeted therapy 上展現了前所未有的精準化和 escalation。此一雙向運動——低風險端的 de-escalation 和高風險端的 precision intensification——共同構成了 2025 guideline 的核心哲學：**right-sizing treatment to risk**。Guideline 的演進將持續被新的 evidence 所驅動，但其方向——更個體化、更精準、更重視 patient-reported outcomes——已不可逆轉。
+
+---
+
+## v1.4 Cross-Validation 修正摘要
+
+本文件（07_discussion_rationale.md）於 v1.4 修訂中進行以下重要修正：
+
+### 修正 1：IoN Trial 方法學補充（Section 2.2）
+- **原文**：僅呈現 ITT 結果（97.9% vs 96.3%，non-inferiority met）
+- **v1.4 新增**：Per-protocol 分析的 p for non-inferiority = 0.093，未達 0.05 閾值。此差異意味著雖然 ITT（主要分析）確立非劣效性，per-protocol 分析（敏感性分析）未能複製。讀者應理解這是整體結論的一個不確定因素，而非推翻主要結論。
+
+### 修正 2：R32B 證據等級澄清（Section 2.2 連結到具體 Recommendation 變更）
+- **原文**：未明確說明 R32B 的推薦強度
+- **v1.4 新增**：R32B 為 Conditional/Low certainty evidence（非 Moderate）。Low-intermediate 和 intermediate-high 兩個 sub-tier 共用同一個 Conditional/Low "may be considered" 推薦，不分開。反映 RCT 對 intermediate-risk 患者的排除導致此領域仍處於 Low certainty。
+
+### 修正 3：Complete Remission 概念適用範圍（Section 2.7）
+- **原文**：將 complete remission 概念呈現為廣泛適用，未區分手術類型
+- **v1.4 新增**：明確指出 complete remission（R48.2/R48.4）僅適用於 total thyroidectomy ± RAI 患者。Lobectomy 患者進入 R48.5/R48.6（GPS 層級），stopping rules 未被正式 recommendation 所規範。
+
+### 已確認正確（無需修改）
+- Section 2.4 pCND：R19A 已正確標示為 Strong/Moderate（Line 229）
+- Section 2.2 IoN 主要數據：97.9% (no ablation) vs 96.3% (ablation) 已正確呈現（Line 145）
+- Section 2.8 分子分型：OTC（Oncocytic Thyroid Carcinoma）命名已正確使用（WHO 2022 5th edition，取代 "Hurthle cell carcinoma"）
+- rhTSH R34A：已正確標示為 "preferred"（強化 vs 2015 的 "alternative"）
